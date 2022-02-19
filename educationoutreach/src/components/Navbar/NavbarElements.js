@@ -4,28 +4,29 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
   background: #fffb3ff;
-  height: 80px;
+  height: 35px;
   display: flex;
   justify-content: space-between;
   padding: 0.2rem calc((100vw-1000px) / 2);
+  width: 65%;
   z-index: 12;
 `;
 export const NavLink = styled(Link)`
-  color: #000;
+  color: rgb(3, 125, 158);
   display: flex;
   align-items: center;
-  text-size: 18px;
-  text-decoration: underline;
+  font-size: 20px;
+  text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
   &.active {
-    color: #15cdfc;
+    color: lightblue;
   }
 `;
 export const Bars = styled(FaBars)`
   display: none;
-  color: #000;
+  color: black;
   @media screen and (max-width: 768px) {
     display: block;
     postion: absolute;
@@ -40,8 +41,9 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 25vw;
-  text-size: 18px;
+  margin-left: 20vw;
+  margin-bottom: 2px;
+  text-size: 24px;
   white-space: nowrap;
   @media screen and (max-width: 768px) {
     display: none;

@@ -1,0 +1,38 @@
+.logoText {
+  width: 55%;
+  height: auto;
+}
+.headerLogoText {
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  text-align: center;
+  font-size: 38px;
+  color: rgb(5, 56, 92);
+  width: 100%;
+  height: auto;
+}
+
+.subLogoText {
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  text-align: center;
+  font-size: 28px;
+  color: #6699cc;
+  width: 100%;
+  height: auto;
+}
+.logo {
+  margin-left: 5%;
+  width: 20%;
+  height: auto;
+}
+
+.aligned {
+  display: flex;
+  align-items: center;
+}
+
+.underLine {
+  width: 64.5%;
+  margin-top: 2px;
+  margin-left: 20vw;
+  display: float;
+}

@@ -1,0 +1,21 @@
+h2 {
+  color: rgb(5, 56, 92);
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  margin-bottom: 4px;
+}
+
+p {
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-size: 18px;
+}
+
+.page {
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.center {
+  justify-content: center;
+  display: absolute;
+  transform: translate(-50%, -50%);
+}
