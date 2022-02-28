@@ -25,7 +25,7 @@ function Home() {
       </p>
 
       <h2 className="center">BEHAVIOR CHANGE PROGRAMS</h2>
-      <MapContainer />
+      {/*<MapContainer />*/}
     </div>
   );
 }

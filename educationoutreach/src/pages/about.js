@@ -1,10 +1,11 @@
 import React from "react";
+import { render } from "react-dom";
 import "./Text.css";
 
 function About() {
-  return (
+  render(
     <div className="page">
-      <h1>About page placeholder</h1>
+      <button onClick={onclick}></button>
     </div>
   );
 }
