@@ -38,5 +38,6 @@ sketch
 .ionide
 
 # Support for Project snippet scope
+"terminal.integrated.shellArgs.linux": ["-l"]
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,react
