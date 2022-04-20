@@ -1,0 +1,64 @@
+table {
+  border-spacing: 1px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(3, 125, 158, 0.75);
+  overflow: hidden;
+  white-space: nowrap;
+}
+tr:nth-child(odd) {
+  background-color: rgba(3, 125, 158, 0.25);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.headerRow {
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+
+th {
+  background-color: rgb(5, 56, 92);
+  color: aliceblue;
+  text-align: center;
+  line-height: 35px;
+}
+
+td {
+  padding: 7px;
+}
+
+td:nth-child(even) {
+  background-color: rgba(3, 125, 158, 0.25);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.questionLabels {
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  line-height: 35px;
+}
+
+.buttonNext {
+  float: right;
+  margin-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.buttonNextDataCollection {
+  float: right;
+  margin-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  margin-top: 63px;
+}
+.buttonPerivous {
+  float: left;
+  margin-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}

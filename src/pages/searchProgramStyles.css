@@ -1,0 +1,63 @@
+.Searchbar {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  width: 50vw;
+  display: inline-block;
+}
+
+.BlueSquare {
+  background-color: rgba(3, 125, 158, 0.12);
+  padding: 10px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+}
+
+/* The four sections of filter box */
+.TargetAudience {
+  width: 25%;
+}
+.TargetPollutant {
+  width: 25%;
+}
+.ResearchInstruments {
+  width: 25%;
+}
+.ProgramLocation {
+  width: 25%;
+}
+
+.Results {
+  padding: 10px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.ResultInteriorBox {
+  width: 20%;
+  text-align: center;
+  padding: 7px;
+}
+
+.filterTitle {
+  position: absolute;
+  background-color: rgb(3, 125, 158);
+  text-align: center;
+  top: 40%;
+  left: 15%;
+  transform: translate(-30%, -30%);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 24px;
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+}

@@ -1,0 +1,29 @@
+.panelBoxProgramComparison {
+  margin-left: 12%;
+  margin-right: 12%;
+}
+.panelBoxAddProgram {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.rightbox {
+  display: inline;
+  float: left;
+  margin-left: 10%;
+}
+
+.leftbox {
+  display: inline;
+  float: left;
+  margin-left: 10%;
+}
+
+.programComparisonTable {
+  width: 100%;
+}
+
+.buffer {
+  margin-top: 10px;
+  margin-bottom: 60px;
+}

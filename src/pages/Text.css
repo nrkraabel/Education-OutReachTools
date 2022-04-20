@@ -1,0 +1,55 @@
+h2 {
+  color: rgb(5, 56, 92);
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  margin-bottom: 4px;
+}
+
+p {
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-size: 18px;
+}
+
+h3 {
+  color: rgb(3, 125, 158);
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  margin-bottom: 4px;
+}
+h4 {
+  color: rgb(3, 125, 158);
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  margin-bottom: 4px;
+}
+
+.page {
+  margin-left: 6vw;
+  margin-right: 6vw;
+}
+
+.center {
+  justify-content: center;
+  display: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.greyBox {
+  width: 15%;
+  height: 22%;
+  background-color: lightgrey;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 25px;
+  margin-left: 2%;
+  margin-bottom: 5%;
+  float: right;
+}
+
+.introText {
+  width: 55vw;
+  margin-right: 5vw;
+  justify-content: left;
+  display: inline-block;
+}
+
+.map {
+  margin-bottom: 50px;
+}
