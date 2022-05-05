@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import TabPanel from "../components/TabPanel";
+import TabPanel from "../../components/TabPanel";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import "./Tab.css";
-import "./Text.css";
-import "./Table.css";
+import "../Tab.css";
+import "../Text.css";
+import "../Table.css";
+import "./CampaignSelection.css";
 import Button from "@mui/material/Button";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import LinkIcon from "@mui/icons-material/Link";
 import Link from "@mui/material/Link";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { CSVLink, CSVDownload } from "react-csv";
+import DoneIcon from "@mui/icons-material/Done";
 
 //Helper to tab prop
 function a11yProps(index) {
@@ -22,7 +23,7 @@ function a11yProps(index) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-function ProgramComparison() {
+function CampaignSelection() {
   const [tabNum, setTabNum] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -33,7 +34,7 @@ function ProgramComparison() {
     setTabNum(tabNum + 1);
   };
 
-  const handlePerivous = () => {
+  const handlePrevious = () => {
     setTabNum(tabNum - 1);
   };
 
@@ -44,18 +45,18 @@ function ProgramComparison() {
       width: 650,
     },
     {
-      field: "Program1",
-      headerName: "Program One",
+      field: "Campaign1",
+      headerName: "Campaign One",
       width: 250,
     },
     {
-      field: "Program2",
-      headerName: "Program Two",
+      field: "Campaign2",
+      headerName: "Campaign Two",
       width: 250,
     },
     {
-      field: "Program3",
-      headerName: "Program Three",
+      field: "Campaign3",
+      headerName: "Campaign Three",
       width: 250,
     },
   ];
@@ -67,245 +68,238 @@ function ProgramComparison() {
     setCombinedData([
       {
         id: 1,
-        Question: "Program Title",
-        Program1: ProgramOne.ProgramTitle,
-        Program2: ProgramTwo.ProgramTitle,
-        Program3: ProgramThree.ProgramTitle,
+        Question: "Campaign Title",
+        Campaign1: CampaignOne.CampaignTitle,
+        Campaign2: CampaignTwo.CampaignTitle,
+        Campaign3: CampaignThree.CampaignTitle,
       },
       {
         id: 2,
         Question: "Problem Addressed",
-        Program1: ProgramOne.ProblemAddressed,
-        Program2: ProgramTwo.ProblemAddressed,
-        Program3: ProgramThree.ProblemAddressed,
+        Campaign1: CampaignOne.ProblemAddressed,
+        Campaign2: CampaignTwo.ProblemAddressed,
+        Campaign3: CampaignThree.ProblemAddressed,
       },
       {
         id: 3,
         Question: "Target Behavior",
-        Program1: ProgramOne.TargetBehavior,
-        Program2: ProgramTwo.TargetBehavior,
-        Program3: ProgramThree.TargetBehavior,
+        Campaign1: CampaignOne.TargetBehavior,
+        Campaign2: CampaignTwo.TargetBehavior,
+        Campaign3: CampaignThree.TargetBehavior,
       },
       {
         id: 4,
         Question: 'Is the behavior an "end-state" behavior?',
-        Program1: ProgramOne.BehaviorEndState,
-        Program2: ProgramTwo.BehaviorEndState,
-        Program3: ProgramThree.BehaviorEndState,
+        Campaign1: CampaignOne.BehaviorEndState,
+        Campaign2: CampaignTwo.BehaviorEndState,
+        Campaign3: CampaignThree.BehaviorEndState,
       },
       {
         id: 5,
         Question: "Can the behavior be measured?",
-        Program1: ProgramOne.BehaviorMeasureable,
-        Program2: ProgramTwo.BehaviorMeasureable,
-        Program3: ProgramThree.BehaviorMeasureable,
+        Campaign1: CampaignOne.BehaviorMeasureable,
+        Campaign2: CampaignTwo.BehaviorMeasureable,
+        Campaign3: CampaignThree.BehaviorMeasureable,
       },
       {
         id: 6,
         Question: "What gap or need for action will this behavior change fill?",
-        Program1: ProgramOne.NeedForAction,
-        Program2: ProgramTwo.NeedForAction,
-        Program3: ProgramThree.NeedForAction,
+        Campaign1: CampaignOne.NeedForAction,
+        Campaign2: CampaignTwo.NeedForAction,
+        Campaign3: CampaignThree.NeedForAction,
       },
       {
         id: 7,
         Question:
           "Is data available to show percent of people not engaging in behavior?",
-        Program1: ProgramOne.DataAvaiable,
-        Program2: ProgramTwo.DataAvaiable,
-        Program3: ProgramThree.DataAvaiable,
+        Campaign1: CampaignOne.DataAvaiable,
+        Campaign2: CampaignTwo.DataAvaiable,
+        Campaign3: CampaignThree.DataAvaiable,
       },
       {
         id: 8,
         Question: "Target Audience",
-        Program1: ProgramOne.TargetAudience,
-        Program2: ProgramTwo.TargetAudience,
-        Program3: ProgramThree.TargetAudience,
+        Campaign1: CampaignOne.TargetAudience,
+        Campaign2: CampaignTwo.TargetAudience,
+        Campaign3: CampaignThree.TargetAudience,
       },
       {
         id: 9,
         Question:
           "What research, if any, was performed to select the target audience/support target audience choice?",
-        Program1: ProgramOne.ResearchSelectionOfTargetAudience,
-        Program2: ProgramTwo.ResearchSelectionOfTargetAudience,
-        Program3: ProgramThree.ResearchSelectionOfTargetAudience,
+        Campaign1: CampaignOne.ResearchSelectionOfTargetAudience,
+        Campaign2: CampaignTwo.ResearchSelectionOfTargetAudience,
+        Campaign3: CampaignThree.ResearchSelectionOfTargetAudience,
       },
-      {
-        id: 10,
-        Question:
-          "Is the strategic marketing mix appropriate for target audience?",
-        Program1: ProgramOne.StartegicMarketing,
-        Program2: ProgramTwo.StartegicMarketing,
-        Program3: ProgramThree.StartegicMarketing,
-      },
+
       {
         id: 11,
         Question:
           "Does the behavior address a local water quality or flow control problem?",
-        Program1: ProgramOne.BehaviorAddresses,
-        Program2: ProgramTwo.BehaviorAddresses,
-        Program3: ProgramThree.BehaviorAddresses,
+        Campaign1: CampaignOne.BehaviorAddresses,
+        Campaign2: CampaignTwo.BehaviorAddresses,
+        Campaign3: CampaignThree.BehaviorAddresses,
       },
       {
         id: 12,
         Question:
           "What is the targeted pollutant or flow control method addressed?",
-        Program1: ProgramOne.TargetedPollutant,
-        Program2: ProgramTwo.TargetedPollutant,
-        Program3: ProgramThree.TargetedPollutant,
+        Campaign1: CampaignOne.TargetedPollutant,
+        Campaign2: CampaignTwo.TargetedPollutant,
+        Campaign3: CampaignThree.TargetedPollutant,
       },
       {
         id: 13,
         Question: "What is the top benefit of enacting the behavior?",
-        Program1: ProgramOne.TopBenefit,
-        Program2: ProgramTwo.TopBenefit,
-        Program3: ProgramThree.TopBenefit,
+        Campaign1: CampaignOne.TopBenefit,
+        Campaign2: CampaignTwo.TopBenefit,
+        Campaign3: CampaignThree.TopBenefit,
       },
       {
         id: 14,
         Question:
           "What evidence is there that the behavior will affect local water quality and flow control issues? What is the source of evidence?",
-        Program1: ProgramOne.EvidenceOfBenefit,
-        Program2: ProgramTwo.EvidenceOfBenefit,
-        Program3: ProgramThree.EvidenceOfBenefit,
+        Campaign1: CampaignOne.EvidenceOfBenefit,
+        Campaign2: CampaignTwo.EvidenceOfBenefit,
+        Campaign3: CampaignThree.EvidenceOfBenefit,
       },
       {
         id: 15,
         Question: "Generally, are most people able to enact the behavior?",
-        Program1: ProgramOne.AreMostPeopleAble,
-        Program2: ProgramTwo.AreMostPeopleAble,
-        Program3: ProgramThree.AreMostPeopleAble,
+        Campaign1: CampaignOne.AreMostPeopleAble,
+        Campaign2: CampaignTwo.AreMostPeopleAble,
+        Campaign3: CampaignThree.AreMostPeopleAble,
       },
       {
         id: 16,
         Question: "What are the barriers to enacting the behavior?",
-        Program1: ProgramOne.Barriers,
-        Program2: ProgramTwo.Barriers,
-        Program3: ProgramThree.Barriers,
+        Campaign1: CampaignOne.Barriers,
+        Campaign2: CampaignTwo.Barriers,
+        Campaign3: CampaignThree.Barriers,
       },
       {
         id: 17,
         Question:
-          "To what degree can barriers be addressed as part of the program?",
-        Program1: ProgramOne.DegreeBarriersAddressed,
-        Program2: ProgramTwo.DegreeBarriersAddressed,
-        Program3: ProgramThree.DegreeBarriersAddressed,
+          "To what degree can barriers be addressed as part of the campaign?",
+        Campaign1: CampaignOne.DegreeBarriersAddressed,
+        Campaign2: CampaignTwo.DegreeBarriersAddressed,
+        Campaign3: CampaignThree.DegreeBarriersAddressed,
       },
       {
         id: 18,
         Question: "To what degree are people willing to enact the behavior?",
-        Program1: ProgramOne.DegreePeopleWilling,
-        Program2: ProgramTwo.DegreePeopleWilling,
-        Program3: ProgramThree.DegreePeopleWilling,
+        Campaign1: CampaignOne.DegreePeopleWilling,
+        Campaign2: CampaignTwo.DegreePeopleWilling,
+        Campaign3: CampaignThree.DegreePeopleWilling,
       },
       {
         id: 19,
         Question: "Have prior and similar efforts been undertaken?",
-        Program1: ProgramOne.PriorOrSimilar,
-        Program2: ProgramTwo.PriorOrSimilar,
-        Program3: ProgramThree.PriorOrSimilar,
+        Campaign1: CampaignOne.PriorOrSimilar,
+        Campaign2: CampaignTwo.PriorOrSimilar,
+        Campaign3: CampaignThree.PriorOrSimilar,
       },
 
       {
         id: 20,
         Question: "What political issues, if any, are surrounding this work?",
-        Program1: ProgramOne.PoliticalIssues,
-        Program2: ProgramTwo.PoliticalIssues,
-        Program3: ProgramThree.PoliticalIssues,
+        Campaign1: CampaignOne.PoliticalIssues,
+        Campaign2: CampaignTwo.PoliticalIssues,
+        Campaign3: CampaignThree.PoliticalIssues,
       },
 
       {
         id: 21,
         Question:
           "To what degree can equity issues be addressed with this behavior change?",
-        Program1: ProgramOne.EquityIssues,
-        Program2: ProgramTwo.EquityIssues,
-        Program3: ProgramThree.EquityIssues,
+        Campaign1: CampaignOne.EquityIssues,
+        Campaign2: CampaignTwo.EquityIssues,
+        Campaign3: CampaignThree.EquityIssues,
       },
 
       {
         id: 22,
         Question:
           "Will enacting the behavior have any negative impact on the community?",
-        Program1: ProgramOne.NegativeCommunityImpact,
-        Program2: ProgramTwo.NegativeCommunityImpact,
-        Program3: ProgramThree.NegativeCommunityImpact,
+        Campaign1: CampaignOne.NegativeCommunityImpact,
+        Campaign2: CampaignTwo.NegativeCommunityImpact,
+        Campaign3: CampaignThree.NegativeCommunityImpact,
       },
 
       {
         id: 23,
         Question:
           "Is the behavior (or improvements from it) visible to the community?",
-        Program1: ProgramOne.VisiblityToCommunity,
-        Program2: ProgramTwo.VisiblityToCommunity,
-        Program3: ProgramThree.VisiblityToCommunity,
+        Campaign1: CampaignOne.VisiblityToCommunity,
+        Campaign2: CampaignTwo.VisiblityToCommunity,
+        Campaign3: CampaignThree.VisiblityToCommunity,
       },
 
       {
         id: 24,
         Question:
           "What level of support will this behavior have from the community? ",
-        Program1: ProgramOne.LevelOfSupport,
-        Program2: ProgramTwo.LevelOfSupport,
-        Program3: ProgramThree.LevelOfSupport,
+        Campaign1: CampaignOne.LevelOfSupport,
+        Campaign2: CampaignTwo.LevelOfSupport,
+        Campaign3: CampaignThree.LevelOfSupport,
       },
 
       {
         id: 25,
         Question:
           "What other policies/initiatives of the community/jurisdiction does this behavior support, if any?",
-        Program1: ProgramOne.OtherSupport,
-        Program2: ProgramTwo.OtherSupport,
-        Program3: ProgramThree.OtherSupport,
+        Campaign1: CampaignOne.OtherSupport,
+        Campaign2: CampaignTwo.OtherSupport,
+        Campaign3: CampaignThree.OtherSupport,
       },
 
       {
         id: 26,
         Question: "What are the possible partnership opportunities, if any?",
-        Program1: ProgramOne.PossiblePartnerships,
-        Program2: ProgramTwo.PossiblePartnerships,
-        Program3: ProgramThree.PossiblePartnerships,
+        Campaign1: CampaignOne.PossiblePartnerships,
+        Campaign2: CampaignTwo.PossiblePartnerships,
+        Campaign3: CampaignThree.PossiblePartnerships,
       },
 
       {
         id: 27,
-        Question: "Would this program qualify for a grant?",
-        Program1: ProgramOne.QualifyForGrant,
-        Program2: ProgramTwo.QualifyForGrant,
-        Program3: ProgramThree.QualifyForGrant,
+        Question: "Would this campaign qualify for a grant?",
+        Campaign1: CampaignOne.QualifyForGrant,
+        Campaign2: CampaignTwo.QualifyForGrant,
+        Campaign3: CampaignThree.QualifyForGrant,
       },
 
       {
         id: 28,
         Question:
           "What community partners would be willing to advocate this work, if any?",
-        Program1: ProgramOne.CommunityPartners,
-        Program2: ProgramTwo.CommunityPartners,
-        Program3: ProgramThree.CommunityPartners,
+        Campaign1: CampaignOne.CommunityPartners,
+        Campaign2: CampaignTwo.CommunityPartners,
+        Campaign3: CampaignThree.CommunityPartners,
       },
 
       {
         id: 29,
         Question:
           "Are materials/tools/instruments available from previous studies?",
-        Program1: ProgramOne.PerivousMaterials,
-        Program2: ProgramTwo.PerivousMaterials,
-        Program3: ProgramThree.PerivousMaterials,
+        Campaign1: CampaignOne.PerivousMaterials,
+        Campaign2: CampaignTwo.PerivousMaterials,
+        Campaign3: CampaignThree.PerivousMaterials,
       },
 
       {
         id: 30,
         Question:
           "Have available materials/tools/instruments been validated or pre-tested?",
-        Program1: ProgramOne.AvaiableMaterials,
-        Program2: ProgramTwo.AvaiableMaterials,
-        Program3: ProgramThree.AvaiableMaterials,
+        Campaign1: CampaignOne.AvaiableMaterials,
+        Campaign2: CampaignTwo.AvaiableMaterials,
+        Campaign3: CampaignThree.AvaiableMaterials,
       },
     ]);
     setCSVFileReady(true);
   };
-  const [ProgramOne, setProgramOne] = useState({
-    ProgramTitle: "",
+  const [CampaignOne, setCampaignOne] = useState({
+    CampaignTitle: "",
     ProblemAddressed: "",
     TargetBehavior: "",
     BehaviorEndState: "",
@@ -314,7 +308,6 @@ function ProgramComparison() {
     DataAvaiable: "",
     TargetAudience: "",
     ResearchSelectionOfTargetAudience: "",
-    StartegicMarketing: "",
     BehaviorAddresses: "",
     TargetedPollutant: "",
     TopBenefit: "",
@@ -337,15 +330,15 @@ function ProgramComparison() {
     AvaiableMaterials: "",
   });
 
-  const handleChangeProgramOne = (evt) => {
+  const handleChangeCampaignOne = (evt) => {
     const value = evt.target.value;
-    setProgramOne({
-      ...ProgramOne,
+    setCampaignOne({
+      ...CampaignOne,
       [evt.target.name]: value,
     });
   };
-  const [ProgramTwo, setProgramTwo] = useState({
-    ProgramTitle: "",
+  const [CampaignTwo, setCampaignTwo] = useState({
+    CampaignTitle: "",
     ProblemAddressed: "",
     TargetBehavior: "",
     BehaviorEndState: "",
@@ -354,7 +347,6 @@ function ProgramComparison() {
     DataAvaiable: "",
     TargetAudience: "",
     ResearchSelectionOfTargetAudience: "",
-    StartegicMarketing: "",
     BehaviorAddresses: "",
     TargetedPollutant: "",
     TopBenefit: "",
@@ -376,16 +368,16 @@ function ProgramComparison() {
     PerivousMaterials: "",
     AvaiableMaterials: "",
   });
-  const handleChangeProgramTwo = (evt) => {
+  const handleChangeCampaignTwo = (evt) => {
     const value = evt.target.value;
-    setProgramTwo({
-      ...ProgramTwo,
+    setCampaignTwo({
+      ...CampaignTwo,
       [evt.target.name]: value,
     });
   };
 
-  const [ProgramThree, setProgramThree] = useState({
-    ProgramTitle: "",
+  const [CampaignThree, setCampaignThree] = useState({
+    CampaignTitle: "",
     ProblemAddressed: "",
     TargetBehavior: "",
     BehaviorEndState: "",
@@ -394,7 +386,6 @@ function ProgramComparison() {
     DataAvaiable: "",
     TargetAudience: "",
     ResearchSelectionOfTargetAudience: "",
-    StartegicMarketing: "",
     BehaviorAddresses: "",
     TargetedPollutant: "",
     TopBenefit: "",
@@ -416,10 +407,10 @@ function ProgramComparison() {
     PerivousMaterials: "",
     AvaiableMaterials: "",
   });
-  const handleChangeProgramThree = (evt) => {
+  const handleChangeCampaignThree = (evt) => {
     const value = evt.target.value;
-    setProgramThree({
-      ...ProgramThree,
+    setCampaignThree({
+      ...CampaignThree,
       [evt.target.name]: value,
     });
   };
@@ -427,15 +418,15 @@ function ProgramComparison() {
   return (
     <div className="page">
       <span>
-        <h2 className="programComparisonHeader">PROGRAM COMPARISON TOOL</h2>
+        <h2 className="programComparisonHeader">CAMPAIGN SELECTION TOOL</h2>
         <p className="introText">
-          It’s time to select an Behavior Change program that is right for you!
-          The tool below allows you to compare Behavior Change programs based on
-          your jursdiction’s needs.
+          It’s time to select an Behavior Change campaign that is right for you!
+          The tool below allows you to compare Behavior Change campaigns based
+          on your jursdiction’s needs.
           <br />
           <br />
           Begin by entering information below and work through each of the
-          sections for your program(s). At the end, you will have the option to
+          sections for your campaign(s). At the end, you will have the option to
           download your responses as an Excel spreadsheet for future reference.
           Please note that your information is not saved on this site, so you
           must complete the steps and download your report before closing your
@@ -455,7 +446,7 @@ function ProgramComparison() {
               href="file:///C:/Users/Nicholas/Downloads/E&O%20Website%20Mock%20Up_FINAL.pdf"
               underline="hover"
             >
-              {"  "}Types of Programs
+              {"  "}Types of Campaigns
             </Link>
           </div>
           <div>
@@ -492,11 +483,11 @@ function ProgramComparison() {
             <Tabs
               value={tabNum}
               onChange={handleChange}
-              aria-label="Comparison selector"
+              aria-label="Campaign selector"
               scrollButtons="auto"
               varient="fullWidth"
             >
-              <Tab label="Program Purpose & Problem" {...a11yProps(0)} />
+              <Tab label="Campaign Purpose & Problem" {...a11yProps(0)} />
               <Tab label="Target Behavior" {...a11yProps(1)} />
               <Tab label="Target Audience" {...a11yProps(2)} />
               <Tab label="Water Quality" {...a11yProps(3)} />
@@ -510,50 +501,50 @@ function ProgramComparison() {
               <table className="programComparisonTable">
                 <tr className="headerRow">
                   <th>
-                    <b>Program #1</b>
+                    <b>Campaign #1</b>
                   </th>
                   <th>
-                    <b>Program #2</b>
+                    <b>Campaign #2</b>
                   </th>
                   <th>
-                    <b>Program #3</b>
+                    <b>Campaign #3</b>
                   </th>
                 </tr>
                 <tr>
                   <td className="questionLabels" colSpan="3">
-                    <b>Enter program title:</b>
+                    <b>Enter campaign title:</b>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <TextField
-                      id="Program Title1"
-                      name="ProgramTitle"
-                      onChange={handleChangeProgramOne}
+                      id="Campaign Title1"
+                      name="CampaignTitle"
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.ProgramTitle}
+                      value={CampaignOne.CampaignTitle}
                       size="small"
                       fullWidth
                     />
                   </td>
                   <td>
                     <TextField
-                      id="Program Title2"
-                      name="ProgramTitle"
-                      onChange={handleChangeProgramTwo}
+                      id="Campaign Title2"
+                      name="CampaignTitle"
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.ProgramTitle}
+                      value={CampaignTwo.CampaignTitle}
                       size="small"
                       fullWidth
                     />
                   </td>
                   <td>
                     <TextField
-                      id="Program Title3"
-                      name="ProgramTitle"
-                      onChange={handleChangeProgramThree}
+                      id="Campaign Title3"
+                      name="CampaignTitle"
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.ProgramTitle}
+                      value={CampaignThree.CampaignTitle}
                       size="small"
                       fullWidth
                     />
@@ -569,9 +560,9 @@ function ProgramComparison() {
                     <TextField
                       id="problem addressed #1"
                       name="ProblemAddressed"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.ProblemAddressed}
+                      value={CampaignOne.ProblemAddressed}
                       size="small"
                       fullWidth
                     />
@@ -580,9 +571,9 @@ function ProgramComparison() {
                     <TextField
                       id="problem addressed #2"
                       name="ProblemAddressed"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.ProblemAddressed}
+                      value={CampaignTwo.ProblemAddressed}
                       size="small"
                       fullWidth
                     />
@@ -591,9 +582,9 @@ function ProgramComparison() {
                     <TextField
                       id="problem addressed #3"
                       name="ProblemAddressed"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.ProblemAddressed}
+                      value={CampaignThree.ProblemAddressed}
                       size="small"
                       fullWidth
                     />
@@ -613,13 +604,13 @@ function ProgramComparison() {
               <table className="programComparisonTable">
                 <tr className="headerRow">
                   <th>
-                    <b>Program #1</b>
+                    <b>Campaign #1</b>
                   </th>
                   <th>
-                    <b>Program #2</b>
+                    <b>Campaign #2</b>
                   </th>
                   <th>
-                    <b>Program #3</b>
+                    <b>Campaign #3</b>
                   </th>
                 </tr>
                 <tr>
@@ -632,9 +623,9 @@ function ProgramComparison() {
                     <TextField
                       id="Target Behavior1"
                       name="TargetBehavior"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.TargetBehavior}
+                      value={CampaignOne.TargetBehavior}
                       size="small"
                       multiline
                       fullWidth
@@ -644,9 +635,9 @@ function ProgramComparison() {
                     <TextField
                       id="TargetBehavior2"
                       name="TargetBehavior"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.TargetBehavior}
+                      value={CampaignTwo.TargetBehavior}
                       size="small"
                       multiline
                       fullWidth
@@ -655,9 +646,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="TargetBehavior"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.TargetBehavior}
+                      value={CampaignThree.TargetBehavior}
                       size="small"
                       multiline
                       fullWidth
@@ -672,37 +663,40 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.BehaviorEndState}
+                      value={CampaignOne.BehaviorEndState}
                       name="BehaviorEndState"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.BehaviorEndState}
+                      value={CampaignTwo.BehaviorEndState}
                       name="BehaviorEndState"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.BehaviorEndState}
+                      value={CampaignThree.BehaviorEndState}
                       name="BehaviorEndState"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
@@ -715,37 +709,40 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.BehaviorMeasureable}
+                      value={CampaignOne.BehaviorMeasureable}
                       name="BehaviorMeasureable"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.BehaviorMeasureable}
+                      value={CampaignTwo.BehaviorMeasureable}
                       name="BehaviorMeasureable"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.BehaviorMeasureable}
+                      value={CampaignThree.BehaviorMeasureable}
                       name="BehaviorMeasureable"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
@@ -762,9 +759,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="NeedForAction"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.NeedForAction}
+                      value={CampaignOne.NeedForAction}
                       size="small"
                       multiline
                       fullWidth
@@ -773,9 +770,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="NeedForAction"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.NeedForAction}
+                      value={CampaignTwo.NeedForAction}
                       size="small"
                       multiline
                       fullWidth
@@ -784,9 +781,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="NeedForAction"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.NeedForAction}
+                      value={CampaignThree.NeedForAction}
                       size="small"
                       multiline
                       fullWidth
@@ -804,37 +801,40 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.DataAvaiable}
+                      value={CampaignOne.DataAvaiable}
                       name="DataAvaiable"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.DataAvaiable}
+                      value={CampaignTwo.DataAvaiable}
                       name="DataAvaiable"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.DataAvaiable}
+                      value={CampaignThree.DataAvaiable}
                       name="DataAvaiable"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
@@ -845,9 +845,9 @@ function ProgramComparison() {
                   Next
                 </Button>
               </div>
-              <div className="buttonPerivous">
-                <Button onClick={handlePerivous} variant="contained">
-                  Perivous
+              <div className="buttonPrevious">
+                <Button onClick={handlePrevious} variant="contained">
+                  Previous
                 </Button>
               </div>
             </div>
@@ -857,13 +857,13 @@ function ProgramComparison() {
               <table className="programComparisonTable">
                 <tr className="headerRow">
                   <th>
-                    <b>Program #1</b>
+                    <b>Campaign #1</b>
                   </th>
                   <th>
-                    <b>Program #2</b>
+                    <b>Campaign #2</b>
                   </th>
                   <th>
-                    <b>Program #3</b>
+                    <b>Campaign #3</b>
                   </th>
                 </tr>
                 <tr>
@@ -875,9 +875,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="TargetAudience"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.TargetAudience}
+                      value={CampaignOne.TargetAudience}
                       size="small"
                       multiline
                       fullWidth
@@ -886,9 +886,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="TargetAudience"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.TargetAudience}
+                      value={CampaignTwo.TargetAudience}
                       size="small"
                       multiline
                       fullWidth
@@ -897,9 +897,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="TargetAudience"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.TargetAudience}
+                      value={CampaignThree.TargetAudience}
                       size="small"
                       multiline
                       fullWidth
@@ -918,9 +918,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="ResearchSelectionOfTargetAudience"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.ResearchSelectionOfTargetAudience}
+                      value={CampaignOne.ResearchSelectionOfTargetAudience}
                       size="small"
                       multiline
                       fullWidth
@@ -929,9 +929,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="ResearchSelectionOfTargetAudience"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.ResearchSelectionOfTargetAudience}
+                      value={CampaignTwo.ResearchSelectionOfTargetAudience}
                       size="small"
                       multiline
                       fullWidth
@@ -940,59 +940,13 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="ResearchSelectionOfTargetAudience"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.ResearchSelectionOfTargetAudience}
+                      value={CampaignThree.ResearchSelectionOfTargetAudience}
                       size="small"
                       multiline
                       fullWidth
                     />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="questionLabels" colSpan="3">
-                    <b>
-                      Is the strategic marketing mix appropriate for target
-                      audience?
-                    </b>{" "}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <Select
-                      value={ProgramOne.StartegicMarketing}
-                      name="StartegicMarketing"
-                      fullWidth
-                      size="small"
-                      onChange={handleChangeProgramOne}
-                    >
-                      <MenuItem value={"Yes"}>Yes</MenuItem>
-                      <MenuItem value={"No"}>No</MenuItem>
-                    </Select>
-                  </td>
-                  <td>
-                    <Select
-                      value={ProgramTwo.StartegicMarketing}
-                      name="StartegicMarketing"
-                      fullWidth
-                      size="small"
-                      onChange={handleChangeProgramTwo}
-                    >
-                      <MenuItem value={"Yes"}>Yes</MenuItem>
-                      <MenuItem value={"No"}>No</MenuItem>
-                    </Select>
-                  </td>
-                  <td>
-                    <Select
-                      value={ProgramThree.StartegicMarketing}
-                      name="StartegicMarketing"
-                      fullWidth
-                      size="small"
-                      onChange={handleChangeProgramThree}
-                    >
-                      <MenuItem value={"Yes"}>Yes</MenuItem>
-                      <MenuItem value={"No"}>No</MenuItem>
-                    </Select>
                   </td>
                 </tr>
               </table>
@@ -1001,9 +955,9 @@ function ProgramComparison() {
                   Next
                 </Button>
               </div>
-              <div className="buttonPerivous">
-                <Button onClick={handlePerivous} variant="contained">
-                  Perivous
+              <div className="buttonPrevious">
+                <Button onClick={handlePrevious} variant="contained">
+                  Previous
                 </Button>
               </div>
             </div>
@@ -1013,13 +967,13 @@ function ProgramComparison() {
               <table className="programComparisonTable">
                 <tr className="headerRow">
                   <th>
-                    <b>Program #1</b>
+                    <b>Campaign #1</b>
                   </th>
                   <th>
-                    <b>Program #2</b>
+                    <b>Campaign #2</b>
                   </th>
                   <th>
-                    <b>Program #3</b>
+                    <b>Campaign #3</b>
                   </th>
                 </tr>
                 <tr>
@@ -1033,37 +987,40 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.BehaviorAddresses}
+                      value={CampaignOne.BehaviorAddresses}
                       name="BehaviorAddresses"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.BehaviorAddresses}
+                      value={CampaignTwo.BehaviorAddresses}
                       name="BehaviorAddresses"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.BehaviorAddresses}
+                      value={CampaignThree.BehaviorAddresses}
                       name="BehaviorAddresses"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
@@ -1079,11 +1036,11 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.TargetedPollutant}
+                      value={CampaignOne.TargetedPollutant}
                       name="TargetedPollutant"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       multiline
                     >
                       <MenuItem
@@ -1110,11 +1067,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.TargetedPollutant}
+                      value={CampaignTwo.TargetedPollutant}
                       name="TargetedPollutant"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       multiline
                     >
                       <MenuItem
@@ -1142,11 +1099,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.TargetedPollutant}
+                      value={CampaignThree.TargetedPollutant}
                       name="TargetedPollutant"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       multiline
                     >
                       <MenuItem
@@ -1193,9 +1150,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="TopBenefit"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.TopBenefit}
+                      value={CampaignOne.TopBenefit}
                       size="small"
                       multiline
                       fullWidth
@@ -1204,9 +1161,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="TopBenefit"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.TopBenefit}
+                      value={CampaignTwo.TopBenefit}
                       size="small"
                       multiline
                       fullWidth
@@ -1215,9 +1172,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="TopBenefit"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.TopBenefit}
+                      value={CampaignThree.TopBenefit}
                       size="small"
                       multiline
                       fullWidth
@@ -1237,9 +1194,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="EvidenceOfBenefit"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.EvidenceOfBenefit}
+                      value={CampaignOne.EvidenceOfBenefit}
                       size="small"
                       multiline
                       fullWidth
@@ -1248,9 +1205,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="EvidenceOfBenefit"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.EvidenceOfBenefit}
+                      value={CampaignTwo.EvidenceOfBenefit}
                       size="small"
                       multiline
                       fullWidth
@@ -1259,9 +1216,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="EvidenceOfBenefit"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.EvidenceOfBenefit}
+                      value={CampaignThree.EvidenceOfBenefit}
                       size="small"
                       multiline
                       fullWidth
@@ -1274,9 +1231,9 @@ function ProgramComparison() {
                   Next
                 </Button>
               </div>
-              <div className="buttonPerivous">
-                <Button onClick={handlePerivous} variant="contained">
-                  Perivous
+              <div className="buttonPrevious">
+                <Button onClick={handlePrevious} variant="contained">
+                  Previous
                 </Button>
               </div>
             </div>
@@ -1286,13 +1243,13 @@ function ProgramComparison() {
               <table className="programComparisonTable">
                 <tr className="headerRow">
                   <th>
-                    <b>Program #1</b>
+                    <b>Campaign #1</b>
                   </th>
                   <th>
-                    <b>Program #2</b>
+                    <b>Campaign #2</b>
                   </th>
                   <th>
-                    <b>Program #3</b>
+                    <b>Campaign #3</b>
                   </th>
                 </tr>
                 <tr>
@@ -1305,11 +1262,11 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.AreMostPeopleAble}
+                      value={CampaignOne.AreMostPeopleAble}
                       name="AreMostPeopleAble"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
                       <MenuItem value={"Maybe"}>Maybe</MenuItem>
@@ -1318,11 +1275,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.AreMostPeopleAble}
+                      value={CampaignTwo.AreMostPeopleAble}
                       name="AreMostPeopleAble"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
                       <MenuItem value={"Maybe"}>Maybe</MenuItem>
@@ -1331,11 +1288,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.AreMostPeopleAble}
+                      value={CampaignThree.AreMostPeopleAble}
                       name="AreMostPeopleAble"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
                       <MenuItem value={"Maybe"}>Maybe</MenuItem>
@@ -1352,9 +1309,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="Barriers"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.Barriers}
+                      value={CampaignOne.Barriers}
                       size="small"
                       multiline
                       fullWidth
@@ -1363,9 +1320,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="Barriers"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.Barriers}
+                      value={CampaignTwo.Barriers}
                       size="small"
                       multiline
                       fullWidth
@@ -1374,9 +1331,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="Barriers"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.Barriers}
+                      value={CampaignThree.Barriers}
                       size="small"
                       multiline
                       fullWidth
@@ -1387,18 +1344,18 @@ function ProgramComparison() {
                   <td className="questionLabels" colSpan="3">
                     <b>
                       To what degree can barriers be addressed as part of the
-                      program?
+                      campaign?
                     </b>{" "}
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.DegreeBarriersAddressed}
+                      value={CampaignOne.DegreeBarriersAddressed}
                       name="DegreeBarriersAddressed"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1407,11 +1364,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.DegreeBarriersAddressed}
+                      value={CampaignTwo.DegreeBarriersAddressed}
                       name="DegreeBarriersAddressed"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1420,11 +1377,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.DegreeBarriersAddressed}
+                      value={CampaignThree.DegreeBarriersAddressed}
                       name="DegreeBarriersAddressed"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1442,11 +1399,11 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.DegreePeopleWilling}
+                      value={CampaignOne.DegreePeopleWilling}
                       name="DegreePeopleWilling"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1455,11 +1412,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.DegreePeopleWilling}
+                      value={CampaignTwo.DegreePeopleWilling}
                       name="DegreePeopleWilling"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1468,11 +1425,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.DegreePeopleWilling}
+                      value={CampaignThree.DegreePeopleWilling}
                       name="DegreePeopleWilling"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1488,37 +1445,40 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.PriorOrSimilar}
+                      value={CampaignOne.PriorOrSimilar}
                       name="PriorOrSimilar"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.PriorOrSimilar}
+                      value={CampaignTwo.PriorOrSimilar}
                       name="PriorOrSimilar"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.PriorOrSimilar}
+                      value={CampaignThree.PriorOrSimilar}
                       name="PriorOrSimilar"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
@@ -1535,9 +1495,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="PoliticalIssues"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.PoliticalIssues}
+                      value={CampaignOne.PoliticalIssues}
                       size="small"
                       multiline
                       fullWidth
@@ -1546,9 +1506,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="PoliticalIssues"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.PoliticalIssues}
+                      value={CampaignTwo.PoliticalIssues}
                       size="small"
                       multiline
                       fullWidth
@@ -1557,9 +1517,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="PoliticalIssues"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.PoliticalIssues}
+                      value={CampaignThree.PoliticalIssues}
                       size="small"
                       multiline
                       fullWidth
@@ -1572,9 +1532,9 @@ function ProgramComparison() {
                   Next
                 </Button>
               </div>
-              <div className="buttonPerivous">
-                <Button onClick={handlePerivous} variant="contained">
-                  Perivous
+              <div className="buttonPrevious">
+                <Button onClick={handlePrevious} variant="contained">
+                  Previous
                 </Button>
               </div>
             </div>
@@ -1584,13 +1544,13 @@ function ProgramComparison() {
               <table className="programComparisonTable">
                 <tr className="headerRow">
                   <th>
-                    <b>Program #1</b>
+                    <b>Campaign #1</b>
                   </th>
                   <th>
-                    <b>Program #2</b>
+                    <b>Campaign #2</b>
                   </th>
                   <th>
-                    <b>Program #3</b>
+                    <b>Campaign #3</b>
                   </th>
                 </tr>
                 <tr>
@@ -1604,11 +1564,11 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.EquityIssues}
+                      value={CampaignOne.EquityIssues}
                       name="EquityIssues"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1617,11 +1577,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.EquityIssues}
+                      value={CampaignTwo.EquityIssues}
                       name="EquityIssues"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1630,11 +1590,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.EquityIssues}
+                      value={CampaignThree.EquityIssues}
                       name="EquityIssues"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1653,11 +1613,11 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.NegativeCommunityImpact}
+                      value={CampaignOne.NegativeCommunityImpact}
                       name="NegativeCommunityImpact"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
                       <MenuItem value={"Maybe"}>Maybe</MenuItem>
@@ -1666,11 +1626,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.NegativeCommunityImpact}
+                      value={CampaignTwo.NegativeCommunityImpact}
                       name="NegativeCommunityImpact"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
                       <MenuItem value={"Maybe"}>Maybe</MenuItem>
@@ -1679,11 +1639,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.NegativeCommunityImpact}
+                      value={CampaignThree.NegativeCommunityImpact}
                       name="NegativeCommunityImpact"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
                       <MenuItem value={"Maybe"}>Maybe</MenuItem>
@@ -1702,37 +1662,40 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.VisiblityToCommunity}
+                      value={CampaignOne.VisiblityToCommunity}
                       name="VisiblityToCommunity"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.VisiblityToCommunity}
+                      value={CampaignTwo.VisiblityToCommunity}
                       name="VisiblityToCommunity"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.VisiblityToCommunity}
+                      value={CampaignThree.VisiblityToCommunity}
                       name="VisiblityToCommunity"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
@@ -1748,11 +1711,11 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.LevelOfSupport}
+                      value={CampaignOne.LevelOfSupport}
                       name="LevelOfSupport"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1761,11 +1724,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.LevelOfSupport}
+                      value={CampaignTwo.LevelOfSupport}
                       name="LevelOfSupport"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1774,11 +1737,11 @@ function ProgramComparison() {
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.LevelOfSupport}
+                      value={CampaignThree.LevelOfSupport}
                       name="LevelOfSupport"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Low"}>Low</MenuItem>
                       <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -1798,9 +1761,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="OtherSupport"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.OtherSupport}
+                      value={CampaignOne.OtherSupport}
                       size="small"
                       multiline
                       fullWidth
@@ -1809,9 +1772,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="OtherSupport"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.OtherSupport}
+                      value={CampaignTwo.OtherSupport}
                       size="small"
                       multiline
                       fullWidth
@@ -1820,9 +1783,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="OtherSupport"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.OtherSupport}
+                      value={CampaignThree.OtherSupport}
                       size="small"
                       multiline
                       fullWidth
@@ -1835,9 +1798,9 @@ function ProgramComparison() {
                   Next
                 </Button>
               </div>
-              <div className="buttonPerivous">
-                <Button onClick={handlePerivous} variant="contained">
-                  Perivous
+              <div className="buttonPrevious">
+                <Button onClick={handlePrevious} variant="contained">
+                  Previous
                 </Button>
               </div>
             </div>
@@ -1847,13 +1810,13 @@ function ProgramComparison() {
               <table className="programComparisonTable">
                 <tr className="headerRow">
                   <th>
-                    <b>Program #1</b>
+                    <b>Campaign #1</b>
                   </th>
                   <th>
-                    <b>Program #2</b>
+                    <b>Campaign #2</b>
                   </th>
                   <th>
-                    <b>Program #3</b>
+                    <b>Campaign #3</b>
                   </th>
                 </tr>
                 <tr>
@@ -1867,9 +1830,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="PossiblePartnerships"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.PossiblePartnerships}
+                      value={CampaignOne.PossiblePartnerships}
                       size="small"
                       multiline
                       fullWidth
@@ -1878,9 +1841,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="PossiblePartnerships"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.PossiblePartnerships}
+                      value={CampaignTwo.PossiblePartnerships}
                       size="small"
                       multiline
                       fullWidth
@@ -1889,9 +1852,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="PossiblePartnerships"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.PossiblePartnerships}
+                      value={CampaignThree.PossiblePartnerships}
                       size="small"
                       multiline
                       fullWidth
@@ -1900,43 +1863,46 @@ function ProgramComparison() {
                 </tr>
                 <tr>
                   <td className="questionLabels" colSpan="3">
-                    <b>Would this program qualify for a grant?</b>{" "}
+                    <b>Would this campaign qualify for a grant?</b>{" "}
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.QualifyForGrant}
+                      value={CampaignOne.QualifyForGrant}
                       name="QualifyForGrant"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.QualifyForGrant}
+                      value={CampaignTwo.QualifyForGrant}
                       name="QualifyForGrant"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.QualifyForGrant}
+                      value={CampaignThree.QualifyForGrant}
                       name="QualifyForGrant"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
@@ -1953,9 +1919,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="CommunityPartners"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                       variant="outlined"
-                      value={ProgramOne.CommunityPartners}
+                      value={CampaignOne.CommunityPartners}
                       size="small"
                       multiline
                       fullWidth
@@ -1964,9 +1930,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="CommunityPartners"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                       variant="outlined"
-                      value={ProgramTwo.CommunityPartners}
+                      value={CampaignTwo.CommunityPartners}
                       size="small"
                       multiline
                       fullWidth
@@ -1975,9 +1941,9 @@ function ProgramComparison() {
                   <td>
                     <TextField
                       name="CommunityPartners"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                       variant="outlined"
-                      value={ProgramThree.CommunityPartners}
+                      value={CampaignThree.CommunityPartners}
                       size="small"
                       multiline
                       fullWidth
@@ -1995,37 +1961,40 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.PerivousMaterials}
+                      value={CampaignOne.PerivousMaterials}
                       name="PerivousMaterials"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.PerivousMaterials}
+                      value={CampaignTwo.PerivousMaterials}
                       name="PerivousMaterials"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.PerivousMaterials}
+                      value={CampaignThree.PerivousMaterials}
                       name="PerivousMaterials"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
@@ -2041,59 +2010,65 @@ function ProgramComparison() {
                 <tr>
                   <td>
                     <Select
-                      value={ProgramOne.AvaiableMaterials}
+                      value={CampaignOne.AvaiableMaterials}
                       name="AvaiableMaterials"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramOne}
+                      onChange={handleChangeCampaignOne}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramTwo.AvaiableMaterials}
+                      value={CampaignTwo.AvaiableMaterials}
                       name="AvaiableMaterials"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramTwo}
+                      onChange={handleChangeCampaignTwo}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                   <td>
                     <Select
-                      value={ProgramThree.AvaiableMaterials}
+                      value={CampaignThree.AvaiableMaterials}
                       name="AvaiableMaterials"
                       fullWidth
                       size="small"
-                      onChange={handleChangeProgramThree}
+                      onChange={handleChangeCampaignThree}
                     >
                       <MenuItem value={"Yes"}>Yes</MenuItem>
+                      <MenuItem value={"Unsure"}>Unsure</MenuItem>
                       <MenuItem value={"No"}>No</MenuItem>
                     </Select>
                   </td>
                 </tr>
               </table>
-              <div className="buttonNext">
-                {" "}
-                {/* submit uses same formating as Next */}
-                <Button onClick={handleSubmit} variant="contained">
-                  Submit
+              <div className="buttonPrevious">
+                <Button onClick={handlePrevious} variant="contained">
+                  Previous
                 </Button>
               </div>
-              <div className="buttonPerivous">
-                <Button onClick={handlePerivous} variant="contained">
-                  Perivous
+              <div className="buttonSubmit">
+                <Button
+                  onClick={handleSubmit}
+                  variant="contained"
+                  size="large"
+                  endIcon={<DoneIcon />}
+                >
+                  Submit
                 </Button>
               </div>
             </div>
           </TabPanel>
         </Box>
       </div>
-      {CSVFileReady == true && (
+      {CSVFileReady === true && (
         <div
           style={{
             marginTop: 150,
@@ -2113,4 +2088,4 @@ function ProgramComparison() {
   );
 }
 
-export default ProgramComparison;
+export default CampaignSelection;

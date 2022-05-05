@@ -31,8 +31,8 @@
 }
 
 .underLine {
-  width: 64.5%;
+  width: 1000px;
   margin-top: 2px;
-  margin-left: 20vw;
+  margin-left: calc(50% - 500px);
   display: float;
 }

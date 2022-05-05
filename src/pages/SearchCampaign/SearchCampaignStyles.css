@@ -15,6 +15,7 @@
   display: flex;
   width: 90%;
   margin-left: 5%;
+  margin-bottom: 2%;
 }
 
 /* The four sections of filter box */
@@ -30,15 +31,24 @@
 .ProgramLocation {
   width: 25%;
 }
+.AddressEnvironmental {
+  margin-top: 55%;
+}
+
+.FilterButton {
+  margin-top: 10%;
+}
 
 .Results {
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   margin-bottom: 50px;
+  align-self: center;
 }
 
 .ResultInteriorBox {
@@ -50,14 +60,17 @@
 .filterTitle {
   position: absolute;
   background-color: rgb(3, 125, 158);
+  left: calc(10% + 100px);
   text-align: center;
-  top: 40%;
-  left: 15%;
-  transform: translate(-30%, -30%);
+  transform: translate(-30%, -50%);
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 12px;
   padding-right: 12px;
   font-size: 24px;
   font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+}
+
+.infoText {
+  font-size: 12px;
 }

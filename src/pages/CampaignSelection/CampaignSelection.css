@@ -1,0 +1,10 @@
+.questionLabels {
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  line-height: 35px;
+}
+
+.buttonSubmit {
+  margin-top: 35px;
+  margin-left: calc(50% - 50px);
+}

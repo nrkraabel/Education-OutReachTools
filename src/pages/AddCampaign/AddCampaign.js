@@ -1,22 +1,21 @@
 import React from "react";
-import TabPanel from "../components/TabPanel";
+import TabPanel from "../../components/TabPanel";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import "./Tab.css";
+import "../Tab.css";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { useState, setState, state } from "react";
+import { useState } from "react";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import LinkIcon from "@mui/icons-material/Link";
 import Link from "@mui/material/Link";
 import "./InputFile.css";
-import "./Table.css";
-import { Alert } from "@mui/material";
-import { fireStore, storage } from "../firebase";
-import { TwentyZeroMpRounded } from "@mui/icons-material";
+import "../Table.css";
+import "./AddCampaign.css";
+import { fireStore } from "../../firebase";
 
 function a11yProps(index) {
   return {
@@ -25,7 +24,7 @@ function a11yProps(index) {
   };
 }
 
-function AddProgram() {
+function AddCampaign() {
   const [Tabvalue, setTabValue] = useState(0);
 
   const handleChangeTab = (event, newValue) => {
@@ -34,7 +33,7 @@ function AddProgram() {
   const handleNext = () => {
     setTabValue(Tabvalue + 1);
   };
-  const handlePerivous = () => {
+  const handlePrevious = () => {
     setTabValue(Tabvalue - 1);
   };
 
@@ -141,7 +140,7 @@ function AddProgram() {
         <h2>SUBMIT DATA</h2>
         <p className="introText">
           If you know of stormwater and/or water quality behavior change
-          programs that we do not have listed, please help us by inputting the
+          campaigns that we do not have listed, please help us by inputting the
           details through this form. We will follow up to verify information
           before publicly posting. If you have any questions or would like to
           suggest corrections to existing entries in the data please contact us
@@ -173,7 +172,7 @@ function AddProgram() {
               href="file:///C:/Users/Nicholas/Downloads/E&O%20Website%20Mock%20Up_FINAL.pdf"
               underline="hover"
             >
-              {"   "}Types of Programs
+              {"   "}Types of Campaigns
             </Link>
           </div>
           <div>
@@ -215,7 +214,7 @@ function AddProgram() {
             <Tabs
               value={Tabvalue}
               onChange={handleChangeTab}
-              aria-label="Add Program selector"
+              aria-label="Add Campaign selector"
               scrollButtons="auto"
               textColor="inherit"
               variant="fullWidth"
@@ -236,139 +235,126 @@ function AddProgram() {
               noValidate
               autoComplete="off"
             >
-              <table className="addProgram">
-                <tr>
-                  <td>
+              <div className="leftBox">
+                <TextField
+                  id="Jurisdiction Name & Department"
+                  label="Jurisdiction Name & Department"
+                  name="JurisdictionName"
+                  onChange={handleChangeFormData}
+                  variant="outlined"
+                  value={formState.JurisdictionName}
+                  size="small"
+                  fullWidth
+                  margin="normal"
+                />
+                <TextField
+                  id="Jurisdiction Contact"
+                  label="Jurisdiction Contact"
+                  name="JurisdictionContact"
+                  onChange={handleChangeFormData}
+                  variant="outlined"
+                  value={formState.JurisdictionContact}
+                  size="small"
+                  fullWidth
+                  margin="normal"
+                />
+                <TextField
+                  id="Other Agencies Involvedined-basic"
+                  label="Other Agencies Involved"
+                  name="OtherAgencies"
+                  onChange={handleChangeFormData}
+                  variant="outlined"
+                  value={formState.OtherAgencies}
+                  size="small"
+                  fullWidth
+                  margin="normal"
+                />
+                <TextField
+                  id="Other Agency Contact(s)"
+                  label="Other Agency Contact(s)"
+                  name="AgenciesContact"
+                  onChange={handleChangeFormData}
+                  variant="outlined"
+                  value={formState.AgenciesContact}
+                  size="small"
+                  fullWidth
+                  margin="normal"
+                />
+              </div>
+              <div className="rightBox">
+                <TextField
+                  id="Study Name"
+                  label="Study Name"
+                  name="StudyName"
+                  onChange={handleChangeFormData}
+                  variant="outlined"
+                  value={formState.StudyName}
+                  size="small"
+                  fullWidth
+                  margin="normal"
+                />
+                <TextField
+                  id="Report Author(s)"
+                  label="Report Author(s)"
+                  name="Authors"
+                  onChange={handleChangeFormData}
+                  variant="outlined"
+                  value={formState.Authors}
+                  size="small"
+                  fullWidth
+                  margin="normal"
+                />
+                <span>
+                  <div className="leftbox">
                     <TextField
-                      id="Jurisdiction Name & Department"
-                      label="Jurisdiction Name & Department"
-                      name="JurisdictionName"
+                      id="date"
+                      label="Year Study Started"
+                      name="YearStarted"
                       onChange={handleChangeFormData}
-                      variant="outlined"
-                      value={formState.JurisdictionName}
+                      value={formState.YearStarted}
+                      type="date"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
                       size="small"
-                      fullWidth
                       margin="normal"
                     />
+                  </div>
+                  <div className="rightbox">
                     <TextField
-                      id="Jurisdiction Contact"
-                      label="Jurisdiction Contact"
-                      name="JurisdictionContact"
+                      id="date"
+                      label="Year Study Completed"
+                      name="YearCompleted"
                       onChange={handleChangeFormData}
-                      variant="outlined"
-                      value={formState.JurisdictionContact}
+                      value={formState.YearCompleted}
+                      type="date"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
                       size="small"
-                      fullWidth
                       margin="normal"
                     />
-                    <TextField
-                      id="Other Agencies Involvedined-basic"
-                      label="Other Agencies Involved"
-                      name="OtherAgencies"
-                      onChange={handleChangeFormData}
-                      variant="outlined"
-                      value={formState.OtherAgencies}
-                      size="small"
-                      fullWidth
-                      margin="normal"
-                    />
-                    <TextField
-                      id="Other Agency Contact(s)"
-                      label="Other Agency Contact(s)"
-                      name="AgenciesContact"
-                      onChange={handleChangeFormData}
-                      variant="outlined"
-                      value={formState.AgenciesContact}
-                      size="small"
-                      fullWidth
-                      margin="normal"
-                    />
-                  </td>
-                  <td>
-                    <TextField
-                      id="Study Name"
-                      label="Study Name"
-                      name="StudyName"
-                      onChange={handleChangeFormData}
-                      variant="outlined"
-                      value={formState.StudyName}
-                      size="small"
-                      fullWidth
-                      margin="normal"
-                    />
-                    <TextField
-                      id="Report Author(s)"
-                      label="Report Author(s)"
-                      name="Authors"
-                      onChange={handleChangeFormData}
-                      variant="outlined"
-                      value={formState.Authors}
-                      size="small"
-                      fullWidth
-                      margin="normal"
-                    />
-                    <span>
-                      <div className="leftbox">
-                        <TextField
-                          id="date"
-                          label="Year Study Started"
-                          name="YearStarted"
-                          onChange={handleChangeFormData}
-                          value={formState.YearStarted}
-                          type="date"
-                          InputLabelProps={{
-                            shrink: true,
-                          }}
-                          size="small"
-                          margin="normal"
-                        />
-                      </div>
-                      <div className="rightbox">
-                        <TextField
-                          id="date"
-                          label="Year Study Completed"
-                          name="YearCompleted"
-                          onChange={handleChangeFormData}
-                          value={formState.YearCompleted}
-                          type="date"
-                          InputLabelProps={{
-                            shrink: true,
-                          }}
-                          size="small"
-                          margin="normal"
-                        />
-                      </div>
-                    </span>
-                    <center>
-                      <input
-                        name="Report"
-                        onChange={handleFile}
-                        accept="doc/*"
-                        id="report-upload-file"
-                        value={formState.Report}
-                        type="file"
-                      ></input>
-                      <label for="report-upload-file">Upload Report</label>
-                    </center>
-                    <center className="spacing">
-                      <input
-                        name="Abstract"
-                        onChange={handleFile}
-                        accept="doc/*"
-                        value={formState.Abstract}
-                        id="Abstract-upload-file"
-                        type="file"
-                      ></input>
-                      <label for="Abstract-upload-file">Upload Abstract</label>
-                    </center>
-                  </td>
-                </tr>
+                  </div>
+                </span>
+                <center>
+                  <input
+                    name="Report"
+                    onChange={handleFile}
+                    accept="doc/*"
+                    id="report-upload-file"
+                    value={formState.Report}
+                    type="file"
+                  ></input>
+                  <label for="report-upload-file">Upload Report</label>
+                </center>
+                <center className="spacing"></center>
+
                 <div className="buttonNext">
                   <Button onClick={handleNext} variant="contained">
                     Next
                   </Button>
                 </div>
-              </table>
+              </div>
             </Box>
           </TabPanel>
           <TabPanel value={Tabvalue} index={1}>
@@ -380,7 +366,7 @@ function AddProgram() {
               noValidate
               autoComplete="off"
             >
-              <div className="leftbox">
+              <div className="leftBox">
                 <TextField
                   id="Study Location"
                   label="Study Location"
@@ -428,13 +414,13 @@ function AddProgram() {
                   fullWidth
                   margin="normal"
                 />
-                <div className="buttonPerivous">
-                  <Button onClick={handlePerivous} variant="contained">
-                    Perivous
+                <div className="buttonPrevious">
+                  <Button onClick={handlePrevious} variant="contained">
+                    Previous
                   </Button>
                 </div>
               </div>
-              <div className="rightbox">
+              <div className="rightBox">
                 <InputLabel id="Target Behavior Change Category">
                   Target Behavior Change Category
                 </InputLabel>
@@ -506,6 +492,7 @@ function AddProgram() {
                     Sediment and Erosion Control
                   </MenuItem>
                 </Select>
+                <pre></pre>
                 <TextField
                   id="Target Audience"
                   label="Target Audience"
@@ -515,14 +502,13 @@ function AddProgram() {
                   variant="outlined"
                   size="small"
                   fullWidth
-                  margin="normal"
                 />
-                <InputLabel id="Target Audience Category">
+                <InputLabel id="TargetAudienceCategory">
                   Target Audience Category
                 </InputLabel>
                 <Select
-                  labelId="Target Audience Category"
-                  id="Target Audience Category"
+                  labelId="TargetAudienceCategory"
+                  id="TargetAudienceCategory"
                   value={formState.TargetAudienceCategory}
                   label="Target Audience Category"
                   fullWidth
@@ -565,13 +551,12 @@ function AddProgram() {
               noValidate
               autoComplete="off"
             >
-              <div className="leftbox">
+              <div className="leftBox">
                 <InputLabel id="Type">Type</InputLabel>
                 <Select
                   labelId="Type"
                   id="Type"
                   value={formState.Type}
-                  label="Target Audience Category"
                   fullWidth
                   name="Type"
                   size="small"
@@ -607,7 +592,7 @@ function AddProgram() {
                       <b>Data Collection Date Range</b>
                     </p>
                   </center>
-                  <div className="leftbox">
+                  <div className="leftBox">
                     <TextField
                       label="Start of pre-E&O data collection"
                       type="date"
@@ -621,7 +606,7 @@ function AddProgram() {
                       margin="normal"
                     />
                   </div>
-                  <div className="rightbox">
+                  <div className="rightBox">
                     <TextField
                       label="End of pre-E&O data collection"
                       type="date"
@@ -635,7 +620,7 @@ function AddProgram() {
                       margin="normal"
                     />
                   </div>
-                  <div className="leftbox">
+                  <div className="leftBox">
                     <TextField
                       label="Start of post-E&O data collection"
                       type="date"
@@ -649,7 +634,7 @@ function AddProgram() {
                       margin="normal"
                     />
                   </div>
-                  <div className="rightbox">
+                  <div className="rightBox">
                     <TextField
                       label="End of post-E&O data collection"
                       type="date"
@@ -664,13 +649,13 @@ function AddProgram() {
                     />
                   </div>
                 </span>
-                <div className="buttonPerivous">
-                  <Button onClick={handlePerivous} variant="contained">
-                    Perivous
+                <div className="buttonPrevious">
+                  <Button onClick={handlePrevious} variant="contained">
+                    Previous
                   </Button>
                 </div>
               </div>
-              <div className="rightbox">
+              <div className="rightBox">
                 <TextField
                   label="Instruments Used"
                   variant="outlined"
@@ -704,6 +689,7 @@ function AddProgram() {
                   onChange={handleChangeFormData}
                 >
                   <MenuItem value={"Yes"}>Yes</MenuItem>
+                  <MenuItem value={"Unsure"}>Unsure</MenuItem>
                   <MenuItem value={"No"}>No</MenuItem>
                 </Select>
                 <TextField
@@ -747,7 +733,7 @@ function AddProgram() {
               noValidate
               autoComplete="off"
             >
-              <div className="leftbox">
+              <div className="leftBox">
                 <InputLabel id="DQI">
                   Data Quality Indicators (DQIs) that Were Addressed
                 </InputLabel>
@@ -761,6 +747,7 @@ function AddProgram() {
                   onChange={handleChangeFormData}
                 >
                   <MenuItem value={"Yes"}>Yes</MenuItem>
+                  <MenuItem value={"Unsure"}>Unsure</MenuItem>
                   <MenuItem value={"No"}>No</MenuItem>
                 </Select>
                 <TextField
@@ -773,13 +760,13 @@ function AddProgram() {
                   fullWidth
                   margin="normal"
                 />
-                <div className="buttonPerivous">
-                  <Button onClick={handlePerivous} variant="contained">
-                    Perivous
+                <div className="buttonPrevious">
+                  <Button onClick={handlePrevious} variant="contained">
+                    Previous
                   </Button>
                 </div>
               </div>
-              <div className="rightbox">
+              <div className="rightBox">
                 <TextField
                   label="Data Analysis Methods"
                   variant="outlined"
@@ -788,12 +775,13 @@ function AddProgram() {
                   value={formState.DataAnalysisMethod}
                   size="small"
                   fullWidth
-                  margin="normal"
                 />
+                <pre></pre>
                 <InputLabel id="HTC">
                   Was hypothesis testing completed?
                 </InputLabel>
                 <Select
+                  id="HTC"
                   labelId="HTC"
                   value={formState.HypothesisTesting}
                   label="Was hypothesis testing completed?"
@@ -803,6 +791,7 @@ function AddProgram() {
                   onChange={handleChangeFormData}
                 >
                   <MenuItem value={"Yes"}>Yes</MenuItem>
+                  <MenuItem value={"Unsure"}>Unsure</MenuItem>
                   <MenuItem value={"No"}>No</MenuItem>
                 </Select>
                 <div className="buttonNext">
@@ -822,7 +811,7 @@ function AddProgram() {
               noValidate
               autoComplete="off"
             >
-              <div className="leftbox">
+              <div className="leftBox">
                 <TextField
                   label="Campaign Location"
                   variant="outlined"
@@ -843,13 +832,13 @@ function AddProgram() {
                   fullWidth
                   margin="normal"
                 />
-                <div className="buttonPerivous">
-                  <Button onClick={handlePerivous} variant="contained">
-                    Perivous
+                <div className="buttonPrevious">
+                  <Button onClick={handlePrevious} variant="contained">
+                    Previous
                   </Button>
                 </div>
               </div>
-              <div className="rightbox">
+              <div className="rightBox">
                 <center className="spacing">
                   <input
                     name="CampaignMaterialExample"
@@ -874,6 +863,7 @@ function AddProgram() {
                   onChange={handleChangeFormData}
                 >
                   <MenuItem value={"Yes"}>Yes</MenuItem>
+                  <MenuItem value={"Unsure"}>Unsure</MenuItem>
                   <MenuItem value={"No"}>No</MenuItem>
                 </Select>
               </div>
@@ -891,4 +881,4 @@ function AddProgram() {
     </div>
   );
 }
-export default AddProgram;
+export default AddCampaign;

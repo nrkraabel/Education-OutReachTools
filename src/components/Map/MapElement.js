@@ -11,6 +11,9 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
+import { fireData } from "../../firebase";
+import { get, child } from "firebase/database";
+
 const libraries = ["places"];
 const center = {
   lat: 35.51073,
@@ -22,14 +25,25 @@ const options = {
   zoomControl: true,
 };
 function MapElement(props) {
+  const [Studies, setStudies] = useState([]);
+  useEffect(() => {
+    let dataRef = fireData;
+    get(child(dataRef, "/")).then((snapshot) => {
+      var Study = snapshot.val();
+      setStudies(Study);
+    });
+  }, []);
+
+  console.log({ Studies });
   const mapContainerStyle = {
     width: props.width,
     height: props.height,
   };
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: "AIzaSyAG1f8Z7haVyHIqox2r6Y3KSB06EAeVnzs",
     libraries,
   });
+  const [selected, setSelected] = React.useState(null);
   //To prevent rerendering the map data is saved unless data changes
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
@@ -44,7 +58,35 @@ function MapElement(props) {
       center={center}
       options={options}
       onLoad={onMapLoad}
-    ></GoogleMap>
+    >
+      {Studies.map((marker) => (
+        <Marker
+          key={marker.Title}
+          position={{ lat: marker.lat, lng: marker.lon }}
+          icon={{
+            url: "/MapMarker.svg",
+            scaledSize: new window.google.maps.Size(25, 25),
+          }}
+          onClick={() => {
+            setSelected(marker);
+          }}
+        />
+      ))}
+      {selected ? (
+        <InfoWindow
+          position={{ lat: selected.lat, lng: selected.lon }}
+          onCloseClick={() => {
+            setSelected(null);
+            localStorage.removeItem(selected);
+          }}
+        >
+          <div>
+            <h1>{selected.Title}</h1>
+            <a href={selected.Link}>Link to PDF</a>
+          </div>
+        </InfoWindow>
+      ) : null}
+    </GoogleMap>
   );
 }
 

@@ -18,7 +18,7 @@ const Navbar = () => {
         <img className="logo" src={Logo} alt="Logo" />
         <div className="logoText">
           <h1 className="headerLogoText">
-            Tools & Resources for Behavior Change Programs
+            Tools & Resources for Behavior Change Campaigns
           </h1>
           <h2 className="subLogoText">IN STORMWATER & WATER QUALITY</h2>
         </div>
@@ -29,14 +29,14 @@ const Navbar = () => {
           <NavLink to="/" activestyle>
             Home
           </NavLink>
-          <NavLink to="/add-program" activestyle>
-            Add Program
+          <NavLink to="/add-campaign" activestyle>
+            Add Campaign
           </NavLink>
-          <NavLink to="/search-programs" activestyle>
-            Search Programs
+          <NavLink to="/search-campaigns" activestyle>
+            Search Campaigns
           </NavLink>
-          <NavLink to="/program-comparison" activestyle>
-            Program Comparison
+          <NavLink to="/campaign-selection" activestyle>
+            Campaign Selection
           </NavLink>
           {/* <NavLink to="/evaluation-tools" activestyle>
             Evaluation Tools

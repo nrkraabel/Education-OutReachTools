@@ -3,12 +3,12 @@ import "./App.css";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages";
-import About from "./pages/about";
-import AddProgram from "./pages/addProgram";
-import EvaluationTools from "./pages/evaluationTools";
-import SearchPrograms from "./pages/searchPrograms";
-import ProgramComparison from "./pages/programComparison";
-import OtherResources from "./pages/otherResources";
+import About from "./pages/About/About";
+import AddCampaign from "./pages/AddCampaign/AddCampaign";
+import EvaluationTools from "./pages/EvaluationTools";
+import SearchCampaigns from "./pages/SearchCampaign/SearchCampaigns";
+import CampaignSelection from "./pages/CampaignSelection/CampaignSelection";
+import OtherResources from "./pages/OtherResources";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -17,10 +17,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/add-program" element={<AddProgram />} />
-        <Route path="/search-programs" element={<SearchPrograms />} />
+        <Route path="/add-campaign" element={<AddCampaign />} />
+        <Route path="/search-campaigns" element={<SearchCampaigns />} />
         <Route path="/evaluation-tools" element={<EvaluationTools />} />
-        <Route path="/program-comparison" element={<ProgramComparison />} />
+        <Route path="/campaign-selection" element={<CampaignSelection />} />
         <Route path="/other-resources" element={<OtherResources />} />
         <Route path="/about" element={<About />} />
       </Routes>

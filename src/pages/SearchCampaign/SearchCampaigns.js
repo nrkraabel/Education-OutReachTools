@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./Text.css";
-import "./searchProgramStyles.css";
+import "../Text.css";
+import "./SearchCampaignStyles.css";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
@@ -11,17 +11,15 @@ import FormLabel from "@mui/material/FormLabel";
 import Checkbox from "@mui/material/Checkbox";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import { fireData } from "../firebase";
+import { fireData } from "../../firebase";
 import Fuse from "fuse.js";
 import { get, child } from "firebase/database";
+import Button from "@mui/material/Button";
 
-function SearchPrograms() {
+function SearchCampaigns() {
   //Deals with search results
   const [searchResults, setSearchResults] = useState(null);
-  const options = {
-    includeScore: false,
-    keys: ["Authors", "Title", "Year"],
-  };
+
   const [Studies, setStudies] = useState([]);
   useEffect(() => {
     let dataRef = fireData;
@@ -30,10 +28,6 @@ function SearchPrograms() {
       setStudies(Study);
     });
   }, []);
-
-  console.log(Studies.FilePath);
-  console.log(Studies);
-  const fuse = new Fuse(Studies, options);
   const [filterChoices, setFilterChoices] = useState({
     //target Audience Filters
     GeneralPublic: false,
@@ -42,11 +36,11 @@ function SearchPrograms() {
     Engineers: false,
     Contractors: false,
     Developers: false,
-    Planners: false,
+    LandUsePlanners: false,
     Residents: false,
     Landscapers: false,
     PropertyManagers: false,
-    DevelopmentReviewStaff: false,
+    MobileBusinesses: false,
     //Target Pollutant Filters
     Pathogens: false,
     Nutrients: false,
@@ -55,8 +49,7 @@ function SearchPrograms() {
     Sediment: false,
     Trash: false,
     ToxicChemicals: false,
-    LID: false,
-    Infiltration: false,
+    LIDInflitration: false,
     //Research Instruments filters:
     Surveys: false,
     Observations: false,
@@ -68,10 +61,133 @@ function SearchPrograms() {
     Examplary: false,
     Good: false,
     Fair: false,
-    NotRanked: false,
+    //NotRanked: false,
     //Program Location filter
-    ProgramLocation: "",
+    CampaignLocation: "",
+    //Enviromental Justice
+    EnvJustice: false,
   });
+
+  const handleFilter = () => {
+    var keys = [];
+    var location = [];
+    //Target Audience
+    if (filterChoices.GeneralPublic) {
+      keys.push("aud_general");
+    }
+    if (filterChoices.SchoolAgeChildren) {
+      keys.push("aud_kids");
+    }
+    if (filterChoices.Businesses) {
+      keys.push("aud_busin");
+    }
+    if (filterChoices.Engineers) {
+      keys.push("aud_eng");
+    }
+    if (filterChoices.Contractors) {
+      keys.push("aud_contract");
+    }
+    if (filterChoices.Developers) {
+      keys.push("aud_develop");
+    }
+    if (filterChoices.LandUsePlanners) {
+      keys.push("aud_planner");
+    }
+    if (filterChoices.Residents) {
+      keys.push("aud_resident");
+    }
+    if (filterChoices.Landscapers) {
+      keys.push("aud_landscape");
+    }
+    if (filterChoices.PropertyManagers) {
+      keys.push("aud_propmgr");
+    }
+    if (filterChoices.MobileBusinesses) {
+      keys.push("aud_mobilebus");
+    }
+    //Pollutant
+    if (filterChoices.Pathogens) {
+      keys.push("poll_pathogen");
+    }
+    if (filterChoices.Nutrients) {
+      keys.push("poll_nutrient");
+    }
+    if (filterChoices.Metals) {
+      keys.push("poll_metal");
+    }
+    if (filterChoices.Oils) {
+      keys.push("poll_oil");
+    }
+    if (filterChoices.Sediment) {
+      keys.push("poll_sediment");
+    }
+    if (filterChoices.Trash) {
+      keys.push("poll_trash");
+    }
+    if (filterChoices.ToxicChemicals) {
+      keys.push("poll_toxics");
+    }
+    if (filterChoices.LIDInflitration) {
+      keys.push("poll_LID");
+      keys.push("poll_Infil");
+    }
+    //instrustments
+    if (filterChoices.Surveys) {
+      keys.push("instr_survey");
+    }
+    if (filterChoices.Observations) {
+      keys.push("instr_obser");
+    }
+    if (filterChoices.Interviews) {
+      keys.push("instr_interv");
+    }
+    if (filterChoices.FocusGroups) {
+      keys.push("instr_focus");
+    }
+    if (filterChoices.PicturesVideos) {
+      keys.push("instr_pics");
+    }
+    //location
+    if (filterChoices.CampaignLocation != "") {
+      keys.push("Where");
+    }
+    //Enviromental Justice
+    if (filterChoices.EnvJustice) {
+      keys.push("envjust");
+    }
+    //Rating
+    if (filterChoices.Examplary) {
+      keys.push("Examplary");
+    }
+    if (filterChoices.Good) {
+      keys.push("Good");
+    }
+    if (filterChoices.Fair) {
+      keys.push("Fair");
+    }
+    var options = {
+      includeScore: false,
+      keys: keys,
+    };
+    var fuse = new Fuse(Studies, options);
+
+    var result = fuse.search("=1");
+    if (filterChoices.CampaignLocation != "" && keys.length === 1) {
+      result = fuse.search("=" + filterChoices.CampaignLocation);
+    } else if (filterChoices.CampaignLocation != "") {
+      var NewSearch = [];
+      var locations = fuse.search("=" + filterChoices.CampaignLocation);
+      result.forEach((element) => {
+        locations.forEach((location) => {
+          if (location.item.Title === element.item.Title) {
+            NewSearch.push(element);
+          }
+        });
+      });
+      result = NewSearch;
+    }
+    setSearchResults(result);
+  };
 
   const handleChange = (event) => {
     setFilterChoices({
@@ -88,9 +204,13 @@ function SearchPrograms() {
   const [text, setText] = useState("");
   const onChangeText = (evt) => setText(evt.target.value);
   const Search = (e) => {
+    const options = {
+      includeScore: false,
+      keys: ["Authors", "Title", "Keywords"],
+    };
+    var fuse = new Fuse(Studies, options);
     const result = fuse.search(text);
     setSearchResults(result);
-    console.log(result);
   };
   return (
     <div className="page">
@@ -98,7 +218,7 @@ function SearchPrograms() {
         <div className="Searchbar">
           <TextField
             onChange={onChangeText}
-            placeholder="Search Program...."
+            placeholder="Search...."
             sx={{ width: "45ch" }}
             size="small"
             value={text}
@@ -112,30 +232,98 @@ function SearchPrograms() {
         <b>FILTER BY:</b>
       </div>
       <div className="BlueSquare">
-        <div className="TargetAudience">
-          <FormControl sx={{ m: 2 }} component="fieldset" variant="standard">
-            <FormLabel component="legend">TARGET AUDIENCE:</FormLabel>
+        <div className="TargetPollutant">
+          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormLabel component="legend">TARGET POLLUTANT:</FormLabel>
             <FormGroup>
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={filterChoices.GeneralPublic}
+                    checked={filterChoices.LIDInflitration}
                     onChange={handleChange}
-                    name="GeneralPublic"
+                    name="LIDInflitration"
                   />
                 }
-                label="General Public"
+                label="LID/Inflitration"
               />
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={filterChoices.SchoolAgeChildren}
+                    checked={filterChoices.Metals}
                     onChange={handleChange}
-                    name="SchoolAgeChildren"
+                    name="Metals"
                   />
                 }
-                label="School-Age Children"
+                label="Metals"
               />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={filterChoices.Nutrients}
+                    onChange={handleChange}
+                    name="Nutrients"
+                  />
+                }
+                label="Nutrients"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={filterChoices.Oils}
+                    onChange={handleChange}
+                    name="Oils"
+                  />
+                }
+                label="Oils"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={filterChoices.Pathogens}
+                    onChange={handleChange}
+                    name="Pathogens"
+                  />
+                }
+                label="Pathogens (Fecal Coliforms, Bacteria, E. Coli)"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={filterChoices.Sediment}
+                    onChange={handleChange}
+                    name="Sediment"
+                  />
+                }
+                label="Sediment"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={filterChoices.ToxicChemicals}
+                    onChange={handleChange}
+                    name="ToxicChemicals"
+                  />
+                }
+                label="Toxic Chemicals (Pesticide, 
+                  Household Cleaner, etc.)"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={filterChoices.Trash}
+                    onChange={handleChange}
+                    name="Trash"
+                  />
+                }
+                label="Trash"
+              />
+            </FormGroup>
+          </FormControl>
+        </div>
+        <div className="TargetAudience">
+          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormLabel component="legend">TARGET AUDIENCE:</FormLabel>
+            <FormGroup>
               <FormControlLabel
                 control={
                   <Checkbox
@@ -145,16 +333,6 @@ function SearchPrograms() {
                   />
                 }
                 label="Businesses"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Engineers}
-                    onChange={handleChange}
-                    name="Engineers"
-                  />
-                }
-                label="Engineers"
               />
               <FormControlLabel
                 control={
@@ -179,22 +357,32 @@ function SearchPrograms() {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={filterChoices.Planners}
+                    checked={filterChoices.Engineers}
                     onChange={handleChange}
-                    name="Planners"
+                    name="Engineers"
                   />
                 }
-                label="Planners"
+                label="Engineers"
               />
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={filterChoices.Residents}
+                    checked={filterChoices.GeneralPublic}
                     onChange={handleChange}
-                    name="Residents"
+                    name="GeneralPublic"
                   />
                 }
-                label="Residents"
+                label="General Public"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={filterChoices.LandUsePlanners}
+                    onChange={handleChange}
+                    name="LandUsePlanners"
+                  />
+                }
+                label="Land Use Planners"
               />
               <FormControlLabel
                 control={
@@ -209,6 +397,16 @@ function SearchPrograms() {
               <FormControlLabel
                 control={
                   <Checkbox
+                    checked={filterChoices.MobileBusinesses}
+                    onChange={handleChange}
+                    name="MobileBusinesses"
+                  />
+                }
+                label="Mobile Businesses"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
                     checked={filterChoices.PropertyManagers}
                     onChange={handleChange}
                     name="PropertyManagers"
@@ -219,110 +417,22 @@ function SearchPrograms() {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={filterChoices.DevelopmentReviewStaff}
+                    checked={filterChoices.Residents}
                     onChange={handleChange}
-                    name="DevelopmentReviewStaff"
+                    name="Residents"
                   />
                 }
-                label="Development Review Staff"
-              />
-            </FormGroup>
-          </FormControl>
-        </div>
-        <div className="TargetPollutant">
-          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-            <FormLabel component="legend">TARGET POLLUTANT:</FormLabel>
-            <FormGroup>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Pathogens}
-                    onChange={handleChange}
-                    name="Pathogens"
-                  />
-                }
-                label="Pathogens (Fecal Coliforms, Bacteria, E. Coli)"
+                label="Residents"
               />
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={filterChoices.Nutrients}
+                    checked={filterChoices.SchoolAgeChildren}
                     onChange={handleChange}
-                    name="Nutrients"
+                    name="SchoolAgeChildren"
                   />
                 }
-                label="Nutrients"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Metals}
-                    onChange={handleChange}
-                    name="Metals"
-                  />
-                }
-                label="Metals"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Oils}
-                    onChange={handleChange}
-                    name="Oils"
-                  />
-                }
-                label="Oils"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Sediment}
-                    onChange={handleChange}
-                    name="Sediment"
-                  />
-                }
-                label="Sediment"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Trash}
-                    onChange={handleChange}
-                    name="Trash"
-                  />
-                }
-                label="Trash"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.ToxicChemicals}
-                    onChange={handleChange}
-                    name="ToxicChemicals"
-                  />
-                }
-                label="Toxic Chemicals (Pesticide, 
-                  Household Cleaner, etc.)"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.LID}
-                    onChange={handleChange}
-                    name="LID"
-                  />
-                }
-                label="LID"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Infiltration}
-                    onChange={handleChange}
-                    name="Infiltration"
-                  />
-                }
-                label="Infiltration"
+                label="School-Age Children"
               />
             </FormGroup>
           </FormControl>
@@ -334,22 +444,12 @@ function SearchPrograms() {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={filterChoices.Surveys}
+                    checked={filterChoices.FocusGroups}
                     onChange={handleChange}
-                    name="Surveys"
+                    name="FocusGroups"
                   />
                 }
-                label="Surveys"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Observations}
-                    onChange={handleChange}
-                    name="Observations"
-                  />
-                }
-                label="Observations"
+                label="Focus Groups"
               />
               <FormControlLabel
                 control={
@@ -364,12 +464,12 @@ function SearchPrograms() {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={filterChoices.FocusGroups}
+                    checked={filterChoices.Observations}
                     onChange={handleChange}
-                    name="FocusGroups"
+                    name="Observations"
                   />
                 }
-                label="Focus Groups"
+                label="Observations"
               />
               <FormControlLabel
                 control={
@@ -380,6 +480,16 @@ function SearchPrograms() {
                   />
                 }
                 label="Pictures/Videos"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={filterChoices.Surveys}
+                    onChange={handleChange}
+                    name="Surveys"
+                  />
+                }
+                label="Surveys"
               />
             </FormGroup>
           </FormControl>
@@ -394,7 +504,7 @@ function SearchPrograms() {
                     name="Examplary"
                   />
                 }
-                label="Examplary"
+                label="Exemplary"
               />
               <FormControlLabel
                 control={
@@ -416,27 +526,17 @@ function SearchPrograms() {
                 }
                 label="Fair"
               />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.NotRanked}
-                    onChange={handleChange}
-                    name="NotRanked"
-                  />
-                }
-                label="N/A (not yet ranked)"
-              />
             </FormGroup>
           </FormControl>
         </div>
         <div className="ProgramLocation">
           <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-            <FormLabel component="legend">PROGRAM STATE:</FormLabel>
+            <FormLabel component="legend">CAMPAIGN STATE:</FormLabel>
             <FormGroup>
               <Select
-                value={filterChoices.ProgramLocation}
+                value={filterChoices.CampaignLocation}
                 fullWidth
-                name="ProgramLocation"
+                name="CampaignLocation"
                 onChange={handleChangeLocation}
               >
                 <MenuItem value={"Alabama"}>Alabama</MenuItem>
@@ -492,63 +592,120 @@ function SearchPrograms() {
               </Select>
             </FormGroup>
           </FormControl>
+          <div className="AddressEnvironmental">
+            <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+              <FormLabel component="legend">
+                Addresses Environmental Justice Concerns
+              </FormLabel>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={filterChoices.EnvJustice}
+                      onChange={handleChange}
+                      name="EnvJustice"
+                    />
+                  }
+                  label="Addresses Concerns"
+                />
+              </FormGroup>
+            </FormControl>
+          </div>
+          <center className="FilterButton">
+            <Button variant="contained" size="medium" onClick={handleFilter}>
+              Apply Filters
+            </Button>
+          </center>
         </div>
       </div>
       {searchResults == null && Studies.length > 0 && (
         <div className="Results">
           <div className="ResultInteriorBox">
             <h4>{Studies[0].Title}</h4>
-            <a href={Studies[0].FilePath} target="_blank">
+            <a href={Studies[0].Link} target="_blank">
               Click for PDF
             </a>
           </div>
           <div className="ResultInteriorBox">
             <h4>{Studies[1].Title}</h4>
-            <a href={Studies[1].FilePath} target="_blank">
+            <a href={Studies[1].Link} target="_blank">
               Click for PDF
             </a>
           </div>
           <div className="ResultInteriorBox">
             <h4>{Studies[2].Title}</h4>
-            <a href={Studies[2].FilePath} target="_blank">
+            <a href={Studies[2].Link} target="_blank">
               Click for PDF
             </a>
           </div>
           <div className="ResultInteriorBox">
             <h4>{Studies[3].Title}</h4>
-            <a href={Studies[3].FilePath} target="_blank">
+            <a href={Studies[3].Link} target="_blank">
               Click for PDF
             </a>
           </div>
           <div className="ResultInteriorBox">
             <h4>{Studies[4].Title}</h4>
-            <a href={Studies[4].FilePath} target="_blank">
+            <a href={Studies[4].Link} target="_blank">
               Click for PDF
             </a>
           </div>
         </div>
       )}
       {searchResults != null && searchResults[0] != null && (
-        <div className="Results">
-          <div className="ResultInteriorBox">
-            <h4>{searchResults[0].item.Title}</h4>
-          </div>
-          <div className="ResultInteriorBox">
-            <h4>{searchResults[1].item.Title}</h4>
-          </div>
-          <div className="ResultInteriorBox">
-            <h4>{searchResults[2].item.Title}</h4>
-          </div>
-          <div className="ResultInteriorBox">
-            <h4>{searchResults[3].item.Title}</h4>
-          </div>
-          <div className="ResultInteriorBox">
-            <h4>{searchResults[4].item.Title}</h4>
-          </div>
+        <div>
+          <center className="Results">
+            <div className="ResultInteriorBox">
+              <h4>{searchResults[0].item.Title}</h4>
+              <a href={searchResults[0].item.Link} target="_blank">
+                Click for PDF
+              </a>
+            </div>
+            {searchResults[1] != null && (
+              <div className="ResultInteriorBox">
+                <h4>{searchResults[1].item.Title}</h4>
+                <a href={searchResults[1].item.Link} target="_blank">
+                  Click for PDF
+                </a>
+              </div>
+            )}
+            {searchResults[2] != null && (
+              <div className="ResultInteriorBox">
+                <h4>{searchResults[2].item.Title}</h4>
+                <a href={searchResults[2].item.Link} target="_blank">
+                  Click for PDF
+                </a>
+              </div>
+            )}
+            {searchResults[3] != null && (
+              <div className="ResultInteriorBox">
+                <h4>{searchResults[3].item.Title}</h4>
+                <a href={searchResults[3].item.Link} target="_blank">
+                  Click for PDF
+                </a>
+              </div>
+            )}
+            {searchResults[4] != null && (
+              <div className="ResultInteriorBox">
+                <h4>{searchResults[4].item.Title}</h4>
+                <a href={searchResults[4].item.Link} target="_blank">
+                  Click for PDF
+                </a>
+              </div>
+            )}
+          </center>
+          {searchResults[5] != null && (
+            <center>
+              <p className="infoText">
+                There are more than 5 results. Changes making users able to
+                scroll through all results are planned.
+              </p>
+            </center>
+          )}
         </div>
       )}
     </div>
   );
 }
 
-export default SearchPrograms;
+export default SearchCampaigns;
