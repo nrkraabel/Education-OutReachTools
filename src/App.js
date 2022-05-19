@@ -5,10 +5,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages";
 import About from "./pages/About/About";
 import AddCampaign from "./pages/AddCampaign/AddCampaign";
-import EvaluationTools from "./pages/EvaluationTools";
+import EvaluationTools from "./pages/evaluationTools";
 import SearchCampaigns from "./pages/SearchCampaign/SearchCampaigns";
 import CampaignSelection from "./pages/CampaignSelection/CampaignSelection";
-import OtherResources from "./pages/OtherResources";
+import OtherResources from "./pages/otherResources";
 import Navbar from "./components/Navbar";
 
 function App() {
