@@ -82,7 +82,7 @@ function MapElement(props) {
         >
           <div>
             <h1>{selected.Title}</h1>
-            <a href={selected.Link}>Link to PDF</a>
+            <a href={selected.Link} target="_blank" rel="noreferrer">Link to PDF</a>
           </div>
         </InfoWindow>
       ) : null}
