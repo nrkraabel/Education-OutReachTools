@@ -1,8 +1,8 @@
 import React from "react";
 import "../Text.css";
-import WSU from "C:/Users/Nicholas/educationtools/src/Images/WSUExtension.jpg";
-import SAM from "C:/Users/Nicholas/educationtools/src/Images/SAM.jpg";
-import StormWater from "C:/Users/Nicholas/educationtools/src/Images/StormwaterCenter.png";
+import WSU from "../Images/WSUExtension.jpg";
+import SAM from "../Images/SAM.jpg";
+import StormWater from "../Images/StormwaterCenter.png";
 import "./About.css";
 
 function About() {
