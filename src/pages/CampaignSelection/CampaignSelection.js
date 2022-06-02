@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import TabPanel from "../../components/TabPanel";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -15,6 +15,8 @@ import LinkIcon from "@mui/icons-material/Link";
 import Link from "@mui/material/Link";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import DoneIcon from "@mui/icons-material/Done";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 //Helper to tab prop
 function a11yProps(index) {
@@ -24,6 +26,11 @@ function a11yProps(index) {
   };
 }
 function CampaignSelection() {
+  const messagesStartRef = useRef(null);
+
+  const scrollToNext = () => {
+    messagesStartRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   const [tabNum, setTabNum] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -32,6 +39,7 @@ function CampaignSelection() {
 
   const handleNext = () => {
     setTabNum(tabNum + 1);
+    scrollToNext();
   };
 
   const handlePrevious = () => {
@@ -282,9 +290,9 @@ function CampaignSelection() {
         id: 29,
         Question:
           "Are materials/tools/instruments available from previous studies?",
-        Campaign1: CampaignOne.PerivousMaterials,
-        Campaign2: CampaignTwo.PerivousMaterials,
-        Campaign3: CampaignThree.PerivousMaterials,
+        Campaign1: CampaignOne.PreviousMaterials,
+        Campaign2: CampaignTwo.PreviousMaterials,
+        Campaign3: CampaignThree.PreviousMaterials,
       },
 
       {
@@ -297,6 +305,7 @@ function CampaignSelection() {
       },
     ]);
     setCSVFileReady(true);
+    scrollToNext();
   };
   const [CampaignOne, setCampaignOne] = useState({
     CampaignTitle: "",
@@ -326,7 +335,7 @@ function CampaignSelection() {
     PossiblePartnerships: "",
     QualifyForGrant: "",
     CommunityPartners: "",
-    PerivousMaterials: "",
+    PreviousMaterials: "",
     AvaiableMaterials: "",
   });
 
@@ -365,7 +374,7 @@ function CampaignSelection() {
     PossiblePartnerships: "",
     QualifyForGrant: "",
     CommunityPartners: "",
-    PerivousMaterials: "",
+    PreviousMaterials: "",
     AvaiableMaterials: "",
   });
   const handleChangeCampaignTwo = (evt) => {
@@ -404,7 +413,7 @@ function CampaignSelection() {
     PossiblePartnerships: "",
     QualifyForGrant: "",
     CommunityPartners: "",
-    PerivousMaterials: "",
+    PreviousMaterials: "",
     AvaiableMaterials: "",
   });
   const handleChangeCampaignThree = (evt) => {
@@ -592,8 +601,12 @@ function CampaignSelection() {
                 </tr>
               </table>
 
-              <div className="buttonNext">
-                <Button onClick={handleNext} variant="contained">
+              <div className="buttonNext" ref={messagesStartRef}>
+                <Button
+                  endIcon={<ArrowForwardIcon />}
+                  onClick={handleNext}
+                  variant="contained"
+                >
                   Next
                 </Button>
               </div>
@@ -840,13 +853,21 @@ function CampaignSelection() {
                   </td>
                 </tr>
               </table>
-              <div className="buttonNext">
-                <Button onClick={handleNext} variant="contained">
+              <div className="buttonNext" ref={messagesStartRef}>
+                <Button
+                  endIcon={<ArrowForwardIcon />}
+                  onClick={handleNext}
+                  variant="contained"
+                >
                   Next
                 </Button>
               </div>
               <div className="buttonPrevious">
-                <Button onClick={handlePrevious} variant="contained">
+                <Button
+                  startIcon={<ArrowBackIcon />}
+                  onClick={handlePrevious}
+                  variant="contained"
+                >
                   Previous
                 </Button>
               </div>
@@ -950,13 +971,21 @@ function CampaignSelection() {
                   </td>
                 </tr>
               </table>
-              <div className="buttonNext">
-                <Button onClick={handleNext} variant="contained">
+              <div className="buttonNext" ref={messagesStartRef}>
+                <Button
+                  endIcon={<ArrowForwardIcon />}
+                  onClick={handleNext}
+                  variant="contained"
+                >
                   Next
                 </Button>
               </div>
               <div className="buttonPrevious">
-                <Button onClick={handlePrevious} variant="contained">
+                <Button
+                  startIcon={<ArrowBackIcon />}
+                  onClick={handlePrevious}
+                  variant="contained"
+                >
                   Previous
                 </Button>
               </div>
@@ -1226,13 +1255,21 @@ function CampaignSelection() {
                   </td>
                 </tr>
               </table>
-              <div className="buttonNext">
-                <Button onClick={handleNext} variant="contained">
+              <div className="buttonNext" ref={messagesStartRef}>
+                <Button
+                  endIcon={<ArrowForwardIcon />}
+                  onClick={handleNext}
+                  variant="contained"
+                >
                   Next
                 </Button>
               </div>
               <div className="buttonPrevious">
-                <Button onClick={handlePrevious} variant="contained">
+                <Button
+                  startIcon={<ArrowBackIcon />}
+                  onClick={handlePrevious}
+                  variant="contained"
+                >
                   Previous
                 </Button>
               </div>
@@ -1527,13 +1564,21 @@ function CampaignSelection() {
                   </td>
                 </tr>
               </table>
-              <div className="buttonNext">
-                <Button onClick={handleNext} variant="contained">
+              <div className="buttonNext" ref={messagesStartRef}>
+                <Button
+                  endIcon={<ArrowForwardIcon />}
+                  onClick={handleNext}
+                  variant="contained"
+                >
                   Next
                 </Button>
               </div>
               <div className="buttonPrevious">
-                <Button onClick={handlePrevious} variant="contained">
+                <Button
+                  startIcon={<ArrowBackIcon />}
+                  onClick={handlePrevious}
+                  variant="contained"
+                >
                   Previous
                 </Button>
               </div>
@@ -1793,13 +1838,21 @@ function CampaignSelection() {
                   </td>
                 </tr>
               </table>
-              <div className="buttonNext">
-                <Button onClick={handleNext} variant="contained">
+              <div className="buttonNext" ref={messagesStartRef}>
+                <Button
+                  endIcon={<ArrowForwardIcon />}
+                  onClick={handleNext}
+                  variant="contained"
+                >
                   Next
                 </Button>
               </div>
               <div className="buttonPrevious">
-                <Button onClick={handlePrevious} variant="contained">
+                <Button
+                  startIcon={<ArrowBackIcon />}
+                  onClick={handlePrevious}
+                  variant="contained"
+                >
                   Previous
                 </Button>
               </div>
@@ -1961,8 +2014,8 @@ function CampaignSelection() {
                 <tr>
                   <td>
                     <Select
-                      value={CampaignOne.PerivousMaterials}
-                      name="PerivousMaterials"
+                      value={CampaignOne.PreviousMaterials}
+                      name="PreviousMaterials"
                       fullWidth
                       size="small"
                       onChange={handleChangeCampaignOne}
@@ -1974,8 +2027,8 @@ function CampaignSelection() {
                   </td>
                   <td>
                     <Select
-                      value={CampaignTwo.PerivousMaterials}
-                      name="PerivousMaterials"
+                      value={CampaignTwo.PreviousMaterials}
+                      name="PreviousMaterials"
                       fullWidth
                       size="small"
                       onChange={handleChangeCampaignTwo}
@@ -1987,8 +2040,8 @@ function CampaignSelection() {
                   </td>
                   <td>
                     <Select
-                      value={CampaignThree.PerivousMaterials}
-                      name="PerivousMaterials"
+                      value={CampaignThree.PreviousMaterials}
+                      name="PreviousMaterials"
                       fullWidth
                       size="small"
                       onChange={handleChangeCampaignThree}
@@ -2050,7 +2103,11 @@ function CampaignSelection() {
                 </tr>
               </table>
               <div className="buttonPrevious">
-                <Button onClick={handlePrevious} variant="contained">
+                <Button
+                  startIcon={<ArrowBackIcon />}
+                  onClick={handlePrevious}
+                  variant="contained"
+                >
                   Previous
                 </Button>
               </div>
@@ -2070,6 +2127,7 @@ function CampaignSelection() {
       </div>
       {CSVFileReady === true && (
         <div
+          ref={messagesStartRef}
           style={{
             marginTop: 150,
             marginBottom: 100,

@@ -44,6 +44,15 @@ function OtherResources() {
       <h3>Other BMP databases</h3>
       <p>
         <a
+          href="https://www.chesapeakebehaviorchange.org/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Chesapeake Behavior Change
+        </a>
+      </p>
+      <p>
+        <a
           href="https://www.toolsofchange.com/en/home/"
           target="_blank"
           rel="noreferrer"

@@ -51,5 +51,42 @@ h4 {
 }
 
 .map {
-  margin-bottom: 50px;
+  margin-left:4vw;
+  margin-right: 4vw;;
+}
+
+.headerImage {
+  width: 100vw;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.roundedGreyBox {
+  padding: 15px;
+  border-radius: 15px 50px 30px;
+  width:80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  background-color: rgba(128,128,128,0.2);
+}
+
+.chartBox {
+  width:calc(30% - 20px);
+  height: auto;
+  border-radius: 25px;
+  box-shadow:0 0 8px 1px grey;
+  background-color: rgba(128,128,128,0.2);
+  padding-top: 10px;
+  margin: 10px;
+  float: left
+}
+.Charts
+{
+  margin-left: calc(5% + 120px);
+}
+.MapDetails {
+  font-size: 10px;
+}
+.MapDetailsBox {
+  margin-bottom: 55px;
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../Text.css";
 import "./SearchCampaignStyles.css";
 import TextField from "@mui/material/TextField";
@@ -15,10 +15,17 @@ import { fireData } from "../../firebase";
 import Fuse from "fuse.js";
 import { get, child } from "firebase/database";
 import Button from "@mui/material/Button";
+import SearchCard from "../../components/SearchCard/SearchCard";
 
 function SearchCampaigns() {
   //Deals with search results
   const [searchResults, setSearchResults] = useState(null);
+
+  const messagesStartRef = useRef(null)
+
+  const scrollToResults = () => {
+    messagesStartRef.current.scrollIntoView({ behavior: "smooth" })
+  }
 
   const [Studies, setStudies] = useState([]);
   useEffect(() => {
@@ -187,6 +194,7 @@ function SearchCampaigns() {
       result = NewSearch;
     }
     setSearchResults(result);
+    scrollToResults();
   };
 
   const handleChange = (event) => {
@@ -211,6 +219,7 @@ function SearchCampaigns() {
     var fuse = new Fuse(Studies, options);
     const result = fuse.search(text);
     setSearchResults(result);
+    scrollToResults();
   };
   return (
     <div className="page">
@@ -618,90 +627,15 @@ function SearchCampaigns() {
           </center>
         </div>
       </div>
-      {searchResults == null && Studies.length > 0 && (
-        <div className="Results">
-          <div className="ResultInteriorBox">
-            <h4>{Studies[0].Title}</h4>
-            <a href={Studies[0].Link} target="_blank">
-              Click for PDF
-            </a>
-          </div>
-          <div className="ResultInteriorBox">
-            <h4>{Studies[1].Title}</h4>
-            <a href={Studies[1].Link} target="_blank">
-              Click for PDF
-            </a>
-          </div>
-          <div className="ResultInteriorBox">
-            <h4>{Studies[2].Title}</h4>
-            <a href={Studies[2].Link} target="_blank">
-              Click for PDF
-            </a>
-          </div>
-          <div className="ResultInteriorBox">
-            <h4>{Studies[3].Title}</h4>
-            <a href={Studies[3].Link} target="_blank">
-              Click for PDF
-            </a>
-          </div>
-          <div className="ResultInteriorBox">
-            <h4>{Studies[4].Title}</h4>
-            <a href={Studies[4].Link} target="_blank">
-              Click for PDF
-            </a>
-          </div>
-        </div>
-      )}
       {searchResults != null && searchResults[0] != null && (
-        <div>
-          <center className="Results">
-            <div className="ResultInteriorBox">
-              <h4>{searchResults[0].item.Title}</h4>
-              <a href={searchResults[0].item.Link} target="_blank">
-                Click for PDF
-              </a>
-            </div>
-            {searchResults[1] != null && (
+        <div ref={messagesStartRef}>
+          <div className="Results">
+            {searchResults && searchResults.map(result =>
               <div className="ResultInteriorBox">
-                <h4>{searchResults[1].item.Title}</h4>
-                <a href={searchResults[1].item.Link} target="_blank">
-                  Click for PDF
-                </a>
+                <SearchCard study={result.item}/>
               </div>
-            )}
-            {searchResults[2] != null && (
-              <div className="ResultInteriorBox">
-                <h4>{searchResults[2].item.Title}</h4>
-                <a href={searchResults[2].item.Link} target="_blank">
-                  Click for PDF
-                </a>
-              </div>
-            )}
-            {searchResults[3] != null && (
-              <div className="ResultInteriorBox">
-                <h4>{searchResults[3].item.Title}</h4>
-                <a href={searchResults[3].item.Link} target="_blank">
-                  Click for PDF
-                </a>
-              </div>
-            )}
-            {searchResults[4] != null && (
-              <div className="ResultInteriorBox">
-                <h4>{searchResults[4].item.Title}</h4>
-                <a href={searchResults[4].item.Link} target="_blank">
-                  Click for PDF
-                </a>
-              </div>
-            )}
-          </center>
-          {searchResults[5] != null && (
-            <center>
-              <p className="infoText">
-                There are more than 5 results. Changes making users able to
-                scroll through all results are planned.
-              </p>
-            </center>
-          )}
+              )}
+          </div>
         </div>
       )}
     </div>

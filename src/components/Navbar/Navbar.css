@@ -1,6 +1,7 @@
 .logoText {
   width: 55%;
   height: auto;
+  margin-top: 0px;
 }
 .headerLogoText {
   font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
@@ -9,6 +10,7 @@
   color: rgb(5, 56, 92);
   width: 100%;
   height: auto;
+  margin-top: 0px;
 }
 
 .subLogoText {

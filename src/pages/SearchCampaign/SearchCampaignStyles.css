@@ -42,20 +42,54 @@
 .Results {
   padding-left: 10px;
   padding-right: 10px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+  display: flex; 
+  flex-wrap: wrap;
   margin-bottom: 50px;
   align-self: center;
+  width: 100%;
 }
 
+
 .ResultInteriorBox {
-  width: 20%;
+  width: calc(20% - 35px);
+  height: 15%;
+  float: left;
   text-align: center;
-  padding: 7px;
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(3, 125, 158, 0.75);
+  background-color: rgba(3, 125, 158, 0.4);
+  cursor: pointer;
+  margin: 7px;
+  transition: 1s;
+  position: relative;
 }
+
+.ResultInteriorBox::before, .ResultInteriorBox::after {
+  position: absolute;
+  background: #eee;
+  z-index: -1;
+  transition: 1s;
+  content: '';
+}
+.ResultInteriorBox:hover::before {
+  width: 0px;
+  background: #fff;
+}
+
+.ResultInteriorBox:hover::after {
+  height: 0px;
+  background: #fff;
+}
+
+.ResultInteriorBox:hover {
+  background: #fff;
+}
+/* .ResultInteriorBox div:hover {
+  box-shadow:0 0 8px 1px green;
+  border-radius: 25px;
+  padding:1%;
+} */
 
 .filterTitle {
   position: absolute;

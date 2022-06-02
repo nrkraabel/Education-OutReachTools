@@ -1,0 +1,10 @@
+.cardDiv {
+    border-radius: 25px;
+    background: rgba(3, 125, 158, 0.5) ;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-self: center;
+    width: 100%;
+    height: 150px;
+    
+}
