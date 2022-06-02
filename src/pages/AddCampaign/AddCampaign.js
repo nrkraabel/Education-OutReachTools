@@ -15,6 +15,7 @@ import Link from "@mui/material/Link";
 import "./InputFile.css";
 import "../Table.css";
 import "./AddCampaign.css";
+import "./SubmitButton.css";
 import { fireStore } from "../../firebase";
 
 function a11yProps(index) {
@@ -320,7 +321,7 @@ function AddCampaign() {
                       margin="normal"
                     />
                   </div>
-                  <div className="rightbox">
+                  <div className="leftbox">
                     <TextField
                       id="date"
                       label="Year Study Completed"
@@ -347,13 +348,13 @@ function AddCampaign() {
                   ></input>
                   <label for="report-upload-file">Upload Report</label>
                 </center>
-                <center className="spacing"></center>
+              </div>
+              <center className="spacing"></center>
 
-                <div className="buttonNext">
-                  <Button onClick={handleNext} variant="contained">
-                    Next
-                  </Button>
-                </div>
+              <div className="buttonNext">
+                <Button onClick={handleNext} variant="contained">
+                  Next
+                </Button>
               </div>
             </Box>
           </TabPanel>
@@ -869,10 +870,8 @@ function AddCampaign() {
               </div>
             </Box>
             <div className="ButtonDiv">
-              <center className="buffer">
-                <Button variant="contained" onClick={submitData}>
-                  Submit
-                </Button>
+              <center>
+                <button>Submit</button>
               </center>
             </div>
           </TabPanel>
