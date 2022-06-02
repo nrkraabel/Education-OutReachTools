@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { Nav, NavLink, Bars, NavMenu } from "./NavbarElements";
-import Logo from "./Logo.JPG";
+import Logo from "../Images/Logo.jpg";
 const ColoredLine = ({ color }) => (
   <hr
     style={{
