@@ -1,0 +1,49 @@
+.campaignBox {
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 25px;
+    width:40%;
+    background-color: rgba(128,128,128,0.2);
+    box-shadow:0 0 8px 1px grey;
+    min-height: 50vh;
+    float: left;
+    margin-left: 75px;
+    margin-bottom: 50px;
+}
+.menuContainer {
+    float: left;
+    margin-left: calc(20% - 75px);
+    width: 20%;
+    height: auto;  
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+.menu {  
+   margin: auto;
+}
+.vr {
+    /* width: 1px; height: 20px; display: inline-block; */
+}
+.headerBox{
+    display: flex;
+  } 
+
+  .mapBox {
+    margin-bottom: 20px;
+    background-color: rgba(128,128,128,0.2);
+    box-shadow:0 0 8px 1px grey; 
+    height: auto;
+    width: 93%;
+    padding: 10px;
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .no-bullets {
+    list-style-type: none; /* Remove bullets */
+    margin-left: 8px;
+    padding: 8px;
+  }
+  .headerParagraphs {
+      max-width: 33.3%;
+  }

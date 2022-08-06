@@ -18,6 +18,14 @@ h4 {
   color: rgb(3, 125, 158);
   font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
   margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+h1 {
+  color: rgb(3, 125, 158);
+  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
 }
 
 .page {
@@ -89,4 +97,13 @@ h4 {
 }
 .MapDetailsBox {
   margin-bottom: 55px;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;;
+}
+.otherResourcesText {
+  width: 80%;
 }

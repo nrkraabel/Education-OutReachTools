@@ -16,7 +16,10 @@ import "./InputFile.css";
 import "../Table.css";
 import "./AddCampaign.css";
 import "./SubmitButton.css";
+import { BsCheck2Circle, BsCircle } from "react-icons/bs";
 import { fireStore } from "../../firebase";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 function a11yProps(index) {
   return {
@@ -37,6 +40,13 @@ function AddCampaign() {
   const handlePrevious = () => {
     setTabValue(Tabvalue - 1);
   };
+  //Files
+  const [reportFile, setReportFile] = useState(null);
+  const [
+    campaignMaterialExampleFile,
+    setCampaignMaterialExampleFile,
+  ] = useState(null);
+  const [instrumentExampleFile, setInstrumentExampleFile] = useState(null);
 
   //handles changes in form data
   const handleChangeFormData = (evt) => {
@@ -48,8 +58,14 @@ function AddCampaign() {
   };
 
   //Files Constants
-  const handleFile = (evt) => {
-    setFormState({ formState: evt.target.files[0] });
+  const handleReportFile = (evt) => {
+    setReportFile(evt.target.files[0]);
+  };
+  const handleCampaignMaterialExampleFile = (evt) => {
+    setCampaignMaterialExampleFile(evt.target.files[0]);
+  };
+  const handleInstrumentExampleFile = (evt) => {
+    setInstrumentExampleFile(evt.target.files[0]);
   };
 
   ///Form Data
@@ -62,8 +78,6 @@ function AddCampaign() {
     Authors: "",
     YearStarted: "",
     YearCompleted: "",
-    Report: null,
-    Abstract: null,
     StudyLocation: "",
     Pollutant: "",
     TargetBehaviourChange: "",
@@ -72,7 +86,6 @@ function AddCampaign() {
     TargetAudienceCategory: "",
     CampaignLocation: "",
     DescriptionofCampaignMaterials: "",
-    CampaignMaterialExample: null,
     MaterialsValidated: "",
     Type: "",
     Location: "",
@@ -85,7 +98,6 @@ function AddCampaign() {
     IntendedPurpose: "",
     InstrumentsValidated: "",
     ValidationProcess: "",
-    InstrumentExample: null,
     DataQualityIndicators: "",
     UsabilityValidated: "",
     DataAnalysisMethod: "",
@@ -103,8 +115,7 @@ function AddCampaign() {
       Authors: formState.Authors,
       YearStarted: formState.YearStarted,
       YearCompleted: formState.YearCompleted,
-      Report: formState.Report,
-      Abstract: formState.Abstract,
+      Report: reportFile.name,
       StudyLocation: formState.StudyLocation,
       Pollutant: formState.Pollutant,
       TargetBehaviourChange: formState.TargetBehaviourChange,
@@ -113,7 +124,7 @@ function AddCampaign() {
       TargetAudienceCategory: formState.TargetAudienceCategory,
       CampaignLocation: formState.CampaignLocation,
       DescriptionofCampaignMaterials: formState.DescriptionofCampaignMaterials,
-      CampaignMaterialExample: formState.CampaignMaterialExample,
+      CampaignMaterialExample: campaignMaterialExampleFile.name,
       MaterialsValidated: formState.MaterialsValidated,
       Type: formState.Type,
       Location: formState.Location,
@@ -126,7 +137,7 @@ function AddCampaign() {
       IntendedPurpose: formState.IntendedPurpose,
       InstrumentsValidated: formState.InstrumentsValidated,
       ValidationProcess: formState.ValidationProcess,
-      InstrumentExample: formState.InstrumentExample,
+      InstrumentExample: instrumentExampleFile.name,
       DataQualityIndicators: formState.DataQualityIndicators,
       UsabilityValidated: formState.UsabilityValidated,
       DataAnalysisMethod: formState.DataAnalysisMethod,
@@ -340,19 +351,24 @@ function AddCampaign() {
                 <center>
                   <input
                     name="Report"
-                    onChange={handleFile}
+                    onChange={handleReportFile}
                     accept="doc/*"
                     id="report-upload-file"
-                    value={formState.Report}
                     type="file"
                   ></input>
                   <label for="report-upload-file">Upload Report</label>
+                  {reportFile == null && <BsCircle size="18" />}
+                  {reportFile != null && <BsCheck2Circle size="18" />}
                 </center>
               </div>
               <center className="spacing"></center>
 
               <div className="buttonNext">
-                <Button onClick={handleNext} variant="contained">
+                <Button
+                  endIcon={<ArrowForwardIcon />}
+                  onClick={handleNext}
+                  variant="contained"
+                >
                   Next
                 </Button>
               </div>
@@ -416,7 +432,11 @@ function AddCampaign() {
                   margin="normal"
                 />
                 <div className="buttonPrevious">
-                  <Button onClick={handlePrevious} variant="contained">
+                  <Button
+                    startIcon={<ArrowBackIcon />}
+                    onClick={handlePrevious}
+                    variant="contained"
+                  >
                     Previous
                   </Button>
                 </div>
@@ -536,7 +556,11 @@ function AddCampaign() {
                   </MenuItem>
                 </Select>
                 <div className="buttonNext">
-                  <Button onClick={handleNext} variant="contained">
+                  <Button
+                    endIcon={<ArrowForwardIcon />}
+                    onClick={handleNext}
+                    variant="contained"
+                  >
                     Next
                   </Button>
                 </div>
@@ -651,7 +675,11 @@ function AddCampaign() {
                   </div>
                 </span>
                 <div className="buttonPrevious">
-                  <Button onClick={handlePrevious} variant="contained">
+                  <Button
+                    startIcon={<ArrowBackIcon />}
+                    onClick={handlePrevious}
+                    variant="contained"
+                  >
                     Previous
                   </Button>
                 </div>
@@ -707,18 +735,25 @@ function AddCampaign() {
                 <center className="spacing">
                   <input
                     name="InstrumentExample"
-                    onChange={handleFile}
+                    onChange={handleInstrumentExampleFile}
                     accept="doc/*"
-                    value={formState.InstrumentExample}
                     id="Instrument Example"
                     type="file"
                   ></input>
                   <label for="Instrument Example">
                     Upload Instrument Example
                   </label>
+                  {instrumentExampleFile == null && <BsCircle size="18" />}
+                  {instrumentExampleFile != null && (
+                    <BsCheck2Circle size="18" />
+                  )}
                 </center>
                 <div className="buttonNextDataCollection">
-                  <Button onClick={handleNext} variant="contained">
+                  <Button
+                    endIcon={<ArrowForwardIcon />}
+                    onClick={handleNext}
+                    variant="contained"
+                  >
                     Next
                   </Button>
                 </div>
@@ -762,7 +797,11 @@ function AddCampaign() {
                   margin="normal"
                 />
                 <div className="buttonPrevious">
-                  <Button onClick={handlePrevious} variant="contained">
+                  <Button
+                    startIcon={<ArrowBackIcon />}
+                    onClick={handlePrevious}
+                    variant="contained"
+                  >
                     Previous
                   </Button>
                 </div>
@@ -796,7 +835,11 @@ function AddCampaign() {
                   <MenuItem value={"No"}>No</MenuItem>
                 </Select>
                 <div className="buttonNext">
-                  <Button onClick={handleNext} variant="contained">
+                  <Button
+                    endIcon={<ArrowForwardIcon />}
+                    onClick={handleNext}
+                    variant="contained"
+                  >
                     Next
                   </Button>
                 </div>
@@ -834,7 +877,11 @@ function AddCampaign() {
                   margin="normal"
                 />
                 <div className="buttonPrevious">
-                  <Button onClick={handlePrevious} variant="contained">
+                  <Button
+                    startIcon={<ArrowBackIcon />}
+                    onClick={handlePrevious}
+                    variant="contained"
+                  >
                     Previous
                   </Button>
                 </div>
@@ -843,13 +890,18 @@ function AddCampaign() {
                 <center className="spacing">
                   <input
                     name="CampaignMaterialExample"
-                    onChange={handleFile}
+                    onChange={handleCampaignMaterialExampleFile}
                     accept="doc/*"
-                    value={formState.CampaignMaterialExample}
                     id="CME"
                     type="file"
                   ></input>
                   <label for="CME">Upload Campaign Material Example</label>
+                  {campaignMaterialExampleFile == null && (
+                    <BsCircle size="18" />
+                  )}
+                  {campaignMaterialExampleFile != null && (
+                    <BsCheck2Circle size="18" />
+                  )}
                 </center>
                 <InputLabel id="MV">
                   Was campaign material validated or pre-tested?
@@ -871,7 +923,9 @@ function AddCampaign() {
             </Box>
             <div className="ButtonDiv">
               <center>
-                <button>Submit</button>
+                <Button variant="contained" onClick={submitData} size="large">
+                  Submit
+                </Button>
               </center>
             </div>
           </TabPanel>

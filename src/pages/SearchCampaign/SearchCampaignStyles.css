@@ -1,44 +1,20 @@
 .Searchbar {
-  margin-top: 25px;
   margin-bottom: 10px;
   width: 50vw;
   display: inline-block;
+  margin-left: 12px;
 }
 
-.BlueSquare {
-  background-color: rgba(3, 125, 158, 0.12);
-  padding: 10px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+
+
+.sidbarResults {
   display: flex;
-  width: 90%;
-  margin-left: 5%;
-  margin-bottom: 2%;
+  flex-direction: row;
+  justify-content: flex-end;
 }
-
-/* The four sections of filter box */
-.TargetAudience {
-  width: 25%;
+.ResultsBox {
+  width: calc(100vw - 35ch);
 }
-.TargetPollutant {
-  width: 25%;
-}
-.ResearchInstruments {
-  width: 25%;
-}
-.ProgramLocation {
-  width: 25%;
-}
-.AddressEnvironmental {
-  margin-top: 55%;
-}
-
-.FilterButton {
-  margin-top: 10%;
-}
-
 .Results {
   padding-left: 10px;
   padding-right: 10px;
@@ -51,18 +27,17 @@
 
 
 .ResultInteriorBox {
-  width: calc(20% - 35px);
-  height: 15%;
-  float: left;
+  width: calc(25% - 31px);
   text-align: center;
-  padding: 8px;
+  padding: 6px;
+  padding-bottom: 1.2em;
   border-radius: 20px;
   border: 1px solid rgba(3, 125, 158, 0.75);
   background-color: rgba(3, 125, 158, 0.4);
   cursor: pointer;
   margin: 7px;
   transition: 1s;
-  position: relative;
+ 
 }
 
 .ResultInteriorBox::before, .ResultInteriorBox::after {
@@ -91,20 +66,30 @@
   padding:1%;
 } */
 
-.filterTitle {
-  position: absolute;
-  background-color: rgb(3, 125, 158);
-  left: calc(10% + 100px);
-  text-align: center;
-  transform: translate(-30%, -50%);
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 12px;
-  padding-right: 12px;
-  font-size: 24px;
-  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
-}
-
 .infoText {
   font-size: 12px;
+}
+
+.sideBar {
+  padding: 3px;
+  left: 10px;
+  width: 35ch;
+  background-color: rgba(3, 125, 158, 0.25);
+  margin-top: 20px;
+  margin-bottom: 35px;
+  height: 1420px;
+}
+
+.CampaignsHeader {
+  margin-left: calc(50% - 8ch);
+  display: flex;
+  flex-direction: row;
+  color: purple;
+}
+.iconHeader {
+  padding-top: 3px;
+}
+.loader {
+  margin-top: 20%;
+  margin-left: calc(50% - 50px);
 }

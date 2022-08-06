@@ -14,11 +14,10 @@ import Select from "@mui/material/Select";
 import { fireData } from "../../firebase";
 import Fuse from "fuse.js";
 import { get, child } from "firebase/database";
-import { AiOutlineFileSearch } from "react-icons/ai";
+import Button from "@mui/material/Button";
 import SearchCard from "../../components/SearchCard/SearchCard";
 import { Radio } from "@mui/material";
 import RadioGroup from "@mui/material/RadioGroup";
-import { BallTriangle } from "react-loader-spinner";
 
 function intersect(a, b) {
   var combineReturn = [];
@@ -34,9 +33,17 @@ function intersect(a, b) {
 }
 function SearchCampaigns() {
   const [searchResults, setSearchResults] = useState(null);
+
+  //Page effect scroll to results
+  const messagesStartRef = useRef(null);
+
+  const scrollToResults = () => {
+    if (messagesStartRef.current != null) {
+      messagesStartRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   //Intial data read
   const [Studies, setStudies] = useState([]);
-
   useEffect(() => {
     let dataRef = fireData;
     get(child(dataRef, "/")).then((snapshot) => {
@@ -44,31 +51,24 @@ function SearchCampaigns() {
       setStudies(Study);
     });
   }, []);
-
-  //filters variables
+  //consts for filters
   const [targetAudienceFilter, setTargetAudienceFilter] = useState("");
   const [targetPollutantFilter, setTargetPollutantFilter] = useState("");
+  const [researchInstrumentsFilter, setResearchInstrumentsFilter] = useState(
+    ""
+  );
   const [researchQualityFilter, setResearchQualityFilter] = useState("");
   const [enviromentalJusticeFilter, setEnviromentalJusticeFilter] = useState(
     ""
   );
   const [locationFilter, setLocationFilter] = useState("");
 
-  //filter lists
-  const [targetAudienceList, setTargetAudienceList] = useState("");
-  const [targetPollutantList, setTargetPollutantList] = useState("");
-  const [researchQualityList, setResearchQualityList] = useState("");
-  const [enviromentalJusticeList, setEnviromentalJusticeList] = useState("");
-  const [locationList, setLocationList] = useState("");
-
   //Handle functions for the filters
   function handleTargetPollutantFilter(event) {
     if (event.target.value === targetPollutantFilter) {
       setTargetPollutantFilter("");
-      handleFilterChange();
     } else {
       setTargetPollutantFilter(event.target.value);
-      handleFilterChange(1);
     }
   }
   function handleTargetAudienceFilter(event) {
@@ -76,7 +76,13 @@ function SearchCampaigns() {
       setTargetAudienceFilter("");
     } else {
       setTargetAudienceFilter(event.target.value);
-      handleFilterChange(2);
+    }
+  }
+  function handleResearchInstrumentsFilter(event) {
+    if (event.target.value === researchInstrumentsFilter) {
+      setResearchInstrumentsFilter("");
+    } else {
+      setResearchInstrumentsFilter(event.target.value);
     }
   }
   function handleResearchQualityFilter(event) {
@@ -84,7 +90,6 @@ function SearchCampaigns() {
       setResearchQualityFilter("");
     } else {
       setResearchQualityFilter(event.target.value);
-      handleFilterChange(3);
     }
   }
   function handleEnviromentalJusticeFilter(event) {
@@ -92,141 +97,54 @@ function SearchCampaigns() {
       setEnviromentalJusticeFilter("");
     } else {
       setEnviromentalJusticeFilter(event.target.value);
-      handleFilterChange(5);
     }
   }
   function handleLocationFilter(event) {
     setLocationFilter(event.target.value);
-    handleFilterChange(4);
   }
 
   const [SearchOccured, setSearchOccured] = useState(false);
-
-  const [loading, setLoading] = useState(false);
   //Filter Search
-  function handleFilterChange(filterNum) {
-    //Creates an indexed search including all studies
-    const options1 = {
-      includeScore: false,
-      keys: ["Title", "Keywords", "Authors"],
-      threshold: 10,
-    };
-    var fuse1 = new Fuse(Studies, options1);
-    let completeSearch = fuse1.search("ae");
-    if (targetPollutantFilter === "") {
-      setTargetPollutantList(completeSearch);
+  const handleFilter = () => {
+    setSearchOccured(true);
+    //nothing selected
+    if (
+      targetPollutantFilter +
+        targetAudienceFilter +
+        researchInstrumentsFilter +
+        researchQualityFilter +
+        enviromentalJusticeFilter +
+        locationFilter ===
+      ""
+    ) {
+      return;
     }
-    if (targetAudienceFilter === "") {
-      setTargetAudienceList(completeSearch);
-    }
-    if (researchQualityFilter === "") {
-      setResearchQualityList(completeSearch);
-    }
-    if (locationFilter === "") {
-      setLocationList(completeSearch);
-    }
-    if (enviromentalJusticeFilter === "") {
-      setEnviromentalJusticeList(completeSearch);
-    }
-    if (filterNum === 1) {
+    if (targetPollutantFilter != "") {
       const options = {
         includeScore: false,
         keys: [targetPollutantFilter],
-        threshold: 0.1,
+        threshold: 0,
       };
-      var fuse = new Fuse(Studies, options);
-      const result = fuse.search("1");
-      console.log("searchresults", result);
-      setTargetPollutantList(result);
-
-      console.log("target", targetPollutantList);
-      var combinedResult = intersect(result, targetAudienceList);
-      combinedResult = intersect(combinedResult, researchQualityList);
-      combinedResult = intersect(combinedResult, locationList);
-      combinedResult = intersect(combinedResult, enviromentalJusticeList);
-      console.log("combinedResult", combinedResult);
-      setSearchResults(combinedResult);
     }
-    if (filterNum === 2) {
-      const options = {
-        includeScore: false,
-        keys: [targetAudienceFilter],
-        threshold: 0.1,
-      };
-      var fuse = new Fuse(Studies, options);
-      const result = fuse.search("1");
-      setTargetAudienceList(result);
-
-      var combinedResult = intersect(result, targetPollutantList);
-      combinedResult = intersect(combinedResult, researchQualityList);
-      combinedResult = intersect(combinedResult, locationList);
-      combinedResult = intersect(combinedResult, enviromentalJusticeList);
-      setSearchResults(combinedResult);
-    }
-    if (filterNum === 3) {
-      const options = {
-        includeScore: false,
-        keys: [researchQualityFilter],
-        threshold: 0.1,
-      };
-      var fuse = new Fuse(Studies, options);
-      const result = fuse.search("1");
-      console.log("result", result);
-      setResearchQualityList(result);
-      console.log("target", researchQualityList);
-      var combinedResult = intersect(targetAudienceList, targetPollutantList);
-      combinedResult = intersect(combinedResult, result);
-      combinedResult = intersect(combinedResult, locationList);
-      combinedResult = intersect(combinedResult, enviromentalJusticeList);
-
-      setSearchResults(combinedResult);
-      console.log("combinedResult", combinedResult);
-    }
-    if (filterNum === 4) {
-      const options = {
-        includeScore: false,
-        keys: ["Where"],
-        threshold: 0.1,
-      };
-      var fuse = new Fuse(Studies, options);
-      const result = fuse.search(locationFilter);
-      setLocationList(result);
-
-      var combinedResult = intersect(targetAudienceList, targetPollutantList);
-      combinedResult = intersect(combinedResult, researchQualityList);
-      combinedResult = intersect(combinedResult, result);
-      combinedResult = intersect(combinedResult, enviromentalJusticeList);
-
-      setSearchResults(combinedResult);
-    }
-    if (filterNum === 5) {
-      const options = {
-        includeScore: false,
-        keys: [enviromentalJusticeFilter],
-        threshold: 0.1,
-      };
-      var fuse = new Fuse(Studies, options);
-      const result = fuse.search("1");
-
-      setEnviromentalJusticeList(result);
-
-      var combinedResult = intersect(targetAudienceList, targetPollutantList);
-      combinedResult = intersect(combinedResult, researchQualityList);
-      combinedResult = intersect(combinedResult, locationList);
-      combinedResult = intersect(combinedResult, result);
-
-      setSearchResults(combinedResult);
-    }
-
-    setSearchOccured(true);
-    setLoading(true);
-    setTimeout(() => {
-      console.log("display", searchResults);
-      setLoading(false);
-    }, 1500);
-  }
-  //make sure set changes
-  const didMount = useRef(false);
+    // if (filterChoices.CampaignLocation != "" && keys.length === 1) {
+    //   result = fuse.search("=" + filterChoices.CampaignLocation);
+    // } else if (filterChoices.CampaignLocation != "") {
+    //   var NewSearch = [];
+    //   var locations = fuse.search("=" + filterChoices.CampaignLocation);
+    //   result.forEach((element) => {
+    //     locations.forEach((location) => {
+    //       if (location.item.Title === element.item.Title) {
+    //         NewSearch.push(element);
+    //       }
+    //     });
+    //   });
+    //   result = NewSearch;
+    // }
+    // setSearchResults(result);
+    // if (result != null) {
+    //   scrollToResults();
+    // }
+  };
 
   //Text search portion
   const [text, setText] = useState("");
@@ -240,41 +158,42 @@ function SearchCampaigns() {
       threshold: 0.3,
     };
     var fuse = new Fuse(Studies, options);
-    if (text === "") {
-      setSearchOccured(false);
-      return;
-    }
     const result = fuse.search(text);
     setSearchResults(result);
     if (result.length != 0) {
       setResultsText(true);
+      scrollToResults();
     } else {
       setResultsText(false);
     }
+    console.log(searchResults);
   };
 
   return (
     <div className="page">
-      <div className="sidbarResults">
-        <div className="sideBar">
-          <div className="Searchbar">
-            <h3>Keyword Search</h3>
-            <TextField
-              onChange={onChangeText}
-              onKeyDown={Search}
-              placeholder="Search...."
-              sx={{ width: "28ch" }}
-              size="small"
-              value={text}
-            />
-            <IconButton aria-label="Search" onClick={Search}>
-              <SearchIcon sx={{ fontSize: 30 }} color="primary" />
-            </IconButton>
-          </div>
-          <FormControl sx={{ m: 2 }} variant="standard">
-            <FormLabel component="legend">
-              <b>TARGET POLLUTANT:</b>
-            </FormLabel>
+      <center>
+        <div className="Searchbar">
+          <h2>Search Via Keywords</h2>
+          <TextField
+            onChange={onChangeText}
+            placeholder="Search...."
+            sx={{ width: "70ch" }}
+            size="medium"
+            value={text}
+          />
+          <IconButton aria-label="Search" onClick={Search}>
+            <SearchIcon sx={{ fontSize: 48 }} color="primary" />
+          </IconButton>
+        </div>
+      </center>
+      <br />
+      <div className="filterTitle">
+        <b>FILTER BY CATAGORY:</b>
+      </div>
+      <div className="BlueSquare">
+        <div className="TargetPollutant">
+          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormLabel component="legend">TARGET POLLUTANT:</FormLabel>
             <RadioGroup value={targetPollutantFilter}>
               <FormControlLabel
                 value="poll_LID"
@@ -319,10 +238,10 @@ function SearchCampaigns() {
               />
             </RadioGroup>
           </FormControl>
-          <FormControl sx={{ m: 2 }} variant="standard">
-            <FormLabel component="legend">
-              <b>TARGET AUDIENCE:</b>
-            </FormLabel>
+        </div>
+        <div className="TargetAudience">
+          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormLabel component="legend">TARGET AUDIENCE:</FormLabel>
             <RadioGroup value={targetAudienceFilter}>
               <FormControlLabel
                 value="aud_busin"
@@ -381,10 +300,40 @@ function SearchCampaigns() {
               />
             </RadioGroup>
           </FormControl>
-          <FormControl sx={{ m: 2 }} variant="standard">
-            <FormLabel component="legend">
-              <b>RESEARCH QUALITY RANKING:</b>
-            </FormLabel>
+        </div>
+        <div className="ResearchInstruments">
+          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormLabel component="legend">RESEARCH INSTRUMENTS:</FormLabel>
+            <RadioGroup value={researchInstrumentsFilter}>
+              <FormControlLabel
+                value="instr_focus"
+                control={<Radio onClick={handleResearchInstrumentsFilter} />}
+                label="Focus Groups"
+              />
+              <FormControlLabel
+                value="instr_interv"
+                control={<Radio onClick={handleResearchInstrumentsFilter} />}
+                label="Interviews"
+              />
+              <FormControlLabel
+                value="instr_obser"
+                control={<Radio onClick={handleResearchInstrumentsFilter} />}
+                label="Observations"
+              />
+              <FormControlLabel
+                value="instr_pics"
+                control={<Radio onClick={handleResearchInstrumentsFilter} />}
+                label="Pictures/Videos"
+              />
+              <FormControlLabel
+                value="instr_survey"
+                control={<Radio onClick={handleResearchInstrumentsFilter} />}
+                label="Surveys"
+              />
+            </RadioGroup>
+          </FormControl>
+          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormLabel component="legend">RESEARCH QUALITY RANKING:</FormLabel>
             <RadioGroup value={researchQualityFilter}>
               {/* Fix spelling in database */}
               <FormControlLabel
@@ -404,10 +353,10 @@ function SearchCampaigns() {
               />
             </RadioGroup>
           </FormControl>
-          <FormControl sx={{ m: 2 }} variant="standard">
-            <FormLabel component="legend">
-              <b>CAMPAIGN STATE:</b>
-            </FormLabel>
+        </div>
+        <div className="ProgramLocation">
+          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+            <FormLabel component="legend">CAMPAIGN STATE:</FormLabel>
             <FormGroup>
               <Select
                 value={locationFilter}
@@ -468,70 +417,54 @@ function SearchCampaigns() {
               </Select>
             </FormGroup>
           </FormControl>
-          <FormControl sx={{ m: 2 }} variant="standard">
-            <FormLabel component="legend">
-              <b>Addresses Environmental Justice Concerns</b>
-            </FormLabel>
-            <FormGroup>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    value="envjust"
-                    onClick={handleEnviromentalJusticeFilter}
-                    name="EnvJustice"
-                  />
-                }
-                label="Addresses Concerns"
-              />
-            </FormGroup>
-          </FormControl>
-        </div>
-        <div className="ResultsBox">
-          <div className="CampaignsHeader">
-            <h2>Campaigns &nbsp;</h2>
-            <h2 className="iconHeader">
-              <AiOutlineFileSearch />
-            </h2>
+          <div className="AddressEnvironmental">
+            <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
+              <FormLabel component="legend">
+                Addresses Environmental Justice Concerns
+              </FormLabel>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      value="envjust"
+                      onClick={handleEnviromentalJusticeFilter}
+                      name="EnvJustice"
+                    />
+                  }
+                  label="Addresses Concerns"
+                />
+              </FormGroup>
+            </FormControl>
           </div>
-          {loading && (
-            <div className="loader">
-              <BallTriangle color="#00BFFF" height={80} width={100} />
-            </div>
-          )}
-          {searchResults != null &&
-            searchResults.length == 0 &&
-            SearchOccured &&
-            !loading && (
-              <center>
-                <h3>No Results.</h3>
-              </center>
-            )}
-          {searchResults != null && searchResults[0] != null && !loading && (
-            <div>
-              <div className="Results">
-                {searchResults &&
-                  searchResults.map((result) => (
-                    <div className="ResultInteriorBox">
-                      <SearchCard study={result.item} />
-                    </div>
-                  ))}
-              </div>
-            </div>
-          )}
-          {searchResults == null && !SearchOccured && !loading && (
-            <div>
-              <div className="Results">
-                {Studies &&
-                  Studies.map((result) => (
-                    <div className="ResultInteriorBox">
-                      <SearchCard study={result} />
-                    </div>
-                  ))}
-              </div>
-            </div>
-          )}
+          <center className="FilterButton">
+            <Button
+              variant="contained"
+              size="medium"
+              onClick={handleFilter}
+              endIcon={<SearchIcon />}
+            >
+              Search By Filters
+            </Button>
+          </center>
         </div>
       </div>
+      {searchResults == null && SearchOccured && (
+        <center>
+          <h3>No Results.</h3>
+        </center>
+      )}
+      {searchResults != null && searchResults[0] != null && (
+        <div ref={messagesStartRef}>
+          <div className="Results">
+            {searchResults &&
+              searchResults.map((result) => (
+                <div className="ResultInteriorBox">
+                  <SearchCard study={result.item} />
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
