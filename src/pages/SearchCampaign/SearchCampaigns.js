@@ -14,20 +14,29 @@ import Select from "@mui/material/Select";
 import { fireData } from "../../firebase";
 import Fuse from "fuse.js";
 import { get, child } from "firebase/database";
-import Button from "@mui/material/Button";
+import { AiOutlineFileSearch } from "react-icons/ai";
 import SearchCard from "../../components/SearchCard/SearchCard";
+import { Radio } from "@mui/material";
+import RadioGroup from "@mui/material/RadioGroup";
+import { BallTriangle } from "react-loader-spinner";
 
-function SearchCampaigns() {
-  //Deals with search results
-  const [searchResults, setSearchResults] = useState(null);
-
-  const messagesStartRef = useRef(null)
-
-  const scrollToResults = () => {
-    messagesStartRef.current.scrollIntoView({ behavior: "smooth" })
+function intersect(a, b) {
+  var combineReturn = [];
+  for (let i = 0; i < a.length; i++) {
+    for (let j = 0; j < b.length; j++) {
+      if (a[i].refIndex === b[j].refIndex) {
+        combineReturn.push(a[i]);
+        break;
+      }
+    }
   }
-
+  return combineReturn;
+}
+function SearchCampaigns() {
+  const [searchResults, setSearchResults] = useState(null);
+  //Intial data read
   const [Studies, setStudies] = useState([]);
+
   useEffect(() => {
     let dataRef = fireData;
     get(child(dataRef, "/")).then((snapshot) => {
@@ -35,518 +44,526 @@ function SearchCampaigns() {
       setStudies(Study);
     });
   }, []);
-  const [filterChoices, setFilterChoices] = useState({
-    //target Audience Filters
-    GeneralPublic: false,
-    SchoolAgeChildren: false,
-    Businesses: false,
-    Engineers: false,
-    Contractors: false,
-    Developers: false,
-    LandUsePlanners: false,
-    Residents: false,
-    Landscapers: false,
-    PropertyManagers: false,
-    MobileBusinesses: false,
-    //Target Pollutant Filters
-    Pathogens: false,
-    Nutrients: false,
-    Metals: false,
-    Oils: false,
-    Sediment: false,
-    Trash: false,
-    ToxicChemicals: false,
-    LIDInflitration: false,
-    //Research Instruments filters:
-    Surveys: false,
-    Observations: false,
-    Interviews: false,
-    FocusGroups: false,
-    PicturesVideos: false,
-    Other: false,
-    //Research Quality Ranking filters:
-    Examplary: false,
-    Good: false,
-    Fair: false,
-    //NotRanked: false,
-    //Program Location filter
-    CampaignLocation: "",
-    //Enviromental Justice
-    EnvJustice: false,
-  });
 
-  const handleFilter = () => {
-    var keys = [];
-    var location = [];
-    //Target Audience
-    if (filterChoices.GeneralPublic) {
-      keys.push("aud_general");
+  //filters variables
+  const [targetAudienceFilter, setTargetAudienceFilter] = useState("");
+  const [targetPollutantFilter, setTargetPollutantFilter] = useState("");
+  const [researchQualityFilter, setResearchQualityFilter] = useState("");
+  const [enviromentalJusticeFilter, setEnviromentalJusticeFilter] = useState(
+    ""
+  );
+  const [locationFilter, setLocationFilter] = useState("");
+  //Used in search as the fitler have a delay otherwise
+  let tempAudFilter = "";
+  let tempPolFilter = "";
+  let tempResFilter = "";
+  let tempEnvFilter = "";
+  let tempLocFilter = "";
+
+  //filter lists
+  const [targetAudienceList, setTargetAudienceList] = useState("");
+  const [targetPollutantList, setTargetPollutantList] = useState("");
+  const [researchQualityList, setResearchQualityList] = useState("");
+  const [enviromentalJusticeList, setEnviromentalJusticeList] = useState("");
+  const [locationList, setLocationList] = useState("");
+
+  //Handle functions for the filters
+  function handleTargetPollutantFilter(event) {
+    if (event.target.value === targetPollutantFilter) {
+      setTargetPollutantFilter("");
+      tempPolFilter = "";
+      handleFilterChange(6);
+    } else {
+      setTargetPollutantFilter(event.target.value);
+      tempPolFilter = event.target.value;
+      handleFilterChange(1);
     }
-    if (filterChoices.SchoolAgeChildren) {
-      keys.push("aud_kids");
+  }
+  function handleTargetAudienceFilter(event) {
+    if (event.target.value === targetAudienceFilter) {
+      setTargetAudienceFilter("");
+      tempAudFilter = "";
+      handleFilterChange(7);
+    } else {
+      setTargetAudienceFilter(event.target.value);
+      tempAudFilter = event.target.value;
+      handleFilterChange(2);
     }
-    if (filterChoices.Businesses) {
-      keys.push("aud_busin");
+  }
+  function handleResearchQualityFilter(event) {
+    if (event.target.value === researchQualityFilter) {
+      setResearchQualityFilter("");
+      tempResFilter = "";
+      handleFilterChange(8);
+    } else {
+      setResearchQualityFilter(event.target.value);
+      tempResFilter = event.target.value;
+      handleFilterChange(3);
     }
-    if (filterChoices.Engineers) {
-      keys.push("aud_eng");
+  }
+  function handleLocationFilter(event) {
+    setLocationFilter(event.target.value);
+    tempLocFilter = event.target.value;
+    handleFilterChange(4);
+  }
+  function handleEnviromentalJusticeFilter(event) {
+    if (event.target.value === enviromentalJusticeFilter) {
+      setEnviromentalJusticeFilter("");
+      tempEnvFilter = "";
+      handleFilterChange(9);
+    } else {
+      setEnviromentalJusticeFilter(event.target.value);
+      tempEnvFilter = event.target.value;
+      handleFilterChange(5);
     }
-    if (filterChoices.Contractors) {
-      keys.push("aud_contract");
-    }
-    if (filterChoices.Developers) {
-      keys.push("aud_develop");
-    }
-    if (filterChoices.LandUsePlanners) {
-      keys.push("aud_planner");
-    }
-    if (filterChoices.Residents) {
-      keys.push("aud_resident");
-    }
-    if (filterChoices.Landscapers) {
-      keys.push("aud_landscape");
-    }
-    if (filterChoices.PropertyManagers) {
-      keys.push("aud_propmgr");
-    }
-    if (filterChoices.MobileBusinesses) {
-      keys.push("aud_mobilebus");
-    }
-    //Pollutant
-    if (filterChoices.Pathogens) {
-      keys.push("poll_pathogen");
-    }
-    if (filterChoices.Nutrients) {
-      keys.push("poll_nutrient");
-    }
-    if (filterChoices.Metals) {
-      keys.push("poll_metal");
-    }
-    if (filterChoices.Oils) {
-      keys.push("poll_oil");
-    }
-    if (filterChoices.Sediment) {
-      keys.push("poll_sediment");
-    }
-    if (filterChoices.Trash) {
-      keys.push("poll_trash");
-    }
-    if (filterChoices.ToxicChemicals) {
-      keys.push("poll_toxics");
-    }
-    if (filterChoices.LIDInflitration) {
-      keys.push("poll_LID");
-      keys.push("poll_Infil");
-    }
-    //instrustments
-    if (filterChoices.Surveys) {
-      keys.push("instr_survey");
-    }
-    if (filterChoices.Observations) {
-      keys.push("instr_obser");
-    }
-    if (filterChoices.Interviews) {
-      keys.push("instr_interv");
-    }
-    if (filterChoices.FocusGroups) {
-      keys.push("instr_focus");
-    }
-    if (filterChoices.PicturesVideos) {
-      keys.push("instr_pics");
-    }
-    //location
-    if (filterChoices.CampaignLocation != "") {
-      keys.push("Where");
-    }
-    //Enviromental Justice
-    if (filterChoices.EnvJustice) {
-      keys.push("envjust");
-    }
-    //Rating
-    if (filterChoices.Examplary) {
-      keys.push("Examplary");
-    }
-    if (filterChoices.Good) {
-      keys.push("Good");
-    }
-    if (filterChoices.Fair) {
-      keys.push("Fair");
-    }
-    var options = {
+  }
+
+  const [SearchOccured, setSearchOccured] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+  // let targetAudienceList = "";
+  // let targetPollutantList = "";
+  // let researchQualityList = "";
+  // let enviromentalJusticeList = "";
+  // let locationList = "";
+  //Filter Search
+
+  function handleFilterChange(filterNum) {
+    //Creates an indexed search including all studies
+    const options1 = {
       includeScore: false,
-      keys: keys,
+      keys: ["Title", "Keywords", "Authors"],
+      threshold: 10,
     };
-    var fuse = new Fuse(Studies, options);
-
-    var result = fuse.search("=1");
-    if (filterChoices.CampaignLocation != "" && keys.length === 1) {
-      result = fuse.search("=" + filterChoices.CampaignLocation);
-    } else if (filterChoices.CampaignLocation != "") {
-      var NewSearch = [];
-      var locations = fuse.search("=" + filterChoices.CampaignLocation);
-      result.forEach((element) => {
-        locations.forEach((location) => {
-          if (location.item.Title === element.item.Title) {
-            NewSearch.push(element);
-          }
-        });
-      });
-      result = NewSearch;
+    var fuse1 = new Fuse(Studies, options1);
+    let completeSearch = fuse1.search("ae");
+    if (targetPollutantFilter === "") {
+      setTargetPollutantList(completeSearch);
     }
-    setSearchResults(result);
-    scrollToResults();
-  };
+    if (targetAudienceFilter === "") {
+      setTargetAudienceList(completeSearch);
+    }
+    if (researchQualityFilter === "") {
+      setResearchQualityList(completeSearch);
+    }
+    if (locationFilter === "") {
+      setLocationList(completeSearch);
+    }
+    if (enviromentalJusticeFilter === "") {
+      setEnviromentalJusticeList(completeSearch);
+    }
 
-  const handleChange = (event) => {
-    setFilterChoices({
-      ...filterChoices,
-      [event.target.name]: event.target.checked,
-    });
-  };
-  const handleChangeLocation = (event) => {
-    setFilterChoices({
-      ...filterChoices,
-      [event.target.name]: event.target.value,
-    });
-  };
+    if (filterNum === 1) {
+      const options = {
+        includeScore: false,
+        keys: [tempPolFilter],
+        threshold: 0.1,
+      };
+      var fuse = new Fuse(Studies, options);
+      let result = fuse.search("1");
+      setTargetPollutantList(result);
+
+      setTargetAudienceList((state) => {
+        var combinedResult = intersect(result, state);
+        setResearchQualityList((state2) => {
+          combinedResult = intersect(combinedResult, state2);
+          setLocationList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setEnviromentalJusticeList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
+      // var combinedResult = intersect(result, targetAudienceList);
+      // combinedResult = intersect(combinedResult, researchQualityList);
+      // combinedResult = intersect(combinedResult, locationList);
+      // combinedResult = intersect(combinedResult, enviromentalJusticeList);
+    }
+    if (filterNum === 2) {
+      const options = {
+        includeScore: false,
+        keys: [tempAudFilter],
+        threshold: 0.1,
+      };
+      var fuse = new Fuse(Studies, options);
+      const result = fuse.search("1");
+      setTargetAudienceList(result);
+
+      setTargetPollutantList((state) => {
+        var combinedResult = intersect(result, state);
+        setResearchQualityList((state2) => {
+          combinedResult = intersect(combinedResult, state2);
+          setLocationList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setEnviromentalJusticeList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
+    }
+    if (filterNum === 3) {
+      const options = {
+        includeScore: false,
+        keys: [tempResFilter],
+        threshold: 0.1,
+      };
+      var fuse = new Fuse(Studies, options);
+      const result = fuse.search("1");
+      setResearchQualityList(result);
+
+      setTargetAudienceList((state) => {
+        var combinedResult = intersect(result, state);
+        setTargetPollutantList((state2) => {
+          combinedResult = intersect(combinedResult, state2);
+          setLocationList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setEnviromentalJusticeList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
+    }
+    if (filterNum === 4) {
+      const options = {
+        includeScore: false,
+        keys: ["Where"],
+        threshold: 0.3,
+      };
+      var fuse = new Fuse(Studies, options);
+      const result = fuse.search(tempLocFilter);
+      setLocationList(result);
+
+      setTargetAudienceList((state) => {
+        var combinedResult = intersect(result, state);
+        setResearchQualityList((state2) => {
+          combinedResult = intersect(combinedResult, state2);
+          setTargetPollutantList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setEnviromentalJusticeList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
+    }
+    if (filterNum === 5) {
+      const options = {
+        includeScore: false,
+        keys: [tempEnvFilter],
+        threshold: 0.1,
+      };
+      var fuse = new Fuse(Studies, options);
+      const result = fuse.search("1");
+
+      setEnviromentalJusticeList(result);
+
+      setTargetAudienceList((state) => {
+        var combinedResult = intersect(result, state);
+        setResearchQualityList((state2) => {
+          combinedResult = intersect(combinedResult, state2);
+          setLocationList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setTargetPollutantList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
+    }
+    if (filterNum === 6) {
+      setTargetAudienceList((state2) => {
+        setResearchQualityList((state3) => {
+          var combinedResult = intersect(state2, state3);
+          setLocationList((state4) => {
+            combinedResult = intersect(combinedResult, state4);
+            setEnviromentalJusticeList((state5) => {
+              combinedResult = intersect(combinedResult, state5);
+              setSearchResults(combinedResult);
+              return state5;
+            });
+            return state4;
+          });
+          return state3;
+        });
+        return state2;
+      });
+    }
+    if (filterNum === 7) {
+      setTargetPollutantList((state) => {
+        setResearchQualityList((state3) => {
+          var combinedResult = intersect(state, state3);
+          setLocationList((state4) => {
+            combinedResult = intersect(combinedResult, state4);
+            setEnviromentalJusticeList((state5) => {
+              combinedResult = intersect(combinedResult, state5);
+              setSearchResults(combinedResult);
+              return state5;
+            });
+            return state4;
+          });
+          return state3;
+        });
+        return state;
+      });
+    }
+    if (filterNum === 8) {
+      setTargetPollutantList((state) => {
+        setTargetAudienceList((state2) => {
+          var combinedResult = intersect(state, state2);
+          setLocationList((state4) => {
+            combinedResult = intersect(combinedResult, state4);
+            setEnviromentalJusticeList((state5) => {
+              combinedResult = intersect(combinedResult, state5);
+              setSearchResults(combinedResult);
+              return state5;
+            });
+            return state4;
+          });
+          return state2;
+        });
+        return state;
+      });
+    }
+
+    if (filterNum === 9) {
+      setTargetPollutantList((state) => {
+        setTargetAudienceList((state2) => {
+          var combinedResult = intersect(state, state2);
+          setResearchQualityList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setLocationList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
+    }
+    setSearchOccured(true);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }
+
+  //Text search portion
   const [text, setText] = useState("");
+  const [resultsText, setResultsText] = useState(true);
   const onChangeText = (evt) => setText(evt.target.value);
   const Search = (e) => {
+    setSearchOccured(true);
     const options = {
       includeScore: false,
-      keys: ["Authors", "Title", "Keywords"],
+      keys: ["Title", "Keywords"],
+      threshold: 0.3,
     };
     var fuse = new Fuse(Studies, options);
+    if (text === "") {
+      setSearchOccured(false);
+      return;
+    }
     const result = fuse.search(text);
     setSearchResults(result);
-    scrollToResults();
+    if (result.length != 0) {
+      setResultsText(true);
+    } else {
+      setResultsText(false);
+    }
   };
+
   return (
     <div className="page">
-      <center>
-        <div className="Searchbar">
-          <TextField
-            onChange={onChangeText}
-            placeholder="Search...."
-            sx={{ width: "45ch" }}
-            size="small"
-            value={text}
-          />
-          <IconButton aria-label="Search" onClick={Search}>
-            <SearchIcon sx={{ fontSize: 28 }} color="primary" />
-          </IconButton>
-        </div>
-      </center>
-      <div className="filterTitle">
-        <b>FILTER BY:</b>
-      </div>
-      <div className="BlueSquare">
-        <div className="TargetPollutant">
-          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-            <FormLabel component="legend">TARGET POLLUTANT:</FormLabel>
-            <FormGroup>
+      <div className="sidbarResults">
+        <div className="sideBar">
+          <div className="Searchbar">
+            <h3>Keyword Search</h3>
+            <TextField
+              onChange={onChangeText}
+              onKeyDown={Search}
+              placeholder="Search...."
+              sx={{ width: "28ch" }}
+              size="small"
+              value={text}
+            />
+            <IconButton aria-label="Search" onClick={Search}>
+              <SearchIcon sx={{ fontSize: 30 }} color="primary" />
+            </IconButton>
+          </div>
+          <FormControl sx={{ m: 2 }} variant="standard">
+            <FormLabel component="legend">
+              <b>TARGET POLLUTANT:</b>
+            </FormLabel>
+            <RadioGroup value={targetPollutantFilter}>
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.LIDInflitration}
-                    onChange={handleChange}
-                    name="LIDInflitration"
-                  />
-                }
+                value="poll_LID"
+                control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="LID/Inflitration"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Metals}
-                    onChange={handleChange}
-                    name="Metals"
-                  />
-                }
+                value="poll_metal"
+                control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Metals"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Nutrients}
-                    onChange={handleChange}
-                    name="Nutrients"
-                  />
-                }
+                value="poll_nutrient"
+                control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Nutrients"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Oils}
-                    onChange={handleChange}
-                    name="Oils"
-                  />
-                }
+                value="poll_oil"
+                control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Oils"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Pathogens}
-                    onChange={handleChange}
-                    name="Pathogens"
-                  />
-                }
+                value="poll_pathogen"
+                control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Pathogens (Fecal Coliforms, Bacteria, E. Coli)"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Sediment}
-                    onChange={handleChange}
-                    name="Sediment"
-                  />
-                }
+                value="poll_sediment"
+                control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Sediment"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.ToxicChemicals}
-                    onChange={handleChange}
-                    name="ToxicChemicals"
-                  />
-                }
+                value="poll_toxics"
+                control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Toxic Chemicals (Pesticide, 
                   Household Cleaner, etc.)"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Trash}
-                    onChange={handleChange}
-                    name="Trash"
-                  />
-                }
+                value="poll_trash"
+                control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Trash"
               />
-            </FormGroup>
+            </RadioGroup>
           </FormControl>
-        </div>
-        <div className="TargetAudience">
-          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-            <FormLabel component="legend">TARGET AUDIENCE:</FormLabel>
-            <FormGroup>
+          <FormControl sx={{ m: 2 }} variant="standard">
+            <FormLabel component="legend">
+              <b>TARGET AUDIENCE:</b>
+            </FormLabel>
+            <RadioGroup value={targetAudienceFilter}>
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Businesses}
-                    onChange={handleChange}
-                    name="Businesses"
-                  />
-                }
+                value="aud_busin"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Businesses"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Contractors}
-                    onChange={handleChange}
-                    name="Contractors"
-                  />
-                }
+                value="aud_contract"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Contractors"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Developers}
-                    onChange={handleChange}
-                    name="Developers"
-                  />
-                }
+                value="aud_develop"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Developers"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Engineers}
-                    onChange={handleChange}
-                    name="Engineers"
-                  />
-                }
+                value="aud_eng"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Engineers"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.GeneralPublic}
-                    onChange={handleChange}
-                    name="GeneralPublic"
-                  />
-                }
+                value="aud_general"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="General Public"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.LandUsePlanners}
-                    onChange={handleChange}
-                    name="LandUsePlanners"
-                  />
-                }
+                value="aud_planner"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Land Use Planners"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Landscapers}
-                    onChange={handleChange}
-                    name="Landscapers"
-                  />
-                }
+                value="aud_landscape"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Landscapers"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.MobileBusinesses}
-                    onChange={handleChange}
-                    name="MobileBusinesses"
-                  />
-                }
+                value="aud_mobilebus"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Mobile Businesses"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.PropertyManagers}
-                    onChange={handleChange}
-                    name="PropertyManagers"
-                  />
-                }
+                value="aud_propmgr"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Property Managers"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Residents}
-                    onChange={handleChange}
-                    name="Residents"
-                  />
-                }
+                value="aud_resident"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Residents"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.SchoolAgeChildren}
-                    onChange={handleChange}
-                    name="SchoolAgeChildren"
-                  />
-                }
+                value="aud_kids"
+                control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="School-Age Children"
               />
-            </FormGroup>
+            </RadioGroup>
           </FormControl>
-        </div>
-        <div className="ResearchInstruments">
-          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-            <FormLabel component="legend">RESEARCH INSTRUMENTS:</FormLabel>
-            <FormGroup>
+          <FormControl sx={{ m: 2 }} variant="standard">
+            <FormLabel component="legend">
+              <b>RESEARCH QUALITY RANKING:</b>
+            </FormLabel>
+            <RadioGroup value={researchQualityFilter}>
+              {/* Fix spelling in database */}
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.FocusGroups}
-                    onChange={handleChange}
-                    name="FocusGroups"
-                  />
-                }
-                label="Focus Groups"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Interviews}
-                    onChange={handleChange}
-                    name="Interviews"
-                  />
-                }
-                label="Interviews"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Observations}
-                    onChange={handleChange}
-                    name="Observations"
-                  />
-                }
-                label="Observations"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.PicturesVideos}
-                    onChange={handleChange}
-                    name="PicturesVideos"
-                  />
-                }
-                label="Pictures/Videos"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Surveys}
-                    onChange={handleChange}
-                    name="Surveys"
-                  />
-                }
-                label="Surveys"
-              />
-            </FormGroup>
-          </FormControl>
-          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-            <FormLabel component="legend">RESEARCH QUALITY RANKING:</FormLabel>
-            <FormGroup>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Exemplary}
-                    onChange={handleChange}
-                    name="Examplary"
-                  />
-                }
+                value="Examplary"
+                control={<Radio onClick={handleResearchQualityFilter} />}
                 label="Exemplary"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Good}
-                    onChange={handleChange}
-                    name="Good"
-                  />
-                }
+                value="Good"
+                control={<Radio onClick={handleResearchQualityFilter} />}
                 label="Good"
               />
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={filterChoices.Fair}
-                    onChange={handleChange}
-                    name="Fair"
-                  />
-                }
+                value="Fair"
+                control={<Radio onClick={handleResearchQualityFilter} />}
                 label="Fair"
               />
-            </FormGroup>
+            </RadioGroup>
           </FormControl>
-        </div>
-        <div className="ProgramLocation">
-          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-            <FormLabel component="legend">CAMPAIGN STATE:</FormLabel>
+          <FormControl sx={{ m: 2 }} variant="standard">
+            <FormLabel component="legend">
+              <b>CAMPAIGN STATE:</b>
+            </FormLabel>
             <FormGroup>
               <Select
-                value={filterChoices.CampaignLocation}
+                value={locationFilter}
                 fullWidth
                 name="CampaignLocation"
-                onChange={handleChangeLocation}
+                onChange={handleLocationFilter}
               >
                 <MenuItem value={"Alabama"}>Alabama</MenuItem>
                 <MenuItem value={"Alaska"}>Alaska</MenuItem>
@@ -601,43 +618,70 @@ function SearchCampaigns() {
               </Select>
             </FormGroup>
           </FormControl>
-          <div className="AddressEnvironmental">
-            <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-              <FormLabel component="legend">
-                Addresses Environmental Justice Concerns
-              </FormLabel>
-              <FormGroup>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={filterChoices.EnvJustice}
-                      onChange={handleChange}
-                      name="EnvJustice"
-                    />
-                  }
-                  label="Addresses Concerns"
-                />
-              </FormGroup>
-            </FormControl>
+          <FormControl sx={{ m: 2 }} variant="standard">
+            <FormLabel component="legend">
+              <b>Addresses Environmental Justice Concerns</b>
+            </FormLabel>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    value="envjust"
+                    onClick={handleEnviromentalJusticeFilter}
+                    name="EnvJustice"
+                  />
+                }
+                label="Addresses Concerns"
+              />
+            </FormGroup>
+          </FormControl>
+        </div>
+        <div className="ResultsBox">
+          <div className="CampaignsHeader">
+            <h2>Campaigns &nbsp;</h2>
+            <h2 className="iconHeader">
+              <AiOutlineFileSearch />
+            </h2>
           </div>
-          <center className="FilterButton">
-            <Button variant="contained" size="medium" onClick={handleFilter}>
-              Apply Filters
-            </Button>
-          </center>
+          {loading && (
+            <div className="loader">
+              <BallTriangle color="#00BFFF" height={80} width={100} />
+            </div>
+          )}
+          {searchResults != null &&
+            searchResults.length == 0 &&
+            SearchOccured &&
+            !loading && (
+              <center>
+                <h3>No Results.</h3>
+              </center>
+            )}
+          {searchResults != null && searchResults[0] != null && !loading && (
+            <div>
+              <div className="Results">
+                {searchResults &&
+                  searchResults.map((result) => (
+                    <div className="ResultInteriorBox">
+                      <SearchCard study={result.item} />
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
+          {searchResults == null && !SearchOccured && !loading && (
+            <div>
+              <div className="Results">
+                {Studies &&
+                  Studies.map((result) => (
+                    <div className="ResultInteriorBox">
+                      <SearchCard study={result} />
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      {searchResults != null && searchResults[0] != null && (
-        <div ref={messagesStartRef}>
-          <div className="Results">
-            {searchResults && searchResults.map(result =>
-              <div className="ResultInteriorBox">
-                <SearchCard study={result.item}/>
-              </div>
-              )}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

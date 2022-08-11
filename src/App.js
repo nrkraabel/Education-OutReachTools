@@ -10,6 +10,9 @@ import SearchCampaigns from "./pages/SearchCampaign/SearchCampaigns";
 import CampaignSelection from "./pages/CampaignSelection/CampaignSelection";
 import OtherResources from "./pages/otherResources";
 import Navbar from "./components/Navbar";
+import CampaignDetails from "./pages/CampaignDetails/CampaignDetailsTemplate";
+import EducationChangesResidentialNonpoint from "./pages/CampaignDetails/EducationChangesResidentialNonpoint";
+import Example2 from "./pages/CampaignDetails/IdentificationInduction";
 
 function App() {
   return (
@@ -23,6 +26,12 @@ function App() {
         <Route path="/campaign-selection" element={<CampaignSelection />} />
         <Route path="/other-resources" element={<OtherResources />} />
         <Route path="/about" element={<About />} />
+        <Route path="/campaign-details" element={<CampaignDetails />} />
+        <Route
+          path="/campaign-details-example"
+          element={<EducationChangesResidentialNonpoint />}
+        />
+        <Route path="/campaign-details-example2" element={<Example2 />} />
       </Routes>
     </Router>
   );

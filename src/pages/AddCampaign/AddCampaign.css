@@ -12,11 +12,14 @@
 @media(max-width: 1400px) {
   .leftBox {
     height: auto;
+    width: calc(50% - 25px);
+  margin-left: 10px;
+  margin-right: 15px;
+
   }
   .rightBox {
     margin-top: 20px;
-    position: relative;
-    left: 0%;
+    float: left;
   }
 }
 

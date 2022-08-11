@@ -15,10 +15,7 @@ import { fireData } from "../../firebase";
 import { get, child } from "firebase/database";
 
 const libraries = ["places"];
-const center = {
-  lat: 35.51073,
-  lng: -96.4247,
-};
+
 const options = {
   styles: mapstyle,
   disableDefaultUI: true,
@@ -33,8 +30,11 @@ function MapElement(props) {
       setStudies(Study);
     });
   }, []);
+  const center = {
+    lat: props.lat, //35.51073
+    lng: props.lng, //-96.4247
+  };
 
-  console.log({ Studies });
   const mapContainerStyle = {
     width: props.width,
     height: props.height,
@@ -82,7 +82,9 @@ function MapElement(props) {
         >
           <div>
             <h1>{selected.Title}</h1>
-            <a href={selected.Link} target="_blank" rel="noreferrer">Link to PDF</a>
+            <a href={selected.Link} target="_blank" rel="noreferrer">
+              Link to PDF
+            </a>
           </div>
         </InfoWindow>
       ) : null}

@@ -9,14 +9,6 @@ import MapDetails from "./documents/MapDetails.pdf";
 function Home() {
   return (
     <div>
-      <center>
-        {" "}
-        <img
-          className="headerImage"
-          alt="Snake River Washington"
-          src={Header}
-        ></img>
-      </center>
       <div className="page">
         <div className="roundedGreyBox">
           <p>
@@ -45,7 +37,13 @@ function Home() {
         </center>
 
         <div className="map">
-          <MapElement height="65vh" width="80vw" zoom={4.3} />
+          <MapElement
+            height="65vh"
+            width="80vw"
+            zoom={4.3}
+            lat={35.51073}
+            lng={-96.4247}
+          />
         </div>
         <center className="MapDetailsBox">
           <a
@@ -167,15 +165,15 @@ function Home() {
                 ],
                 type: "pie", // default type of chart
                 colors: {
-                  data1: "#488f31",
-                  data5: "#C6C11B",
-                  data2: "#C61B1B",
-                  data3: "#ed6958",
-                  data4: "#9112AF",
-                  data6: "#F7EF02",
-                  data7: "#E520E5",
-                  data8: "#2E86C1",
-                  data9: "#204DE5",
+                  data1: "#DECF3F",
+                  data5: "#5DA5DA",
+                  data2: "#FAA43A",
+                  data3: "#60BD68",
+                  data4: "#B2912F",
+                  data6: "#F17CB0",
+                  data7: "#B276B2",
+                  data8: "#1F75FE",
+                  data9: "#F15854",
                 },
                 names: {
                   // name of each serie
