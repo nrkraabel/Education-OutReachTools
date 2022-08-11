@@ -53,6 +53,12 @@ function SearchCampaigns() {
     ""
   );
   const [locationFilter, setLocationFilter] = useState("");
+  //Used in search as the fitler have a delay otherwise
+  let tempAudFilter = "";
+  let tempPolFilter = "";
+  let tempResFilter = "";
+  let tempEnvFilter = "";
+  let tempLocFilter = "";
 
   //filter lists
   const [targetAudienceList, setTargetAudienceList] = useState("");
@@ -65,45 +71,63 @@ function SearchCampaigns() {
   function handleTargetPollutantFilter(event) {
     if (event.target.value === targetPollutantFilter) {
       setTargetPollutantFilter("");
-      handleFilterChange();
+      tempPolFilter = "";
+      handleFilterChange(6);
     } else {
       setTargetPollutantFilter(event.target.value);
+      tempPolFilter = event.target.value;
       handleFilterChange(1);
     }
   }
   function handleTargetAudienceFilter(event) {
     if (event.target.value === targetAudienceFilter) {
       setTargetAudienceFilter("");
+      tempAudFilter = "";
+      handleFilterChange(7);
     } else {
       setTargetAudienceFilter(event.target.value);
+      tempAudFilter = event.target.value;
       handleFilterChange(2);
     }
   }
   function handleResearchQualityFilter(event) {
     if (event.target.value === researchQualityFilter) {
       setResearchQualityFilter("");
+      tempResFilter = "";
+      handleFilterChange(8);
     } else {
       setResearchQualityFilter(event.target.value);
+      tempResFilter = event.target.value;
       handleFilterChange(3);
-    }
-  }
-  function handleEnviromentalJusticeFilter(event) {
-    if (event.target.value === enviromentalJusticeFilter) {
-      setEnviromentalJusticeFilter("");
-    } else {
-      setEnviromentalJusticeFilter(event.target.value);
-      handleFilterChange(5);
     }
   }
   function handleLocationFilter(event) {
     setLocationFilter(event.target.value);
+    tempLocFilter = event.target.value;
     handleFilterChange(4);
+  }
+  function handleEnviromentalJusticeFilter(event) {
+    if (event.target.value === enviromentalJusticeFilter) {
+      setEnviromentalJusticeFilter("");
+      tempEnvFilter = "";
+      handleFilterChange(9);
+    } else {
+      setEnviromentalJusticeFilter(event.target.value);
+      tempEnvFilter = event.target.value;
+      handleFilterChange(5);
+    }
   }
 
   const [SearchOccured, setSearchOccured] = useState(false);
 
   const [loading, setLoading] = useState(false);
+  // let targetAudienceList = "";
+  // let targetPollutantList = "";
+  // let researchQualityList = "";
+  // let enviromentalJusticeList = "";
+  // let locationList = "";
   //Filter Search
+
   function handleFilterChange(filterNum) {
     //Creates an indexed search including all studies
     const options1 = {
@@ -128,81 +152,127 @@ function SearchCampaigns() {
     if (enviromentalJusticeFilter === "") {
       setEnviromentalJusticeList(completeSearch);
     }
+
     if (filterNum === 1) {
       const options = {
         includeScore: false,
-        keys: [targetPollutantFilter],
+        keys: [tempPolFilter],
         threshold: 0.1,
       };
       var fuse = new Fuse(Studies, options);
-      const result = fuse.search("1");
-      console.log("searchresults", result);
+      let result = fuse.search("1");
       setTargetPollutantList(result);
 
-      console.log("target", targetPollutantList);
-      var combinedResult = intersect(result, targetAudienceList);
-      combinedResult = intersect(combinedResult, researchQualityList);
-      combinedResult = intersect(combinedResult, locationList);
-      combinedResult = intersect(combinedResult, enviromentalJusticeList);
-      console.log("combinedResult", combinedResult);
-      setSearchResults(combinedResult);
+      setTargetAudienceList((state) => {
+        var combinedResult = intersect(result, state);
+        setResearchQualityList((state2) => {
+          combinedResult = intersect(combinedResult, state2);
+          setLocationList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setEnviromentalJusticeList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
+      // var combinedResult = intersect(result, targetAudienceList);
+      // combinedResult = intersect(combinedResult, researchQualityList);
+      // combinedResult = intersect(combinedResult, locationList);
+      // combinedResult = intersect(combinedResult, enviromentalJusticeList);
     }
     if (filterNum === 2) {
       const options = {
         includeScore: false,
-        keys: [targetAudienceFilter],
+        keys: [tempAudFilter],
         threshold: 0.1,
       };
       var fuse = new Fuse(Studies, options);
       const result = fuse.search("1");
       setTargetAudienceList(result);
 
-      var combinedResult = intersect(result, targetPollutantList);
-      combinedResult = intersect(combinedResult, researchQualityList);
-      combinedResult = intersect(combinedResult, locationList);
-      combinedResult = intersect(combinedResult, enviromentalJusticeList);
-      setSearchResults(combinedResult);
+      setTargetPollutantList((state) => {
+        var combinedResult = intersect(result, state);
+        setResearchQualityList((state2) => {
+          combinedResult = intersect(combinedResult, state2);
+          setLocationList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setEnviromentalJusticeList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
     }
     if (filterNum === 3) {
       const options = {
         includeScore: false,
-        keys: [researchQualityFilter],
+        keys: [tempResFilter],
         threshold: 0.1,
       };
       var fuse = new Fuse(Studies, options);
       const result = fuse.search("1");
-      console.log("result", result);
       setResearchQualityList(result);
-      console.log("target", researchQualityList);
-      var combinedResult = intersect(targetAudienceList, targetPollutantList);
-      combinedResult = intersect(combinedResult, result);
-      combinedResult = intersect(combinedResult, locationList);
-      combinedResult = intersect(combinedResult, enviromentalJusticeList);
 
-      setSearchResults(combinedResult);
-      console.log("combinedResult", combinedResult);
+      setTargetAudienceList((state) => {
+        var combinedResult = intersect(result, state);
+        setTargetPollutantList((state2) => {
+          combinedResult = intersect(combinedResult, state2);
+          setLocationList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setEnviromentalJusticeList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
     }
     if (filterNum === 4) {
       const options = {
         includeScore: false,
         keys: ["Where"],
-        threshold: 0.1,
+        threshold: 0.3,
       };
       var fuse = new Fuse(Studies, options);
-      const result = fuse.search(locationFilter);
+      const result = fuse.search(tempLocFilter);
       setLocationList(result);
 
-      var combinedResult = intersect(targetAudienceList, targetPollutantList);
-      combinedResult = intersect(combinedResult, researchQualityList);
-      combinedResult = intersect(combinedResult, result);
-      combinedResult = intersect(combinedResult, enviromentalJusticeList);
-
-      setSearchResults(combinedResult);
+      setTargetAudienceList((state) => {
+        var combinedResult = intersect(result, state);
+        setResearchQualityList((state2) => {
+          combinedResult = intersect(combinedResult, state2);
+          setTargetPollutantList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setEnviromentalJusticeList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
     }
     if (filterNum === 5) {
       const options = {
         includeScore: false,
-        keys: [enviromentalJusticeFilter],
+        keys: [tempEnvFilter],
         threshold: 0.1,
       };
       var fuse = new Fuse(Studies, options);
@@ -210,23 +280,103 @@ function SearchCampaigns() {
 
       setEnviromentalJusticeList(result);
 
-      var combinedResult = intersect(targetAudienceList, targetPollutantList);
-      combinedResult = intersect(combinedResult, researchQualityList);
-      combinedResult = intersect(combinedResult, locationList);
-      combinedResult = intersect(combinedResult, result);
-
-      setSearchResults(combinedResult);
+      setTargetAudienceList((state) => {
+        var combinedResult = intersect(result, state);
+        setResearchQualityList((state2) => {
+          combinedResult = intersect(combinedResult, state2);
+          setLocationList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setTargetPollutantList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
+    }
+    if (filterNum === 6) {
+      setTargetAudienceList((state2) => {
+        setResearchQualityList((state3) => {
+          var combinedResult = intersect(state2, state3);
+          setLocationList((state4) => {
+            combinedResult = intersect(combinedResult, state4);
+            setEnviromentalJusticeList((state5) => {
+              combinedResult = intersect(combinedResult, state5);
+              setSearchResults(combinedResult);
+              return state5;
+            });
+            return state4;
+          });
+          return state3;
+        });
+        return state2;
+      });
+    }
+    if (filterNum === 7) {
+      setTargetPollutantList((state) => {
+        setResearchQualityList((state3) => {
+          var combinedResult = intersect(state, state3);
+          setLocationList((state4) => {
+            combinedResult = intersect(combinedResult, state4);
+            setEnviromentalJusticeList((state5) => {
+              combinedResult = intersect(combinedResult, state5);
+              setSearchResults(combinedResult);
+              return state5;
+            });
+            return state4;
+          });
+          return state3;
+        });
+        return state;
+      });
+    }
+    if (filterNum === 8) {
+      setTargetPollutantList((state) => {
+        setTargetAudienceList((state2) => {
+          var combinedResult = intersect(state, state2);
+          setLocationList((state4) => {
+            combinedResult = intersect(combinedResult, state4);
+            setEnviromentalJusticeList((state5) => {
+              combinedResult = intersect(combinedResult, state5);
+              setSearchResults(combinedResult);
+              return state5;
+            });
+            return state4;
+          });
+          return state2;
+        });
+        return state;
+      });
     }
 
+    if (filterNum === 9) {
+      setTargetPollutantList((state) => {
+        setTargetAudienceList((state2) => {
+          var combinedResult = intersect(state, state2);
+          setResearchQualityList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
+            setLocationList((state4) => {
+              combinedResult = intersect(combinedResult, state4);
+              setSearchResults(combinedResult);
+              return state4;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
+    }
     setSearchOccured(true);
     setLoading(true);
     setTimeout(() => {
-      console.log("display", searchResults);
       setLoading(false);
     }, 1500);
   }
-  //make sure set changes
-  const didMount = useRef(false);
 
   //Text search portion
   const [text, setText] = useState("");
