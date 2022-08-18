@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={-37.8536}
+            lng={144.9631}
           />
         </div>
         <div className="menu">
@@ -219,10 +219,13 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
+          <h1>
+            Education Campaigns to Reduce Stormwater Pollution in Commerical
+            Areas: Do They Work?
+          </h1>
           <p>
-            Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
-            sine me vela tulere ratem,
+            Keywords: behavioral change, monitoring, non-structural best
+            management practices (BMPs), stormwater management
           </p>
         </center>
         <hr />
@@ -230,15 +233,15 @@ function CampgainDetailsTemplate() {
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Taylor, A. Rob Curnow, Tim Fletcher, Justin Lewis
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2007
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Melbourne, Australia
           </p>
           <hr />
         </center>
@@ -247,13 +250,13 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              This paper presents the results of a monitoring and evaluation
+              program that examined the effectiveness of a low cost, eight month
+              education campaign to minimize stormwater pollution in a small
+              commercial area of Melbourne, Australia. In addition, this project
+              also tested newly developed guidelines for monitoring and
+              evaluating all types of nonstructural stormwater quality best
+              management practices (BMPs).
             </p>
           </center>
         )}

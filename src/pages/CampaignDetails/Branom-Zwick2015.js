@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={47.912849}
+            lng={-122.093048}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,32 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            North and South Sound Natural Yard Care Education Evaluation Report
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Cascadia Consulting Group (Jessica Branom-Zwick) and
+            TerraStat Consulting Group (Tamre Cardoso
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2015
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Snohomish County, Thurston County, Cities of
+            Arlington, Bothell, Brier, Edmonds, Everett, Granite, Lynnwood,
+            Marysville, Mill Creek, Monroe, Mountlake Terrace, Mukilteo,
+            Snohomish, and Tumwater
           </p>
           <hr />
         </center>
@@ -247,24 +253,27 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              The Snohomish County and the City of Olympia partnered with 15
+              other local jurisdictions in the Puget Sound region. They
+              implemented two natural yard care education programs in two
+              regions in 2014. Snohomish County partnered with thirteen cities,
+              the Snohomish Conservation District, and the WSU Extension Master
+              Gardener Program, implemented the North Sound Program. program.
+              The City of Olympia partnered with the City of Tumwater and
+              Thurston County implemented the South Sound Program. program.
             </p>
           </center>
         )}
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners with lawns</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Lawn care practices</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>
+              Nutrient and Toxic Chemicals (Pesticide, Household Cleaner, etc.)
+            </p>
           </center>
         )}
         {selector === "2" && (
@@ -300,16 +309,16 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
@@ -323,32 +332,72 @@ function CampgainDetailsTemplate() {
         {selector === "3" && (
           <center>
             <h2>Campaign Implementation</h2>
-            <p>Text</p>
+            <p>
+              The North Sound program included a three-part evening lecture
+              series on various natural yard care topics by landscape
+              professionals. Participants in the North Sound program received 50
+              minutes of lecture in a large workshop format (up to 75 people).
+              The South Sound program included two lawn coach home visits, a
+              demonstration workshop, and incentives to promote natural lawn
+              care. Participants in the South Sound program received six hours
+              of hands-on education on natural lawn care, including two hours of
+              personalized at-home education from lawn care professionals and
+              four hours in small demonstration workshops of no more than 20
+              people.
+            </p>
           </center>
         )}
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Participants completed surveys before and after participating in
+              programs. In addition, surveys were also administered to randomly
+              selected non-participating households to test whether they changed
+              behavior during the same time period without participating in a
+              program.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Both programs resulted in significant behavior change in many of
+              the yard care practices that they addressed. There were several
+              practices that showed little to no behavior change, but most
+              showed moderate to high levels of impact. North Sound participants
+              reported varying levels of behavior change with some notable
+              results. For example, there were 53% reductions in people who
+              reported using weed-and-feed, 27% reductions in using fast-release
+              or weed-and-feed fertilizer, and 26% increase in people who knew
+              to prepare soil with compost. Similar to the North Sound
+              participants, South Sound participants also reported varying
+              levels of behavior change with some notable results. For example,
+              there were 47% reductions in people who reported using
+              weed-and-feed, 55% increase in people who reported using slow
+              release, natural, organic fertilizer, and 60% increase in people
+              who applied lime every 2-3 years.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              For the South Sound program, incentives included a free soil test
+              and lawn measurement, free slow-release fertilizer, free lime, and
+              a discount on renting an aerator.
+            </p>
           </center>
         )}
         {selector === "7" && (
           <center>
             <h2>Socail/Racial Justice Considerations</h2>
             <p>
-              <b>NONE</b>
+              both the baseline and post-outreach surveys asked for respondent
+              demographics, particularly the number of years living in current
+              home.
             </p>
           </center>
         )}
@@ -356,7 +405,11 @@ function CampgainDetailsTemplate() {
         {selector === "8" && (
           <center>
             <h2>
-              <a href="link" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://drive.google.com/file/d/1kY3yFeKVddMmJacvCx1slVySAjj_J6l7/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 PDF Link
               </a>
             </h2>

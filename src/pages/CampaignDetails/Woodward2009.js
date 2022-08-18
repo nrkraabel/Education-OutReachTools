@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={35.759575}
+            lng={-79.019302}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,29 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            Lessons Learned: The North Carolina Backyard Rain Garden Program
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Woodward, W., William F. Hunt, Wendi Hartup
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2009
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>North Carolina, specifically in Brunswick, Craven,
+            Henderson, New Hanover, Transylvania, and Wake counties
           </p>
           <hr />
         </center>
@@ -247,13 +250,11 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              To promote rain gardens and address the needs associated with
+              educating homeowners and commercial landscape contractors on the
+              benefits of rain gardens, their installation and maintenance
+              rquirements, the North Carolina Backyard Rain Garden Program was
+              implemented during the summer of 2006 in a six-county pilot area.
             </p>
           </center>
         )}

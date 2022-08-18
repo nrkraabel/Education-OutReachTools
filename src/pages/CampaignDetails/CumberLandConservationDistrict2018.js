@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={45.253784}
+            lng={-69.445473}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,29 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            Clallam County On-Site Septic System Owner (OSS) Survey (July-August
+            2013)
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Cumberland County Soil & Water Conservation District
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2018
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Maine
           </p>
           <hr />
         </center>
@@ -247,13 +250,10 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              In 2013, 30 municipalities in Maine developed and implemented the
+              Stormwater Awareness Plan, designed to increase the public's
+              understanding of stormwater-related issues including actions that
+              are detrimental to water health.
             </p>
           </center>
         )}

@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={48.7549}
+            lng={-122.4781}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,29 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            City of Bellingham Natural Yard Care Training Post-Program
+            Participant Survey
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Applied Research Northwest
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2020
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Bellingham and Whatcom County, WA
           </p>
           <hr />
         </center>
@@ -247,13 +250,12 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              The City of Belligham and Whatcom County co-sponsored a natural
+              yard care workshop program, the Gardening Green: Sustainable
+              Landcaping workshop series, in contract with WSU Extension. The
+              workshops aimed to train Bellingham and Whatcom County residents
+              to understand and adopt natural yard care practices that protect
+              water quality.
             </p>
           </center>
         )}

@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={-31.9529}
+            lng={115.8573}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,29 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            Optimising the development and use of persuasive communication to
+            influence behaviour in the Swan-Canning river system{" "}
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Michael Hughes, Jim Curtis, Betty Weiler
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2009
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Perth, Australia
           </p>
           <hr />
         </center>
@@ -247,13 +250,16 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              This project aimed to apply behavior change principles on an
+              intervention to influence human behavior impact on the health of
+              the river system based on the following: 1) collaborate with local
+              stakeholds to identify the most problematic behaviors associated
+              with the Swan-Canning river system and produce a guide to conduct
+              targeted behavior modification research. 2) select one target
+              behavior and use group, undertake a trial that identifies and
+              measures the beliefs that underpin that behavior. 3) develop and
+              intervention based on the beliefs and experimentally evaluate its
+              effectiveness at influencing the behavior.
             </p>
           </center>
         )}

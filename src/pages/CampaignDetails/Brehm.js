@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={39.06019}
+            lng={-80.53426}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,26 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>Maintaining the Health of the Nippersink Creek Watershed</h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Brehm, Joan M. & Brian W. Eisenhauer
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>Unspecified
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Nippersink Creek Watershed
           </p>
           <hr />
         </center>
@@ -247,13 +247,22 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              This document reports the evaluation of the second phase outreach
+              and education effort in the Nippersink Creek Watershed. In the
+              first phase, a randomly sampled survey of property owners in 2010
+              in four subwatersheds was conducted to collect information that
+              can be used to guide the implementation of the Nippersink Creek
+              Watershed Plan. The findings from this first phase were used to
+              develop place-based outreach materials focusing on best management
+              practices (BMPs) identified as most underutilized and most likely
+              to respond to behavior-modification outreach campaigns. The second
+              phase included a random sampled survey of property owners in 2013
+              in the same four subwatersheds . The objective of this second
+              phase evaluation was to document residents’ and property owners’
+              knowledge and concern for watershed pollutants, use of specific
+              BMPs, values and beliefs about watershed protection, and
+              sentiments, and their exposure to and knowledge about the specific
+              outreach activities that were developed as part of this project.
             </p>
           </center>
         )}

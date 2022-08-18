@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={29.008169}
+            lng={-81.311188}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,30 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            Final 2011 Fertilizer Pre- and Post-Advertising Campaign Survey
+            Study
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Downs, Phillip E., Joey St. Germain, Jennifer
+            Burnside (Kerr & Downs Research)
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2011
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Southwest Florida
           </p>
           <hr />
         </center>
@@ -247,13 +251,11 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              Southwest Florida Water Management District implemented a
+              Florida-Friendly Fertilizing campaign in spring 2011. The purpose
+              of the campaign was to educate residents regarding the benefits of
+              proper fertilizing techniques and the adverse effects of excess
+              fertilizing and improper fertilizing techniques.
             </p>
           </center>
         )}

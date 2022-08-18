@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={49.2432}
+            lng={-122.9742}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,29 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            Implementing a Neighborhood Scale Stormwater Retrofit: Effect of
+            Self-Draining Rain Barrels on an Urban Stream
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Sara Pour
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2009
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Burnaby, British Columbia
           </p>
           <hr />
         </center>
@@ -247,13 +250,14 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              The objective of this study was to determine the level of effort
+              and methods required to gain volunteer participation for on-site
+              stormwater management retrofit projects and determine if
+              retrofitting single family lots on a neighborhood scale can have
+              an effect on the hydrological response of the receiving stream.
+              This research involved a collaboration with the City of Burnaby
+              where a pilot project was planned and implemented in two
+              residential neighborhoods in the Beecher Creek Watershed.
             </p>
           </center>
         )}

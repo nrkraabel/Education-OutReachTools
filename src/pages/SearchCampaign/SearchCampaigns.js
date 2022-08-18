@@ -102,15 +102,21 @@ function SearchCampaigns() {
     }
   }
   function handleLocationFilter(event) {
-    setLocationFilter(event.target.value);
-    tempLocFilter = event.target.value;
-    handleFilterChange(4);
+    if (event.target.value === "None") {
+      setLocationFilter("");
+      tempLocFilter = "";
+      handleFilterChange(9);
+    } else {
+      setLocationFilter(event.target.value);
+      tempLocFilter = event.target.value;
+      handleFilterChange(4);
+    }
   }
   function handleEnviromentalJusticeFilter(event) {
     if (event.target.value === enviromentalJusticeFilter) {
       setEnviromentalJusticeFilter("");
       tempEnvFilter = "";
-      handleFilterChange(9);
+      handleFilterChange(10);
     } else {
       setEnviromentalJusticeFilter(event.target.value);
       tempEnvFilter = event.target.value;
@@ -121,11 +127,6 @@ function SearchCampaigns() {
   const [SearchOccured, setSearchOccured] = useState(false);
 
   const [loading, setLoading] = useState(false);
-  // let targetAudienceList = "";
-  // let targetPollutantList = "";
-  // let researchQualityList = "";
-  // let enviromentalJusticeList = "";
-  // let locationList = "";
   //Filter Search
 
   function handleFilterChange(filterNum) {
@@ -180,10 +181,6 @@ function SearchCampaigns() {
         });
         return state;
       });
-      // var combinedResult = intersect(result, targetAudienceList);
-      // combinedResult = intersect(combinedResult, researchQualityList);
-      // combinedResult = intersect(combinedResult, locationList);
-      // combinedResult = intersect(combinedResult, enviromentalJusticeList);
     }
     if (filterNum === 2) {
       const options = {
@@ -359,6 +356,24 @@ function SearchCampaigns() {
           var combinedResult = intersect(state, state2);
           setResearchQualityList((state3) => {
             combinedResult = intersect(combinedResult, state3);
+            setEnviromentalJusticeList((state5) => {
+              combinedResult = intersect(combinedResult, state5);
+              setSearchResults(combinedResult);
+              return state5;
+            });
+            return state3;
+          });
+          return state2;
+        });
+        return state;
+      });
+    }
+    if (filterNum === 10) {
+      setTargetPollutantList((state) => {
+        setTargetAudienceList((state2) => {
+          var combinedResult = intersect(state, state2);
+          setResearchQualityList((state3) => {
+            combinedResult = intersect(combinedResult, state3);
             setLocationList((state4) => {
               combinedResult = intersect(combinedResult, state4);
               setSearchResults(combinedResult);
@@ -375,7 +390,7 @@ function SearchCampaigns() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1000);
   }
 
   //Text search portion
@@ -416,6 +431,7 @@ function SearchCampaigns() {
               sx={{ width: "28ch" }}
               size="small"
               value={text}
+              aria-label="Keyword search does not work combine with other search"
             />
             <IconButton aria-label="Search" onClick={Search}>
               <SearchIcon sx={{ fontSize: 30 }} color="primary" />
@@ -430,42 +446,50 @@ function SearchCampaigns() {
                 value="poll_LID"
                 control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="LID/Inflitration"
+                aria-label="Filter by targeted pollutant LID/Inflitration"
               />
               <FormControlLabel
                 value="poll_metal"
                 control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Metals"
+                aria-label="Filter by targeted pollutant Metals"
               />
               <FormControlLabel
                 value="poll_nutrient"
                 control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Nutrients"
+                aria-label="Filter by targeted pollutant Nutrients"
               />
               <FormControlLabel
                 value="poll_oil"
                 control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Oils"
+                aria-label="Filter by targeted pollutant Oils"
               />
               <FormControlLabel
                 value="poll_pathogen"
                 control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Pathogens (Fecal Coliforms, Bacteria, E. Coli)"
+                aria-label="Filter by targeted pollutant Pathogens"
               />
               <FormControlLabel
                 value="poll_sediment"
                 control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Sediment"
+                aria-label="Filter by targeted pollutant Sediment"
               />
               <FormControlLabel
                 value="poll_toxics"
                 control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Toxic Chemicals (Pesticide, 
                   Household Cleaner, etc.)"
+                aria-label="Filter by targeted pollutant Toxic chemicals"
               />
               <FormControlLabel
                 value="poll_trash"
                 control={<Radio onClick={handleTargetPollutantFilter} />}
                 label="Trash"
+                aria-label="Filter by targeted pollutant Trash"
               />
             </RadioGroup>
           </FormControl>
@@ -478,56 +502,67 @@ function SearchCampaigns() {
                 value="aud_busin"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Businesses"
+                aria-label="Filter by targeted audience Businesses"
               />
               <FormControlLabel
                 value="aud_contract"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Contractors"
+                aria-label="Filter by targeted audience Contractors"
               />
               <FormControlLabel
                 value="aud_develop"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Developers"
+                aria-label="Filter by targeted audience Developers"
               />
               <FormControlLabel
                 value="aud_eng"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Engineers"
+                aria-label="Filter by targeted audience Engineers"
               />
               <FormControlLabel
                 value="aud_general"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="General Public"
+                aria-label="Filter by targeted audience General Public"
               />
               <FormControlLabel
                 value="aud_planner"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Land Use Planners"
+                aria-label="Filter by targeted audience Land Use Planners"
               />
               <FormControlLabel
                 value="aud_landscape"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Landscapers"
+                aria-label="Filter by targeted audience Landscapers"
               />
               <FormControlLabel
                 value="aud_mobilebus"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Mobile Businesses"
+                aria-label="Filter by targeted audience Mobile Businesses"
               />
               <FormControlLabel
                 value="aud_propmgr"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Property Managers"
+                aria-label="Filter by targeted audience Property Managers"
               />
               <FormControlLabel
                 value="aud_resident"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="Residents"
+                aria-label="Filter by targeted audience Residents"
               />
               <FormControlLabel
                 value="aud_kids"
                 control={<Radio onClick={handleTargetAudienceFilter} />}
                 label="School-Age Children"
+                aria-label="Filter by targeted audience School-Age Children"
               />
             </RadioGroup>
           </FormControl>
@@ -536,21 +571,23 @@ function SearchCampaigns() {
               <b>RESEARCH QUALITY RANKING:</b>
             </FormLabel>
             <RadioGroup value={researchQualityFilter}>
-              {/* Fix spelling in database */}
               <FormControlLabel
-                value="Examplary"
+                value="Exemplary"
                 control={<Radio onClick={handleResearchQualityFilter} />}
                 label="Exemplary"
+                aria-label="Filter by research quality Exemplary"
               />
               <FormControlLabel
                 value="Good"
                 control={<Radio onClick={handleResearchQualityFilter} />}
                 label="Good"
+                aria-label="Filter by research quality Good"
               />
               <FormControlLabel
                 value="Fair"
                 control={<Radio onClick={handleResearchQualityFilter} />}
                 label="Fair"
+                aria-label="Filter by research quality Fair"
               />
             </RadioGroup>
           </FormControl>
@@ -564,7 +601,9 @@ function SearchCampaigns() {
                 fullWidth
                 name="CampaignLocation"
                 onChange={handleLocationFilter}
+                aria-label="Filter by state"
               >
+                <MenuItem value={"None"}>All</MenuItem>
                 <MenuItem value={"Alabama"}>Alabama</MenuItem>
                 <MenuItem value={"Alaska"}>Alaska</MenuItem>
                 <MenuItem value={"Arizona"}>Arizona</MenuItem>
@@ -629,6 +668,7 @@ function SearchCampaigns() {
                     value="envjust"
                     onClick={handleEnviromentalJusticeFilter}
                     name="EnvJustice"
+                    aria-label="Filter by Addresses Environmental Justice Concerns"
                   />
                 }
                 label="Addresses Concerns"

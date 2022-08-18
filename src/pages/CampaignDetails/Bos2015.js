@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={-37.8136}
+            lng={144.9631}
           />
         </div>
         <div className="menu">
@@ -219,10 +219,14 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
+          <h1>
+            Overcoming barriers to community participation in a catchment-scale
+            experiment: building trust and changing behavior
+          </h1>
           <p>
-            Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
-            sine me vela tulere ratem,
+            Keywords: community participation, stormwater management, community
+            trust, creek restoration, civic politics, environmental program,
+            sustainability.
           </p>
         </center>
         <hr />
@@ -230,15 +234,15 @@ function CampgainDetailsTemplate() {
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Darren G. Bos and Helen L. Brown
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2015
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Melbourne, Australia
           </p>
           <hr />
         </center>
@@ -247,24 +251,26 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              The Little Stringybark Creek (LSC) project is a catchment-scale
+              ecological experiment in Melbourne, Australia. The project
+              attempts to restore an urban stream ecosystem through behaviors
+              that reduce the impact of urban stormwater runoff. The researchers
+              offered incentivesto mitigate the costs of participation and a
+              passive adaptive-management approach to respond to challenges
+              encountered. In this paper, the researches describe the approaches
+              used to engage with the community, their evolution during the
+              project, and their relative effectiveness.
             </p>
           </center>
         )}
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Rain garden and rain barrel</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Unspecified</p>
           </center>
         )}
         {selector === "2" && (
@@ -273,7 +279,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -306,13 +312,13 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -323,25 +329,56 @@ function CampgainDetailsTemplate() {
         {selector === "3" && (
           <center>
             <h2>Campaign Implementation</h2>
-            <p>Text</p>
+            <p>
+              Mail-outs nformed the community of project aims and progress, the
+              nature of incentives, and public events such as community meetings
+              and rain garden demonstration days. The mail-outs also were used
+              to raise awareness of the existence and importance of the creek
+              and threats to creek health. A project website, neighborhood
+              signs, and local newspaper articles contributed to the community
+              information strategy. The program involved three rounds of
+              incentives and it targeted the owners of 833 residential
+              properties connected to the catchment's formal drainage
+              infrastructure. The first 2 were reverse auctions in which
+              multiple sellers (the community) offered their lowest price to 1
+              buyer (the project). The 3rd round used a direct funding approach,
+              aimed at maximizing participation.
+            </p>
           </center>
         )}
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Feedback was obtained from surveys conducted after Rounds 1 and 2
+              and through interviews. The 2 surveys were distributed by mail to
+              householders who registered their interest in the project (by
+              submitting an expression of interest form or contacting project
+              staff) but did not submit a bid in that Round (nonbidders).
+              Regarding the interviews, a randomly selected group of
+              participating and on participating householders was interviewed
+              about their experiences in Round 1, their interest in Round 2, and
+              the reasons for their participation or nonparticipation.{" "}
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              A direct funding approach was a more successful strategy than a
+              reverse auction approach in terms of maximizing program
+              participation. The direct funding approach resulted in 44% of
+              target audience participated, whereas reverse auction round 1 and
+              round 2 only reached 6% and 9% target audience, respectively.
+              However, the direct funding approach was also the most costly.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>Funding for rain barrel and rain garden installations.</p>
           </center>
         )}
         {selector === "7" && (
@@ -355,11 +392,11 @@ function CampgainDetailsTemplate() {
 
         {selector === "8" && (
           <center>
-            <h2>
-              <a href="link" target="_blank" rel="noopener noreferrer">
-                PDF Link
-              </a>
-            </h2>
+            <h2>Do not have</h2>
+            <p>
+              Contact Info: Darren G Bos: dbos@unimelb.edu.au | Helen L. Brown:
+              hlb1980@hotmail.com
+            </p>
           </center>
         )}
       </div>

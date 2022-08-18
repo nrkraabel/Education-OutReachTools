@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={29.79674}
+            lng={-82.494324}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,23 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
-            Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
-            sine me vela tulere ratem,
-          </p>
+          <h1>Alachua County Scoop the Poop Campaign</h1>
+          {/* <p>Keywords:</p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Alachua County, Florida
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2009
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Alachua County, Florida
           </p>
           <hr />
         </center>
@@ -247,24 +244,20 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              The 2009 Alachua County Scoop the Poop Campaign is behavior change
+              campaign to persuade citizens to scoop, bag, and trash pet waste
+              at home and around the community.
             </p>
           </center>
         )}
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Dog owners.</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Pet waste pick-up and proper disposal.</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Pathogens.</p>
           </center>
         )}
         {selector === "2" && (
@@ -273,7 +266,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -300,19 +293,19 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -323,25 +316,59 @@ function CampgainDetailsTemplate() {
         {selector === "3" && (
           <center>
             <h2>Campaign Implementation</h2>
-            <p>Text</p>
+            <p>
+              The Gainesville Clean Water Partnership, a partnership consisting
+              of Alachua County Public Works Department, City of Gainesville
+              Public Works, and the Florida Department of Transportation, funded
+              the Alachua County Scoop the Poop Campaign. The campaign itself
+              was designed and implemented by the Alachua County Environmental
+              Protection Department (ACEPD). ACEPD hired Group Five and
+              Associates for the campaign, and adopted the tagline: "Scoop it,
+              Bag it, Trash it". Group Five and Associates designed a logo, two
+              posters, a pledge, and a pamphlet, as well as produced two fifteen
+              second commercials. Promotional items, such as bag dispensers for
+              leashes and tiny key chain flashlights were purchased and
+              distributed at public outreach events. In addition, veterinary
+              offices also supported the campaign by accepting promotional
+              materials to be placed in their offices. Local adoption centers
+              were another valuable partner. Dog adoption agencies included the
+              bag containers and pamphlets in their adoption packets that went
+              home with new dog owners.
+            </p>
           </center>
         )}
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The University of Florida Bureau of Business and Economic Research
+              administered a telephone survey to gauge the self-reported
+              behaviors and attitudes of participants before and after the
+              campaign. 185 dog owners participated in telephone surveys prior
+              to release of any campaign materials and 112 of the same dog
+              owners completed the follow up interview after most interventions
+              were implemented.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The percentage of people who reported never getting rid of their
+              dogs' wastes decreased by 6%. Additionally, among people who got
+              rid of their dog's waste, there was a 9% increase in putting the
+              waste in the trash.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              promotional materials such as bag dispensers for leashes and tiny
+              key chain flashlights.
+            </p>
           </center>
         )}
         {selector === "7" && (
@@ -356,7 +383,11 @@ function CampgainDetailsTemplate() {
         {selector === "8" && (
           <center>
             <h2>
-              <a href="link" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://drive.google.com/file/d/1seSvdZ7mW079TdOLtUBD6lCXy6kLwIIU/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 PDF Link
               </a>
             </h2>

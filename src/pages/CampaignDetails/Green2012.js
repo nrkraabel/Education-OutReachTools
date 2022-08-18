@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={39.1037}
+            lng={-84.5136}
           />
         </div>
         <div className="menu">
@@ -219,10 +219,15 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
+          <h1>
+            Identification and Induction of Human, Social, and Cultural Capitals
+            through an Experimental Approach to Stormwater Management
+          </h1>
           <p>
-            Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
-            sine me vela tulere ratem,
+            Keywords: urban stormwater management, green infrastructure,
+            resilience, human capital, social capital, cultural capital, best
+            management practices, private property, combined sewer overflow,
+            economic incentive
           </p>
         </center>
         <hr />
@@ -230,15 +235,16 @@ function CampgainDetailsTemplate() {
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Green, Olivia, William D. Shuster, Lee K. Rhea,
+            Ahjond S. Garmestani, and Hale W. Thurston
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2012
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Cincinnati, Ohio
           </p>
           <hr />
         </center>
@@ -247,13 +253,10 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              After a small induction of human capital through an education
+              campagin, two successive (2007, 2008) reverse auctions engaged
+              residents to voluntarily bid on installation of rain barrels and
+              rain gardens on their property.
             </p>
           </center>
         )}

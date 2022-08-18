@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={47.6755}
+            lng={-122.2034}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,30 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            City of Kirland Pet Waste Bacteria Monitoring, Outreach and
+            Education{" "}
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>The City of Kirkland Public Works Storm & Surface
+            Water Division
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2020
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Kirkland, WA
           </p>
           <hr />
         </center>
@@ -247,13 +251,16 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              Uncollected dog waste on sidewalks, parks, and public places is
+              not only unsightly, it also poses a health threat to people, pets,
+              and wildlife, and pollutes local waters. With jurisdictional
+              funding from the King Conservation District, the City of Kirkland
+              ran an 11-week campaign from September through November 2019 to: •
+              evaluate the impacts of pet waste bacteria on water quality •
+              conduct a targeted education and outreach campaign to change
+              scooping behavior • evaluate whether education and outreach
+              efforts led to measurable changes in bacteria levels in a local
+              creek
             </p>
           </center>
         )}

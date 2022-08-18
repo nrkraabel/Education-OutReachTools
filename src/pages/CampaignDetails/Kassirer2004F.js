@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={47.6032}
+            lng={-122.3303}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,27 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>Community Program #6: Seattle and King County, Washington</h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Kassirer, Jay, S. Koswan, K. Spence, S. Morphet, C.
+            Wolnik, S. Goom, and T Del Matto.
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2004
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Seattle and King County, Washington
           </p>
           <hr />
         </center>
@@ -247,13 +248,19 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              In the early 1990's, Seattle and King County began collaborating
+              on programs to change a number of yard and garden practices by
+              residents, including a reduction in pesticide use. The Green
+              Gardening program was implemented to educate the population about
+              alternatives to lawn and garden chemicals. In 1996, Seattle Public
+              Utilities and King County began a campaign to encourage Natural
+              Lawn Care. This program aimed to reduce the volume of grass
+              clippings entering the composting stream, the residential use of
+              pesticide, and water consumption for lawn irrigation. The Natural
+              Lawn Care evolved into Natural Yard Care program with an expanded
+              focus on all aspect of residential gardening. Unfortunately,
+              programming budget had to be reduced due to the economic
+              condition.
             </p>
           </center>
         )}

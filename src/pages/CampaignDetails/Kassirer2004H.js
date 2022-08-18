@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={57.0075}
+            lng={9.8189}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,27 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>Community Program #8: Frejlev Aalborg, Denmark</h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Kassirer, Jay, S. Koswan, K. Spence, S. Morphet, C.
+            Wolnik, S. Goom, and T Del Matto.
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2004
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Frejlev Aalborg, Denmark
           </p>
           <hr />
         </center>
@@ -247,13 +248,13 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              The Aalborg municipal goverment managed the Drastrup project in
+              Denmark as part of a countrywide pesticide reduction plan to
+              prevent groundwater contamination and meet European Union drinking
+              water standards. It was important to protect groundwater in the
+              recharge area near Aalborg City because 1/3 of Aalborg's water was
+              from the area and up to 98% of Denmark's drinking water came from
+              groundwater.
             </p>
           </center>
         )}

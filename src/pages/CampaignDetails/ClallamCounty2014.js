@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={48.254219}
+            lng={-123.45}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,30 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            Clallam County On-Site Septic System Owner (OSS) Survey (July-August
+            2013)
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Clallam County Health & Human Services,
+            Environmental Health Section
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2014
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Clallam County, Washington
           </p>
           <hr />
         </center>
@@ -247,13 +251,12 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              The Clallam County (WA) Environmental Health (CCEH) staff has
+              provided education for on-site septic system (OSS) owners about
+              OSS maintenance activities since 2009 by providing Septics 101
+              workshops, a newsletter (Clean 4 Water Herald), Septics 201
+              workshops, and incentive programs. This document reports the
+              program evaluation that was implemented in 2013.
             </p>
           </center>
         )}

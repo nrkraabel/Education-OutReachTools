@@ -28,13 +28,7 @@ function CampgainDetailsTemplate() {
     <div className="page">
       <div className="menuContainer">
         <div className="mapBox">
-          <MapElement
-            height="20vh"
-            width="22vw"
-            zoom={10}
-            lat={31.7683}
-            lng={35.2137}
-          />
+          <MapElement height="20vh" width="22vw" zoom={10} lat={0} lng={0} />
         </div>
         <div className="menu">
           <ButtonGroup
@@ -219,26 +213,26 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>Prompting Dog Owners to Pick Up Dog Droppings</h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Jason, L. A., Zolik, E. S., & Matese, F. J.
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>1979
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Urban area. Not specified.
           </p>
           <hr />
         </center>
@@ -247,13 +241,11 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              This study investigated daily dog dropping and the amount picked
+              up by owners in an urban area before and after using two
+              behavioral strategies: signs and instructions plus modeling. The
+              objective was to increase the number of dog owners who picked up
+              after their dogs.
             </p>
           </center>
         )}

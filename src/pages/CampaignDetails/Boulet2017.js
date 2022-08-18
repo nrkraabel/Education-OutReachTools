@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={-37.8136}
+            lng={144.9631}
           />
         </div>
         <div className="menu">
@@ -219,10 +219,13 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
+          <h1>
+            Behaviour change: Trialling a novel approach to reduce industrial
+            stormwater pollution
+          </h1>
           <p>
-            Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
-            sine me vela tulere ratem,
+            Keywords: stormwater, pollution, behaviour, non-structural,
+            industrial
           </p>
         </center>
         <hr />
@@ -230,15 +233,16 @@ function CampgainDetailsTemplate() {
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Boulet, M., E. Ghafoori, B.S. Jorgensen, L.D.G.
+            Smith
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2017
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Melbourne, Australia
           </p>
           <hr />
         </center>
@@ -247,24 +251,27 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              This paper presents a detailed case study of the development,
+              implementation, and evaluation of a targeted behavior change pilot
+              program that engaged small to medium industrial businesses in an
+              industrial estate in Melbourne, Australia.
             </p>
           </center>
         )}
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Businesses</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              1) keeping stormwater drains clear and clean 2) storing and
+              managing liquids properly 3) securing loose materials and wastes
+              4) following spill response plans and using spill kits 5)
+              preventing washing into stormwater drains 6) notifying the EPA if
+              a spill occurs on site or is witnessed elsewhere
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -273,7 +280,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 75],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -300,7 +307,7 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
@@ -312,10 +319,10 @@ function CampgainDetailsTemplate() {
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality? <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -323,25 +330,84 @@ function CampgainDetailsTemplate() {
         {selector === "3" && (
           <center>
             <h2>Campaign Implementation</h2>
-            <p>Text</p>
+            <p>
+              The program uses a combination of different behavior change
+              strategies, such as capacity building, social norms, and
+              commitment. The research team partnered with the metropolitan
+              water authority, the state-based Environmental Protection
+              Authority (EPA) and the local council, to co-design, implement,
+              and evaluate the outcomes of the intervention. The intervention
+              features a mix of voluntary and traditional measures to
+              environmental regulation compliance. There are four components: 1)
+              mailing out letters to all businesses in the industrial estate to
+              raise awareness and highlight community involvement and
+              expectations, 2) offering voluntary stormwater pollution
+              assessments for high risk businesses to increase business
+              capability and knowledge of stormwater pollution management, 3)
+              creating broader social norms through an estate-wide communication
+              campaign (162 street drains were stenciled throughout the estate
+              and four EPA "Report Pollution" signs were installed, 4)
+              conducting random EPA inspections of several businesses in the
+              estate to provide a regulatory backstop for the voluntary behavior
+              change program. The water authority contracted assessors to
+              approach every available business in the estate in order to
+              introduce the project, present an EPA poster on stormwater
+              protection, and offer assessments to all businesses that were
+              identified as high-risk. The assessors would perform assessments
+              to businesses that agreed to participate. The businesses were
+              provided with individualized report that included recommendations.
+              Based on the recommendations, businesses were asked to identify
+              one to three changes that they could make to improve stormwater
+              protection. Then, the assessors did a follow-up visit to the same
+              participating businesses in 2-3 weeks after the initial
+              assessment.
+            </p>
           </center>
         )}
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The research team developed a monitoring and evaluation framework
+              to assess the following: 1) target audience participation, 2)
+              changes in compliance behaviors by high-risk businesses that
+              participated in the voluntary assessments, 3) water quality data
+              in stormwater system and local waterway of the industrial estate.
+              Measures of participation were collected from the assessors
+              reports. Behavior change measures were collected through
+              comparision of results from initial and follow-up visits by the
+              assessors with participating businesses. The assessors recorded
+              both self-reported responses from businesses, as well as their own
+              observations about a business site. With respect to water quality
+              monitoring, the metropolitan water authority hired an external
+              consulting group to conduct pollution sourcing tests throughout
+              the estate. These tests were conducted several months before the
+              intervention and then two months after it was implemented.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The intervention resulted in a number of preventative stormwater
+              pollution behaviors by businesses. Follow-up visits reported
+              increases in the percentage of businesses complying with desired
+              behaviors. For example, a higher percentage of businesses made EPA
+              hotline visible on premises, did not let water from floor cleaning
+              went into stormwater drains, had spill kit present, and did not
+              have any uncovered waste bins outdoors. Nearly all businesses
+              (96%) agreed to putting up the EPA’s poster showing their hotline
+              telephone number. This finding is not surprising considering its
+              low cost of adoption. However, behavior involving spending such as
+              purchasing spill kits were relatively less likely to be adopted.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>None</p>
           </center>
         )}
         {selector === "7" && (
@@ -356,7 +422,11 @@ function CampgainDetailsTemplate() {
         {selector === "8" && (
           <center>
             <h2>
-              <a href="link" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://drive.google.com/file/d/1ZjJ3fRFf4lIVfKSMQDAauvFCiYehF-o7/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 PDF Link
               </a>
             </h2>

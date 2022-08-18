@@ -81,9 +81,13 @@ function MapElement(props) {
           }}
         >
           <div>
-            <h1>{selected.Title}</h1>
-            <a href={selected.Link} target="_blank" rel="noreferrer">
-              Link to PDF
+            <h1 className="MapMarker">{selected.Title}</h1>
+            <a
+              href={"/" + selected.InternalRef}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Link to more details
             </a>
           </div>
         </InfoWindow>

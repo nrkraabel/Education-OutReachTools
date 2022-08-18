@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={46.8}
+            lng={-92.1}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,30 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            Using Social Science Data to Evaluate Residential Stormwater
+            Treatments in Duluth, Minnesota
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Karlyn Eckman, Valerie Were, Valerie Brady, Jesse
+            Schomberg, Richard Axler, and Chris Kleist
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2013
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Duluth, MN
           </p>
           <hr />
         </center>
@@ -247,13 +251,19 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              The city of Duluth, Minnesota, faced significant challenges in
+              managing urban stormwater. In the Lakeside neighborhood,
+              stormwater drains into a brach of Amity Creek and ultimately into
+              Lake Superior. Stormwater from uphill neighborhoods affects people
+              living further in downhill. On June 19-20, 2012, a ten-nech
+              rainfall caused major damage in the region and resulted in more
+              than $200 million in flood damage to infrastructure and homes. The
+              Lakeside Stormwater Reduction Project (LSRP) was created to
+              identify effective methods to reduce runoff to Amity Creek, The
+              primary objective was to reduce stormwater runoff, but the
+              researchers also evaluated whether their education and awareness
+              efforts resulted in changing people's understanding and behavior
+              relating to water quality issues.
             </p>
           </center>
         )}

@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={47.578686}
+            lng={-118.680873}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,29 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            Mobile Contractor Illicit Discharge Education & Outreach
+            Effectiveness Study
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Shaw, Jessica
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2020
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Eastern Washington - Wenatchee areas, Washington
           </p>
           <hr />
         </center>
@@ -247,13 +250,19 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              Mobile contractors face many challenges in collecting,
+              transporting, and disposing of wastewater compared to other types
+              of businesses. This study reports the Dump Smart Program that took
+              place in Eastern Washington cities in 2010. The City of Wenatchee
+              as the lead agency, partnered with other cities and counties in
+              Eastern Washington targeted mobile contractors in six eastern
+              Washington communities. The goal of this study was to assess the
+              effectiveness of the Dump Smart education and outreach program in
+              eastern Washington for carpet cleaning contractors. The
+              effectiveness of the program was evaluated based on the number of
+              businesses who were disposing wastewater in accordance with the
+              "Dump Smart Tips for Properly Handling Waste Water when Carpet
+              Cleaning" and how many businesses were carrying spill kits.
             </p>
           </center>
         )}
