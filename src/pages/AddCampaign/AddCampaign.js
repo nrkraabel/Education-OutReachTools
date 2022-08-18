@@ -161,51 +161,6 @@ function AddCampaign() {
           <br />
           To begin, enter info in the tabs below.
         </p>
-        <div className="greyBox">
-          <center>
-            <h2>
-              <b>HELPFUL LINKS</b>
-            </h2>
-          </center>
-          <div>
-            <LinkIcon />
-
-            <Link
-              href="file:///C:/Users/Nicholas/Downloads/E&O%20Website%20Mock%20Up_FINAL.pdf"
-              underline="hover"
-            >
-              {"   "}How to Submit
-            </Link>
-          </div>
-          <div>
-            <LinkIcon />
-
-            <Link
-              href="file:///C:/Users/Nicholas/Downloads/E&O%20Website%20Mock%20Up_FINAL.pdf"
-              underline="hover"
-            >
-              {"   "}Types of Campaigns
-            </Link>
-          </div>
-          <div>
-            <LinkIcon />
-            <Link
-              href="file:///C:/Users/Nicholas/Downloads/E&O%20Website%20Mock%20Up_FINAL.pdf"
-              underline="hover"
-            >
-              {"   "}Target Pollutants
-            </Link>
-          </div>
-          <div>
-            <LinkIcon />
-            <Link
-              href="file:///C:/Users/Nicholas/Downloads/E&O%20Website%20Mock%20Up_FINAL.pdf"
-              underline="hover"
-            >
-              {"   "} Ask a Question
-            </Link>
-          </div>
-        </div>
       </span>
 
       <h2>DATA USAGE</h2>

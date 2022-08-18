@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={39.1437}
+            lng={-84.5136}
           />
         </div>
         <div className="menu">
@@ -219,10 +219,12 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
+          <h1>
+            Using a reverse auction to promote household level stormwater
+            control
+          </h1>
           <p>
-            Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
-            sine me vela tulere ratem,
+            Keywords: procurement auction, stormwater, low impact development
           </p>
         </center>
         <hr />
@@ -230,15 +232,16 @@ function CampgainDetailsTemplate() {
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Hale W. Thurston, Michael A. Taylor, William D.
+            Shuster, Allison H. Roy, Matthew A. Morrison
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2010
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Cincinnati, Ohio
           </p>
           <hr />
         </center>
@@ -247,13 +250,10 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              This paper tests the effectiveness of a procurement action as the
+              coordinating mechanism for encouraging installation of
+              parcel-scale rain gardens and rain barrels within a small suburban
+              watershed in the Midwest.
             </p>
           </center>
         )}

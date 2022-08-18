@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={39.2833}
+            lng={-76.6167}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,28 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
-            Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
-            sine me vela tulere ratem,
-          </p>
+          <h1>
+            Blue Water Baltimore Rainwater Harvesting Behavior Change
+            Implementation
+          </h1>
+          {/* <p>
+            Keywords:
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Bennett, Erin
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2017
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Baltimore, Maryland
           </p>
           <hr />
         </center>
@@ -247,24 +249,28 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              Blue Water Baltimore (BWB) conducts a behavior change project to
+              increase the adoption, installation, and use of rain barrels in
+              Herring Run and Direct Harbor watersheds to decrease stormwater
+              runoff in Baltimore City and County.
             </p>
           </center>
         )}
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>
+              Two communities identified in Baltimore City and Baltimore County
+              within the Herring Run and Direct Harbor watersheds. The
+              communities chosen are Belair-Edison and Dundalk. Belair-Edison is
+              a lower income neighborhood, predominantly African American and
+              long-term members of the community. Dundalk is a middle income,
+              working-class community, and located close to water.
+            </p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Rain Barrel Adoption</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>LID/Inflitration</p>
           </center>
         )}
         {selector === "2" && (
@@ -300,19 +306,19 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -323,32 +329,71 @@ function CampgainDetailsTemplate() {
         {selector === "3" && (
           <center>
             <h2>Campaign Implementation</h2>
-            <p>Text</p>
+            <p>
+              This project serves as a pilot program on specific blocks in one
+              Baltimore City and one Baltimore County neighborhood, in addition
+              to being driven by watershed plans with respond to the 2025 water
+              quality goals established by the Chesapeake Bay Program. Outreach
+              materials were distributed and the pilot program was implemented
+              from May 2015 through early September 2015. Each household
+              included in the pilot blocks received a letter and a handout. The
+              Rain Barrel Coordinator conducted a pre-survey at the time of
+              installation. Pilot program evaluation occured mid-September
+              through October 2015. Broad implementation began in February 2016
+              and extended to August 2016. They collaborated with the
+              neighborhood partners to utilize their social media outlets and
+              other common outreach strategies such as community meetings and
+              newsletters. A final evaluation was conducted in September through
+              October 2016 to determine the overall change in behavior from
+              before and after the implementation.
+            </p>
           </center>
         )}
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              A survey was conducted at the time of installation to assess the
+              individual's knowledge of rain barrels, the plan for use of the
+              water, and opinions on the pilot program. An additional survey was
+              deployed a few months after the rain barrel was installed to gauge
+              the individual's use and opinion of rain barrels. The results of
+              the pilot survey prompted BWB to change a few of the outreach
+              strategies before broad implementation. The same pre and post
+              survey were also conducted among the broad implementation
+              participants.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The broad implementation phase installed 29 rain barrels in
+              Belair-Edison and Dundalk. Including installation as part of the
+              rain barrel price was found to be an effective way to address
+              installation barrier that was identified in their 2014 research.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              individuals participating in the program were giving up $20 to get
+              a rain barrel. The rain barrel cost was discounsted from $89
+              (retail value) down to $20. In most cases, individuals were
+              trading using their hose or outside water access for using a rain
+              barrel with less water pressure.
+            </p>
           </center>
         )}
         {selector === "7" && (
           <center>
             <h2>Socail/Racial Justice Considerations</h2>
             <p>
-              <b>NONE</b>
+              The communities chosen in this project represent diverse
+              demographics, land use, and socio-economic status.
             </p>
           </center>
         )}
@@ -356,7 +401,11 @@ function CampgainDetailsTemplate() {
         {selector === "8" && (
           <center>
             <h2>
-              <a href="link" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://drive.google.com/file/d/1dZLgK3OuNTpo3BiFNE-4D9jaUGW_H74_/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 PDF Link
               </a>
             </h2>

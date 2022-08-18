@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={32.7356}
+            lng={-97.1071}
           />
         </div>
         <div className="menu">
@@ -219,26 +219,29 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
-          <p>
+          <h1>
+            The Neighborhood Water Stewardship Program: An Innovative Approach
+            to Behavior Change in Northern Virginia
+          </h1>
+          {/* <p>
             Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
             sine me vela tulere ratem,
-          </p>
+          </p> */}
         </center>
         <hr />
         <center className="headerBox">
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Aileen Winquist
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2006
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Arlington, VA
           </p>
           <hr />
         </center>
@@ -247,13 +250,23 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              Arlington, VA, is among the most densely populated jurisdictions
+              in the country with a population density of about 7,700 persons
+              per square mile. Development in Arlington has significantly
+              impacted the nearly 30 miles of perennial streams in the County.
+              More than half of the County's original stream network has been
+              replaced by a dense network of underground storm sewers. During
+              storms, these storm sewers convey a large volume of runoff and
+              pollutants to streams at high velocities, causing stream bank
+              erosion, water quality problems, and habitat degradation. The
+              Neighborhood Water Steward Team Program goes beyond many nonpoint
+              source (NPS) education programs to help residents learn new
+              behaviors that prevent water pollution.The program is a
+              partnership of a non-profit organization Arlingtonians for a Clean
+              Environment, Arlington County, the City of Falls Church, and the
+              City of Alexandria. To become water stewards, volunteer team
+              leaders create neighborhood-based teams that learn about
+              preventing water pollution.
             </p>
           </center>
         )}

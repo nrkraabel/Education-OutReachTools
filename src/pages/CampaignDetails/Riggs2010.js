@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={44.9437}
+            lng={-93.0943}
           />
         </div>
         <div className="menu">
@@ -219,10 +219,11 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
+          <h1>Marketing for Behavior Change and Nutrient Reduction </h1>
           <p>
-            Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
-            sine me vela tulere ratem,
+            Keywords: Low impact development, LID, education, outreach, social
+            marketing, Blue Thumb, stormwater, BMP, best management practices,
+            water quality, total maximum daily loads, TMDL.
           </p>
         </center>
         <hr />
@@ -230,15 +231,15 @@ function CampgainDetailsTemplate() {
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>J. Riggs, A. Hong, and J. Westerlund
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2010
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>St. Paul, MN
           </p>
           <hr />
         </center>
@@ -247,13 +248,12 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              This study discusses the Blue Thumb Program, which follows many
+              social marketing strategies and helps the general public plant
+              native gardens, raingardens, and shoreline plantings. The goal of
+              the program is to address barriers that prevent people from
+              planting for clean water. The program also uses incentives to
+              motivate people to act.
             </p>
           </center>
         )}

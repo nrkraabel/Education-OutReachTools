@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={41.2778}
+            lng={-72.7997}
           />
         </div>
         <div className="menu">
@@ -219,10 +219,11 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
+          <h1>
+            Education and Changes in Residential Nonpoint Source Pollution
+          </h1>
           <p>
-            Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
-            sine me vela tulere ratem,
+            Keywords: Stormwater, education, nonpoint, residential, impervious
           </p>
         </center>
         <hr />
@@ -230,15 +231,15 @@ function CampgainDetailsTemplate() {
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Dietz, M.E., John C. Clausen, Karen K. Filchak
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2004
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Branford, Connecticut
           </p>
           <hr />
         </center>
@@ -247,13 +248,12 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              The authors used a paired watershed research design to determine
+              whether educating homeowners about residential BMPs could change
+              behavior and improve the quality of stormwater runoff. The
+              campaign did not use "social marketing" techniques in identifying
+              a target audience, a specific target behavior, and an
+              identification of barriers preventing behavior change.
             </p>
           </center>
         )}

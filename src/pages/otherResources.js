@@ -12,7 +12,7 @@ function OtherResources() {
             <a
               href="https://www.wastormwatercenter.org/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Washington Stormwater Center
             </a>
@@ -21,14 +21,18 @@ function OtherResources() {
             <a
               href="https://ecology.wa.gov/Regulations-Permits/Reporting-requirements/Stormwater-monitoring/Stormwater-Action-Monitoring"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Stormwater Action Monitoring
             </a>
             &nbsp; (SAM)
           </p>
           <p>
-            <a href="https://www.psp.wa.gov/" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.psp.wa.gov/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Puget Sound Partnership
             </a>
           </p>
@@ -36,7 +40,7 @@ function OtherResources() {
             <a
               href="https://vitalsigns.pugetsoundinfo.wa.gov/VitalSignIndicator/Detail/45"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Sound Behavior Index
             </a>
@@ -49,7 +53,7 @@ function OtherResources() {
             <a
               href="https://www.chesapeakebehaviorchange.org/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Chesapeake Behavior Change
             </a>
@@ -58,18 +62,26 @@ function OtherResources() {
             <a
               href="https://www.toolsofchange.com/en/home/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Tools of Change
             </a>
           </p>
           <p>
-            <a href="https://cbsm.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://cbsm.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Community-Based Social Marketing (cbsm.org)
             </a>
           </p>
           <p>
-            <a href="https://pnsma.org/" target="_blank" rel="noreferrer">
+            <a
+              href="https://pnsma.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Pacific Northwest Social Marketing Association
             </a>
           </p>
@@ -78,7 +90,7 @@ function OtherResources() {
             <a
               href="https://cfpub.epa.gov/npstbx/index.html"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Toolbox
             </a>
@@ -94,7 +106,7 @@ function OtherResources() {
             <a
               href="https://coast.noaa.gov/digitalcoast/training/social-marketing.html"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               NOAA
             </a>
@@ -105,7 +117,7 @@ function OtherResources() {
             <a
               href="https://cfpub.epa.gov/watertrain/moduleFrame.cfm?parent_object_id=1822"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Getting in Step
             </a>
@@ -115,7 +127,7 @@ function OtherResources() {
             <a
               href="https://ifas-aec-ccsm.catalog.instructure.com/courses/ccsm"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               University of Florida “Cultivating Community Cultivating Community
               Change: Social Marketing to Encourage Environmental Behaviors
@@ -125,7 +137,7 @@ function OtherResources() {
             <a
               href="https://sites.nicholas.duke.edu/execed/environmental-marketing-strategy-for-behavior-change/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Duke
             </a>
@@ -137,7 +149,7 @@ function OtherResources() {
             <a
               href="https://extendedstudies.ucsd.edu/courses-and-programs/sustainability-and-behavior-change"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               “Sustainability and Behavior Change”
             </a>

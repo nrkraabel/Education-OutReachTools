@@ -43,6 +43,7 @@ function Home() {
             zoom={4.3}
             lat={35.51073}
             lng={-96.4247}
+            alt="Map containing location data of studies in examined, click link below for more info."
           />
         </div>
         <center className="MapDetailsBox">
@@ -50,7 +51,8 @@ function Home() {
             className="MapDetails"
             href={MapDetails}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            aria-label="Opens a text based pdf of map info."
           >
             Map details
           </a>
@@ -106,6 +108,7 @@ function Home() {
                 bottom: 0,
                 top: 0,
               }}
+              alt="Graph of targeted Pollutant"
             />
           </div>
           <div className="chartBox">
@@ -143,6 +146,7 @@ function Home() {
                 bottom: 0,
                 top: 0,
               }}
+              alt="Graph of targeted Audience"
             />
           </div>
           <div className="chartBox">
@@ -165,15 +169,15 @@ function Home() {
                 ],
                 type: "pie", // default type of chart
                 colors: {
-                  data1: "#DECF3F",
-                  data5: "#5DA5DA",
-                  data2: "#FAA43A",
-                  data3: "#60BD68",
-                  data4: "#B2912F",
-                  data6: "#F17CB0",
-                  data7: "#B276B2",
-                  data8: "#1F75FE",
-                  data9: "#F15854",
+                  data1: "#0000FF",
+                  data2: "#0028FF",
+                  data3: "#0050FF",
+                  data4: "#003CFF",
+                  data5: "#0014FF",
+                  data6: "#0064FF",
+                  data7: "#0F00FF",
+                  data8: "#3600FF",
+                  data9: "#00A0FF",
                 },
                 names: {
                   // name of each serie
@@ -195,6 +199,7 @@ function Home() {
                 bottom: 0,
                 top: 0,
               }}
+              alt="Graph of targeted behavior"
             />
           </div>
         </div>

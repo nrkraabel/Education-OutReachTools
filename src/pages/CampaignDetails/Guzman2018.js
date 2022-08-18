@@ -32,8 +32,8 @@ function CampgainDetailsTemplate() {
             height="20vh"
             width="22vw"
             zoom={10}
-            lat={31.7683}
-            lng={35.2137}
+            lat={34.0522}
+            lng={-118.2433}
           />
         </div>
         <div className="menu">
@@ -219,10 +219,16 @@ function CampgainDetailsTemplate() {
       </div>
       <div className="campaignBox">
         <center>
-          <h1>Title</h1>
+          <h1>
+            Inspiring Resident Engagement: Identifying Street Tree Stewardship
+            Participation Strategies in Environmental Justice Communities Using
+            a Community-Based Social Marketing Approach{" "}
+          </h1>
           <p>
-            Keywords: quae legis, ex illo, Theseu, tibi litore mitto unde tuam
-            sine me vela tulere ratem,
+            Keywords: Behavior Change; California; Community Forestry;
+            Community-Based Social Marketing; Environmental Justice;
+            Environmental Psychology; Los Angeles; Nonprofit Organization;
+            Resident Engagement; Social Marketing; Stewardship; Watering.
           </p>
         </center>
         <hr />
@@ -230,15 +236,16 @@ function CampgainDetailsTemplate() {
           <hr />
           <p className="headerParagraphs">
             {" "}
-            <b>Authors: </b>Names
+            <b>Authors: </b>Edith de Guzman, Rachel Malarich, Lori Large, and
+            Sharon Danoff-Burg
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Published: </b>Year
+            <b>Published: </b>2018
           </p>
           <hr />
           <p className="headerParagraphs">
-            <b>Location: </b>Place
+            <b>Location: </b>Los Angeles County, CA
           </p>
           <hr />
         </center>
@@ -247,13 +254,16 @@ function CampgainDetailsTemplate() {
           <center>
             <h2>Abstract</h2>
             <p>
-              Mons fuit; apparent frutices in vertice rari; hinc scopulus raucis
-              pendet adesus aquis. adscendo; vires animus dabat; atque ita late
-              aequora prospectu metior alta meo. inde ego—nam ventis quoque sum
-              crudelibus usa— vidi praecipiti carbasa tenta Noto. aut vidi aut
-              fuerant quae me vidisse putarem; frigidior glacie semianimisque
-              fui. nec languere diu patitur dolor. excitor illo, excitor et
-              summa Thesea voce voco.
+              This study attempted to address the need for establishment-period
+              care for young trees by producing a replicable approach to engage
+              residents in environmental justice communities to actively care
+              for young street trees planted in front of their homes. Using
+              community based social marketing in the community of Huntington
+              Park (Los Angeles County, California, U.S.), the researchers
+              investigated socioeconomic and cultural characteristics to
+              barriers and motivators regarding tree stewardship. Examples of
+              stewardship include watering, mulching, and weeding. Then, the
+              researchers developed an outreach program strategy accordingly.
             </p>
           </center>
         )}
