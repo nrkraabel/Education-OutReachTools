@@ -262,11 +262,16 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners with lawns</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              1) increase the percentage of residents who read and follow
+              package instructions by 5% 2) increase the percentage of residents
+              who use slow-release fertilizer by 7% 3) decrease the percentage
+              of residents who fertilize before heavy rain by 10%
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Nutrients</p>
           </center>
         )}
         {selector === "2" && (
@@ -302,19 +307,19 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -331,26 +336,50 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The questionnaire was pretested and data for pre-campaign was
+              collected from January 3 through January 17, 2011. Post-treatment
+              data was collected from May 16 through June 1, 2011. There were
+              1,152 completed telephone interviews conducted in both pre- and
+              post-test study. The sampling of participants included random
+              samples of landline and cell phone users.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The campaign produced positive results, but not all objectives
+              were met. The percentage of residents who read and followed
+              package instructions increased by 1% after the campaign, which was
+              4 percentage points short of the target. This was in part because
+              the percentage of residents who read and follow package
+              instructions was already high before the campaign. The percentage
+              of residents who used slow-release fertilizer increased by 5%
+              after the campaign, which was 2 percentage points short of the
+              target. Finally, the percentage of residents who fertilized before
+              heavy rain dropped 43% after the advertising campaign, which far
+              exceeded the 10% objective.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (
           <center>
             <h2>Socail/Racial Justice Considerations</h2>
             <p>
-              <b>NONE</b>
+              The survey also collected sociod-demographic information. A
+              typical resident who respondent to the survey was 53 years old
+              (median age), Caucasian, female, homeowner, median household
+              income of $63,500, etc.
             </p>
           </center>
         )}

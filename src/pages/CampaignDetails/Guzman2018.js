@@ -270,11 +270,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Tree care</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -283,7 +283,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -310,7 +310,7 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
@@ -322,7 +322,7 @@ function CampgainDetailsTemplate() {
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -339,26 +339,66 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Baseline observations were collected at each site prior to the
+              pilot program launch, and evaluation of the two program strategies
+              was conducted over a six-week period following outreach. Photos
+              were also taken to document tree health and any other observed
+              issues were noted. The same teams conducted the observations
+              throughout the period for consistency.The study tested whether
+              outreach produced better results than no outreach, and further,
+              whether in-person, active outreach was more effective than passive
+              outreach. Both outreach strategies included distribution of
+              program materials between 10 a.m. and 1 p.m. on a Saturday in
+              March 2017, but differed in the approach used. Neighborhood 1:
+              Active outreach via in-person engagement. An effort was made to
+              speak in person with residents in the area assigned to receive
+              active outreach (36 homes). Pre-notification fliers were left on
+              the doors of the homes prior to the pilot outreach date to alert
+              residents in advance. Neighborhood 2: Passive outreach via a
+              package of materials left at the door or doorstep, with no effort
+              to engage with residents. This group also consisted of 36 homes.{" "}
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Trees at homes in the active outreach group had significantly
+              higher soil moisture, more mulch, and better observed health than
+              trees at homes in the passive outreach group. In sixth week
+              following the outreach, the soil mositure of the active group
+              contained about 10% more water than the soil moisture of the
+              passive group. Also, in sixth week following the outreach, the
+              presence of mulch of the active group was was about 50% higher
+              than the passive group. Both active and passive groups had better
+              outcomes as compared to pre-outreach baseline conditions.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              For the focus groups, participants was offered $25 gift cards to
+              local restaurants and markets. For the surveys, respondents who
+              complete the survey were offered a $10 gift card to a neighborhood
+              store or restaurant.{" "}
+            </p>
           </center>
         )}
         {selector === "7" && (
           <center>
             <h2>Socail/Racial Justice Considerations</h2>
             <p>
-              <b>NONE</b>
+              For the focus groups, it was intentionally designed to include
+              attendees representative of the greater community, which was a mix
+              of working-class men and women of varying ages, mostly of Latino
+              descent. For the survey, respondents were asked about demographic
+              classifications. Additionally, outreach teams were bilingual, and
+              conversations with residents were held in either English or
+              Spanish to accomodate resident preference.
             </p>
           </center>
         )}

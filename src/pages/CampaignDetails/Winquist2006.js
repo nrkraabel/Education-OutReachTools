@@ -273,11 +273,17 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              - Replace household chemicals with environmentally friendly
+              products - dog waste pick up - identify anf fix vehicle oil leaks
+              - lawn care - rain barrel installations - rain garden
+              installations - reduce vehilce miles traveled - find and fix water
+              leaks - water conservation practices
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -286,7 +292,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -313,19 +319,19 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -342,19 +348,38 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Team members completed a "before" and "after" assessment form to
+              track which actions team members had adopted and to calcuate the
+              environmental benefits of those actions.{" "}
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The Neighborhood Water Steward Team program is an important
+              component of the education strategy for the three localities to
+              meet MS4, Tributary Strategy, and TMDL public education
+              requirements. Households participating in the program have adopted
+              581 new actions, such as installing rain barrels, cisterns, rain
+              gardens, reducing pesticide and fertilizer use, and checking
+              vehicles for fuel leaks.Some actions were more popular than
+              others. For example, 35 households (56%) replaced chemicals with
+              environmentally friendly products, but only 3 households (5%)
+              reported cleaning up after their dog. Twenty two households (35%)
+              installed a rain barrel or downspout extensions and 18 (29%)
+              households created a rain garden.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

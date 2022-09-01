@@ -260,11 +260,15 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Landowners, farmers</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              Adopting grassed waterways, terraces, conservation tillage,
+              pasture planting, multipurpose dams, riparian buffer strips, and
+              nutrient management.
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Nutrients, LID/Inflitration</p>
           </center>
         )}
         {selector === "2" && (
@@ -273,7 +277,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 75],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -300,7 +304,7 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
@@ -309,13 +313,13 @@ function CampgainDetailsTemplate() {
                 Observed Behavior Directly? <BsCheck2Circle />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />{" "}
               </li>
               <li>
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality? <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -329,19 +333,48 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Using a booklet that summarizes the participation of watershed
+              residents from 1994-2000. Besides serving as a resource for those
+              interested in adopting BMPs, the booklet also documented farmers'
+              soil or phosphorus reduction in tons per year, the amount of area
+              that had BMPs in place and the acres of land that benefitted from
+              the practices. In addition to the booklet, assessment on fish
+              population was performed.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The most important piece of educational information is a booklet
+              that summarizes the participation of watershed residents from 1994
+              - 2000. The booklet includes a map of the Redwood River
+              sub-watersheds and monitoring sites. There was a lack of interest
+              in the program when it first began in 1995, but the interest grew
+              over time. In 2000, the total number of landowners participating
+              in the Redwood River Clean Water project was 159. The total number
+              of BMPs and conservation practices in place was 350. Also, in
+              2000, the Restoring the Redwood River Booklet received its last
+              update and indicated that there was an average reduction in soil
+              or phosphorus of 158.40 tons per year. Finally, based on the
+              number of fish species sampled, the 1995 fish population
+              assessment reported an increase compared to the 1991 assessment.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              Landowners who chose to implement BMPs received technical
+              assistance and monetary incentives. They received up to 90% cost
+              share assistance for grassed waterways and up to 75% cost shae
+              assistance for other practices. Additionally, landowners received
+              help with the design of their chosen best management practices
+              (BMPs).{" "}
+            </p>
           </center>
         )}
         {selector === "7" && (

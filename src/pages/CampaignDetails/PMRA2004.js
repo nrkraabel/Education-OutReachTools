@@ -265,11 +265,15 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners with lawns</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              Healthy lawn care practices to minimize the need for pesticides
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>
+              Nutrients, Toxic Chemicals (Pesticide, Household Cleaner, etc.)
+            </p>
           </center>
         )}
         {selector === "2" && (
@@ -278,7 +282,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -305,13 +309,13 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
@@ -334,19 +338,41 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The 2004 survey was conducted to determine the effectiveness of
+              the program and collected information that could be used for
+              future program adjustments. The survey was posted on the Home
+              Gardeners page of the Healthy Lawns website and PMRA distributed
+              the mail version. The research team combined findings from the
+              web-based and mail-back surveys. There were 312 surveys included
+              in the final analysis. Homeowners from every province
+              participated, including two from the Yukon Territory.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The 2003 Healthy Lawns pilot homeowner survey reported that most
+              homeowners were aware of the Healthy Lawns key messages, but the
+              2004 survey results indicated that homeowners did not actually
+              implement the practices. Fewer than half respondents indicated
+              that they avoided over fertilizing and one quarter reported that
+              they aerated their lawns. Nonetheless, the 2004 survey reported
+              some positive outcomes. Seven in ten homeowners mowed high and
+              left the grass clippings on the lawn and about six in ten watered
+              deeply and infrequently. To manage pests, around 28% of homeowners
+              indicated they used pesticides only as necessary.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

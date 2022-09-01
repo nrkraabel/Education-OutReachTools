@@ -263,11 +263,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Merchants and the general public in the business area</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Littering</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Nonw</p>
           </center>
         )}
         {selector === "2" && (
@@ -276,7 +276,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 87.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -303,10 +303,10 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
-                Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
+                Observe Control Group or Counter-Factual <BsCheck2Circle />{" "}
               </li>
               <li>
                 Observed Behavior Directly? <BsCheck2Circle />
@@ -315,10 +315,11 @@ function CampgainDetailsTemplate() {
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality?
+                <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -332,19 +333,40 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              To monitor the changes in awareness/knowledge, attitude, and
+              self-reported behavior of the target audiences with respect to
+              littering and litter prevention, they used face-to-face survey
+              instruments before, during, and after the campaign. To evaluate
+              changes in people's actual behavior with respect to littering and
+              litter prevention, they observed littering/binning before, during,
+              and after the campaign as part of the "Clean Communities
+              Assessment Tool". In addition, they inspected small businesses. To
+              monitor stormwater quality, specifically litter loads entering
+              stormwater, they used side entry pit litter baskets at the
+              intervention and control sites to capture gross pollutants before,
+              during, and after the campaign.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The campaign produced mixed results. It was unsuccessful at
+              significantly influencing the public's and merchants' knowledge or
+              attitudes. It was modestly successful at influencing public's and
+              merchants' behavior. Also, it was modestly successful at reducing
+              litter loads in stormwater.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

@@ -257,11 +257,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Dog owners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Pet waste pick-up</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Pathogens (Fecal Coliforms, Bacteria, E. Coli</p>
           </center>
         )}
         {selector === "2" && (
@@ -270,7 +270,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -297,19 +297,19 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -326,19 +326,37 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Dog owners had to complete a survey in order to receive a free
+              doggie waste bag canister. The survey takers were then contacted
+              after several months for a follow-up survey in exchange for a
+              chance to win a $75 gift card. The survey was promoted through the
+              postcard, online ads, e-blast, Facebook and banner on the
+              program's website. Survey takers could participate online or in
+              person at local events or during one of the intercept surveys. The
+              survey team collected 397 baseline and 104 follow up surveys.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The percentage of people who reported picking up their peet waste
+              increased by 5.22%.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              A Facebook sweepstakes where dog owners could enter to win a pet
+              store gift card for submitting a photo of their dog with a visible
+              waste bag attached its leash. This incentive relates to the effort
+              of carrying waste bag as a social norm. Follow-up survey with a
+              chance to win a $75 gift card.
+            </p>
           </center>
         )}
         {selector === "7" && (

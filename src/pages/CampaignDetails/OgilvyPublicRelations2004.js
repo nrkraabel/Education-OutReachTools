@@ -257,11 +257,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Los Angeles residents (in pilot area)</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Proper disposal of trash</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Trash</p>
           </center>
         )}
         {selector === "2" && (
@@ -270,7 +270,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -297,13 +297,13 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
@@ -326,27 +326,51 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              For the 2003 campaign, they conducted a total of 601 phone
+              interviews in two waves: 300 prior to residents' exposure to the
+              pilot test communications and 301 after the exposure to the
+              communications. Participants were drawn from a representative
+              sample of households for the pilot test areas of Inglewood and
+              East Los Angeles. For the 2004 campaign, a total of 800 telephone
+              interviews were conducted across two waves: 400 prior to the
+              residents' exposure to the pilot test communications and 400
+              following exposure to the communications. The research team set
+              quotas for gender and ethnicity for each session of phone study to
+              ensure the final sample matched the demographic characteristics of
+              the pilot test areas. Spanish language was available for
+              interviewees who preferred to speak Spanish. The results reported
+              that 28% of respondents changed their behavior in the past two
+              months, following the program exposure. Among the 28% respondents,
+              half of them reported throwing away trash properly and a quarter
+              disposed yard waste in the proper manner. Participants were
+              screened to meet a set of criteria.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              28% of residents reported changing their behavior in the past two
+              months, with 50% disposing trash in a proper manner. In addition,
+              25% disposed yard waste in a proper manner, a notable increase
+              from the 18% pre-campaign level.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (
           <center>
             <h2>Socail/Racial Justice Considerations</h2>
-            <p>
-              <b>NONE</b>
-            </p>
+            <p>Spanish language was available for interviews.</p>
           </center>
         )}
 

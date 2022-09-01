@@ -270,11 +270,14 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              Installations of trees, shrubs, rain barrels, rain gardens, rock
+              sump storage basins, swales, ditch.{" "}
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -283,7 +286,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 75],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -310,22 +313,22 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
-                Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
+                Observe Control Group or Counter-Factual <BsCheck2Circle />
               </li>
               <li>
                 Observed Behavior Directly? <BsCheck2Circle />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality? <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -339,19 +342,50 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              A knowledge, attitudes, and practices (KAP) study was used to
+              assess how the homeowner’s views on stormwater management changed
+              over the course of the project, with surveys administered both
+              before and after construction activities. The pre- and
+              post-treatment surveys were conducted in person with trained
+              surveyors going door-to-door the year before the construction
+              (April 2008) and the year following construction (October 2010).
+              Repeated attempts were made over the course of a week during each
+              survey period to contact all 83 households in the study area.
+              Additionally, biophysicall monitoring of water quality was also
+              conducted. The project personnel installed automated monitoring
+              equipment in storm pipes early in 2008 to get a year of
+              pre-treatment data. After runoff treaments were installed,
+              stormwater runoff was monitored for another year in 2010.{" "}
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Residents of the treatment street were very willing to participate
+              in the project. The project staff installed runoff reduction
+              treatments on 22 of 25 properties. Staff planted 250 trees and
+              shrubs; installed 22 rain barrels; built 5 rain gardens,
+              constructed 12 rock sump storage basins and two swales; and re-dug
+              a stormwater ditch in which they installed 5 ditch checks.
+              Overall, the capacity of the installlations was about 2800 gallons
+              or 2.5% of measured stormwater runoff. Also, there was about 20%
+              greater reduction in runoff for the treatment street after runoff
+              reduction installations than for the control street for small to
+              moderate storm events. However, the researchers did not claim that
+              the reduction was completely attributed to the installations as
+              other factors could also affect the outcome.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

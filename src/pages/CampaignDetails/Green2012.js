@@ -263,11 +263,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Residents</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Rain garden and rain barrel</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>LID/Inflitration</p>
           </center>
         )}
         {selector === "2" && (
@@ -276,7 +276,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -332,19 +332,42 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              To rank bids, the researchers developed a landscape-level metric
+              of projected effectiveness, which considered factors such as
+              proximity to tributaries, soil infiltration capacity, area of
+              rooftop connectivity, and total impervious area, to rank bids. The
+              goal was to obtain the highest efficienncy with the available
+              funsds and to place rain gardens and rain barrels on parcels where
+              they would have the most environmental benefit. Social capital was
+              evaluated using the proximity of homes as a proxy for social
+              networks. They used spatial clustering techniques. Considering
+              that the data violate the nomally-distributed assumptions because
+              responses are binomal (bid versus no bid), the researchers
+              assessed the presence of non-randomness in the spatial
+              distributions of bid responses by applying boot-strapping (with
+              replacement) techniques to the distribution of parcels linked by
+              each of several pairwise distances between properties.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              81 rain gardens and 165 rain barrels were installed on
+              approximately one-third of the 350 eligible residential properties
+              in the watershed.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              All recipients received nominal compensation of $5 USD for their
+              time and to encourage bidding.
+            </p>
           </center>
         )}
         {selector === "7" && (

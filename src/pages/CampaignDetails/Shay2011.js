@@ -258,11 +258,23 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>
+              Homeowners in the middle to high socio-economic group because they
+              are most likely to have funds to purchase landscape chemicals. In
+              addition, the research team also included information from the
+              fertilizer company Scotts/Miracle Gro. As a result, the target
+              audience also included men of 55 years old and older who value
+              green and well-manicured lawn, homeowners who were in their 30s
+              searching for first-time device on landscaping techniques and had
+              not yet developed less earth-wide habits, and women who were
+              purchasing or influencing more than 50% of fertilizer purchases.
+            </p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Reducing the use of lawn and garden chemicals</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>
+              Nutrients, Toxic Chemicals (Pesticide, Household Cleaner, etc.)
+            </p>
           </center>
         )}
         {selector === "2" && (
@@ -271,7 +283,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 87.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -298,7 +310,7 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
@@ -313,7 +325,7 @@ function CampgainDetailsTemplate() {
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality? <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -327,19 +339,53 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The research team distributed 9,700 mail surveys and received
+              1,872 responses. The outreach was measured in the pilot
+              neighborhoods with before and after education surveys and
+              pollution reduction was assessed with direct monitoring of
+              groundwater springs and stormwater runoff. The monitoring
+              component included detection of herbicide Atrazine and pesticide
+              Carbaryl near the targeted neighborhoods.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The success of educational outreach was measured in the pilot
+              neighborhoods with before-and-after education surveys.
+              Additionally, assessments on pollution reduction were conducted by
+              directly monitoring groundwater springs and stormwater runoff. The
+              majority of neigborhoods surveyed showed a positive behavior
+              response to education and indicated a decrease in chemical
+              fertilizer use, but not all findings were statistically
+              significant. For example, the use of chemical fertilizer decreased
+              by 5%, the use of weed-and-feed decreased by 10%, the use of
+              organic fertilizer increased by 13%, and the use of slow release
+              fertilizer increased by 4%. However, only the increase in the use
+              of organic fertilizer was statistically significant. Results from
+              monitoring data reported that pesticide Carbaryl was not detected
+              in any sample. Potential changes from education as observed in
+              monitoring data were mixed. For example, ammonia decreased at four
+              of five sites in the post-education time period; nitrate
+              concentrations increased at two sites and decreased at one site.
+              Additionally, there were no differences in the peak concentrations
+              of Atrazine pre- or post-education but this may be confounded by
+              the different weather conditions. There was more rainfall during
+              the post-education period, which could have resulted in additional
+              lawn care activities, education notwithstanding.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              A free electric lawn mower was raffled to the attendees at the
+              free workshop in 2009.
+            </p>
           </center>
         )}
         {selector === "7" && (

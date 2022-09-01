@@ -252,11 +252,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Dog owners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Picking up after dogs</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Pathogens (Fecal Coliforms, Bacteria, E. Coli)</p>
           </center>
         )}
         {selector === "2" && (
@@ -292,7 +292,7 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
@@ -301,10 +301,10 @@ function CampgainDetailsTemplate() {
                 Observed Behavior Directly? <BsCheck2Circle />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -321,19 +321,30 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Counting the number of fresh dog droppings in the target area
+              during pre- and post-intervention. Additionally, an evaluation of
+              dog droppings was also conducted during an intervention reversal
+              phase.{" "}
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Intervention using signs only had little effect on behavior
+              change. However, instructions and modeling strategy led to 75%
+              increase of the dog owners picking up their pet waste.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

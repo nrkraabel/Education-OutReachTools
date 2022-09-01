@@ -267,11 +267,16 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Residents</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              Reducing the use of pesticide and changing a number of yard and
+              garden practices
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>
+              Nutrients, Toxic Chemicals (Pesticide, Household Cleaner, etc.)
+            </p>
           </center>
         )}
         {selector === "2" && (
@@ -280,7 +285,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -313,10 +318,10 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
@@ -336,19 +341,35 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Throughout the Green Gardening program and the Natural Lawn Care
+              programs, the partners conducted polls and analyzed limitied sales
+              data that were purchased from large retailers. Clear measurement
+              was difficult to obtain. Little baseline information was available
+              for comparison and sales data were not compiled as there were no
+              reporting requirements for sales and manufacture of residential
+              pesticides.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Polling data suggested a low decline between 1997 and 2003 in the
+              use of Weed-n-Feed type products. Sales data for the period
+              2001-2002 suggested an average decrease of over 20% per store of
+              the main active ingredient in Weed-n-Feed type products, but the
+              sales data results were not clear.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

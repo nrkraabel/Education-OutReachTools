@@ -260,11 +260,13 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners with yards</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Lawn care practices</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>
+              Nutrients, Toxic Chemicals (Pesticide, Household Cleaner, etc.)
+            </p>
           </center>
         )}
         {selector === "2" && (
@@ -300,16 +302,16 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
@@ -329,26 +331,67 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              For the workshop evaluation, the 2018-2019 program evaluation was
+              created to be comparable to the 2014 version but it did not
+              include statistical analysis. Participants in 2018-2019 program
+              still completed surveys before and after participation, but with a
+              few modifications. Workshop participants completed surveys at
+              three or four points during their participation: 1) baseline
+              survey, administered online before participants receiving
+              education, 2) immediate post-outreach surveys, administered paper
+              surveys at the workshops immediately after receiving education, 3)
+              medium-term post-outreach survey, administered 6-12 months after
+              receiving education. This survey was distributed through paper and
+              online, 4) Long-term post-outreach survey, administered five years
+              after receiving education. This paper and web-based survey applied
+              to the 2014 participants only. For the Lawn and Garden Fair,
+              participants filled out a survey that was returned during the
+              event.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Based on the survey results by the 2014 participants, the long
+              term results suggested that participants continued using severeal
+              key practices that directly protect water quality, but some
+              backsliding compared to the medium term. The report defines
+              "backsliding" as when participants initially increased their use
+              of natural yard care pactices after the workshop, but the behavior
+              change was not retained in the long term. Despite some
+              backslidings, the long term results still reported 30% reductions
+              in using weed-and-feed and 13% reductions in broadly applying weed
+              killer, when being compared to the baseline. Backslide also
+              decreased long-term behavior change from moderate to low levels
+              for not leaving beds bare or covered in landscape fabrices or
+              plastic, from 78% yo 73%.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              People who completed a survey at the Lawn and Garden Fair were
+              offered small products for natural yard care practices, such as
+              bag of compost, gauge rule to measure lawn watering, and a 15% off
+              coupon for compost. In addition, they could participate in a
+              drawing for a grand prize consisting of a soil test, a bag of
+              organic fertilizer, a bag of lime, a compost thermometer, a
+              hose-end irrigation timer, a pair of gardening gloves, etc.
+            </p>
           </center>
         )}
         {selector === "7" && (
           <center>
             <h2>Socail/Racial Justice Considerations</h2>
             <p>
-              <b>NONE</b>
+              The survey collected information of three key characteristics that
+              they thought might affect yard care behaviors: residence, home
+              ownership, and who performs yard care.
             </p>
           </center>
         )}

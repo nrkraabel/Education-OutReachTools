@@ -258,11 +258,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Dog owners at parks</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Dog's waste pick-up and proper disposal</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Pathogens (Fecal Coliforms, Bacteria, E. Coli)</p>
           </center>
         )}
         {selector === "2" && (
@@ -298,7 +298,7 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
@@ -307,10 +307,10 @@ function CampgainDetailsTemplate() {
                 Observed Behavior Directly? <BsCheck2Circle />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -327,19 +327,37 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The outreach team evaluated the effectiveness of their program in
+              3 ways: 1) monthly GPS mapping from August 2006 to April 2007, 2)
+              visual observation of dog owners, and 3) dog owner surveys. There
+              were 25 people on average visited the information station each
+              month.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Comparing the survey results from the baseline survey to the
+              3-month post-education survey, the number of dog poop piles in
+              Rivercrest Park decreased by 35%. Then, piles decreased another
+              10% based on another survey conducted a couple of months later.
+              The final survey was conducted a few months later and it showed
+              another slight decrease of 3%. In total, the number of dog poop
+              piles decreased by 48%. At linear park in Greenway, the dog poop
+              piles increased by 25% over the initial survey period, but they
+              decreased by 20% after installations of pet waste bag stations.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

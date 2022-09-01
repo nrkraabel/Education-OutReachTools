@@ -258,11 +258,14 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>
+              Homeowners, owners and employees of nursery and landscaping
+              businesses
+            </p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Using non-phosphorus fertlizers and picking up pet waste</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -271,7 +274,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -298,13 +301,13 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
@@ -327,19 +330,31 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The first baseline survey was conducted in January 2004. Then, a
+              post-campaign survey was administered in September 2004. The
+              second baseline survey was conducted in November 2006, and another
+              post-campaign survey was administered in 2009.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The TAPP campaign achieved a 30% reduction in unpicked up pet
+              waste and 10.8% decrease in households that applied fertilizer.
+              Additionally, the 2009 survey indicated that 18.4% of respondents
+              had switched to non-phosphorus fertilizer.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

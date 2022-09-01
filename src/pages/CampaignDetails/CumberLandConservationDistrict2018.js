@@ -260,11 +260,14 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>
+              Homeowners, aged 35-50 , living in the 30 regulated small MS4
+              municipalities
+            </p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Lawn Care and Pet Waste</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -273,7 +276,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -306,13 +309,13 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -329,19 +332,38 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Surveys were mailed to 15,819 homeowners on July 12, 2013 and the
+              given deadline to respond was August 16, 2013. Survey participants
+              had several options to return the survey: mail, a drop box located
+              outside the County Courthouse, in-person delivery to the
+              Environmental Health counter, fax, email, and online using Survey
+              Monkey. The goal was to obtain at least 400 complete surveys, but
+              it turned out that 2,138 people responded.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Some highlights of the survey findings include: 1) In 2013, 24% of
+              respondents reported that they had reduced the amount of lawn
+              chemicals. In 2018, 66% of respondents reported that they had
+              recuded the amount of lawn chemicals; 2) In 2013, 22% of
+              respondents mowed their lawn no shorter than 2.5-3 inches. In
+              2018, the number went up to 60%; 3) In 2013, 35% of respondents
+              reported picking up their pet's waste. In 2018, the number went up
+              to 53%.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

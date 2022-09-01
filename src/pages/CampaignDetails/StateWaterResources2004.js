@@ -261,11 +261,16 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>LA County residents</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              Disposing trash in a trash can or recycling container when
+              appropriate, cleaning up after dogs every time, putting cigarette
+              butts in an ashtray, participating in community clean ups, and
+              reducing, reusing, and recylin materials when possible
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -274,7 +279,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -301,13 +306,13 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
@@ -330,27 +335,48 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The evaluation study was conducted among 1,000 LA County
+              residents, who were drawn from a representative sample of
+              random-digit phone numbers for LA County. The team set quotas for
+              gender, age, and ethnicity based on census data. Phone interviews
+              were conducted in English or Spanish, based on the interviewee's
+              preference. Study participants had to be 16 years or older,
+              permanent residents of LA county, and residents of LA county for
+              six months or more.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Reported behavior of littering had generally declined since the
+              baseline study in 1997, but the reductions were not consistent
+              across time or groups of people. Additionally, household
+              lawn/garden maintenance activities had generally increased,
+              suggesting that future campaign efforts might want to target lawn
+              care activities. For example, compared to 1997, the percentage of
+              people who dropped a cigarette butt on the ground decreased by 7%
+              on average across the different groups of people and the
+              percentage of people who sprayed their garden or lawn with
+              pesticides increase by 5% on average across the different groups
+              of people.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (
           <center>
             <h2>Socail/Racial Justice Considerations</h2>
-            <p>
-              <b>NONE</b>
-            </p>
+            <p>Campaign print material was also available in Spanish</p>
           </center>
         )}
 

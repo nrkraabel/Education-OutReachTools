@@ -258,11 +258,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Snohomish County residents</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>OSS maintenance, such as regular inspection of septic system</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Pathogens (Fecal Coliforms, Bacteria, E. Coli)</p>
           </center>
         )}
         {selector === "2" && (
@@ -271,7 +271,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -298,19 +298,19 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
-                Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
+                Observe Control Group or Counter-Factual <BsCheck2Circle />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -327,19 +327,47 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              SWM collaborated with Western Washington University (WWU) Office
+              of Survey Research in 2011 to conduct a telephone survey to
+              statistically determine the overall effectiveness of the direct
+              mail strategy. Snohomish County distributed mail surveys to all
+              workshop participants in June 2011, 8 months following the
+              workshops, to assess the workshops' impact on long-term behavior
+              change.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The direct mail campaign served as an effective reminder for
+              people to contact a pumper, as 14% of people claimed to contact a
+              pumper as a result of the campaign. The workshop increased the
+              percentage of people who were significantly more likely to adopt
+              best management practice in the long-term, 8 months after the
+              workshop program. Specifically: - The percentage of people who
+              prevented hazardous chemicals from going down the drain was 22%
+              higher than the control group. - The percentage of people who used
+              less water over the course of the day was 19.5% higher than the
+              control group. - The percentage of people who spread out their
+              water use throughout the week was 41.2% higher than the control
+              group. - The percentage of people who walked over their drainfield
+              searching for odors was 51.4% higher than the control group. - The
+              percentage of people who had a pumper inspected their system on a
+              regular schedule was 27% higher than the control group. -The
+              percentage of people who prevented kitchen scraps from going down
+              the drain was 30.4% higher than the control group.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

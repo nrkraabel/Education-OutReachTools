@@ -260,11 +260,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Plant native gardens, rain gardens, and shoreline plantings.</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -300,22 +300,22 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality? <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -329,19 +329,32 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The campaign kept track of retrofit projects and estimated
+              nutrient load reductions in several watersheds.{" "}
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              One party held in 2007 resulted in 22 rain gardens. The 22 rain
+              gardens translate to approximately 11 pounds of Phosphorus
+              reduction, which is directly attributed to the marketing,
+              technical assistance, and incentives provided. Similar results
+              were found in 2008 and 2009.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              Many program partners offer cost-share grants for water quality
+              projects. Many also offer free home site visits (i.e. technical
+              assistance) to help people choose the best landscaping option.
+            </p>
           </center>
         )}
         {selector === "7" && (

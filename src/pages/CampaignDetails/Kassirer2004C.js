@@ -259,11 +259,13 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Residents</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Reducing the use of pesticides</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>
+              Nutrients, Toxic Chemicals (Pesticide, Household Cleaner, etc.)
+            </p>
           </center>
         )}
         {selector === "2" && (
@@ -272,7 +274,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -305,13 +307,13 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -328,19 +330,36 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              In 2001, Green Venture conducted a survey to assess pesticide use.
+              Following up on the initial survey, the organization conducted a
+              phone survey with two organic lawn care companies in the Hamilton
+              area.{" "}
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Based on information from two organic lawn care companies in the
+              Hamilton area, the salesof organic lawn care products increased by
+              15%-20%. Additionally, three garden centres in and around Dundas
+              were interviewed and they revealed mixed results as to the level
+              of pesticide reduction. One store reported a 50% decrease in
+              pesticide products over the last seven years that may or may not
+              be related to the public education program. Another store said a
+              minimal increase in organic lawn care products and one store
+              revealed a 15%-20% increase in organic lawn care products.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

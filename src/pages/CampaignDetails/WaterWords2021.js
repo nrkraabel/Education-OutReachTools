@@ -259,11 +259,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Parents with children attending schools in New Castle County</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Properly dispose of used cooking oils, fats, and grease.</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Oils</p>
           </center>
         )}
         {selector === "2" && (
@@ -272,7 +272,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -305,13 +305,13 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -328,19 +328,26 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>The number of pledges and post campaign surveys.</p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              About 9% of county residents said that they disposed fats, oils,
+              and grease (FOG) down the drain before the campaign, and the
+              number decreased to 0.3% after participating.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              The schools that collected the most pledges won cash to purchase
+              educational materials and supplies for on-campus projects.
+            </p>
           </center>
         )}
         {selector === "7" && (
