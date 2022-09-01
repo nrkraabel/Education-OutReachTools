@@ -78,15 +78,15 @@ function Home() {
                 ],
                 type: "pie", // default type of chart
                 colors: {
-                  data1: "#003f5c",
-                  data5: "#2f4b7c",
-                  data2: "#665191",
-                  data3: "#a05195",
-                  data4: "#d45087",
-                  data6: "#f95d6a",
-                  data7: "#ff7c43",
-                  data8: "#ffa600",
-                  data9: "#de425b",
+                  data1: "#d2dddf",
+                  data2: "#423f4f",
+                  data3: "#565e75",
+                  data4: "#565e75",
+                  data5: "#d2dddf",
+                  data6: "#d2dddf",
+                  data7: "#8096a5",
+                  data8: "#8096a5",
+                  data9: "#838996",
                 },
                 names: {
                   // name of each serie
@@ -169,15 +169,15 @@ function Home() {
                 ],
                 type: "pie", // default type of chart
                 colors: {
-                  data1: "#0000FF",
-                  data2: "#0028FF",
-                  data3: "#0050FF",
-                  data4: "#003CFF",
-                  data5: "#0014FF",
-                  data6: "#0064FF",
-                  data7: "#0F00FF",
-                  data8: "#3600FF",
-                  data9: "#00A0FF",
+                  data1: "#423f4f",
+                  data2: "#423f4f",
+                  data3: "#565e75",
+                  data4: "#565e75",
+                  data5: "#d2dddf",
+                  data6: "#d2dddf",
+                  data7: "#8096a5",
+                  data8: "#8096a5",
+                  data9: "#838996",
                 },
                 names: {
                   // name of each serie

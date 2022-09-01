@@ -1,21 +1,17 @@
-
-
 .leftBox {
   position: relative;
   width: calc(50% - 25px);
   margin-left: 10px;
   margin-right: 15px;
   height: 0px;
-
 }
 
-@media(max-width: 1400px) {
+@media (max-width: 1400px) {
   .leftBox {
     height: auto;
     width: calc(50% - 25px);
-  margin-left: 10px;
-  margin-right: 15px;
-
+    margin-left: 10px;
+    margin-right: 15px;
   }
   .rightBox {
     margin-top: 20px;
@@ -23,11 +19,34 @@
   }
 }
 
-
 .rightBox {
   position: relative;
   margin-left: 15px;
   margin-right: 10px;
   left: calc(50% + 50px);
   width: calc(50% - 25px);
+}
+
+.ButtonDivSubmit {
+  margin-top: 40px;
+  margin-left: calc(50% - 38px);
+}
+
+.buttonNext {
+  float: right;
+  margin-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.buttonNextDataCollection {
+  float: right;
+  margin-right: 25px;
+  padding-top: 2px;
+  padding-bottom: 15px;
+}
+.buttonPrevious {
+  float: left;
+  margin-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }

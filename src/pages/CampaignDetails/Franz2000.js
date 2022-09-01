@@ -263,11 +263,14 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>
+              Residents in Contra Costa, Los Angeles, Napa, Riverside, San
+              Bernardino, and Solano Counties
+            </p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Grasscyling</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Nutrients</p>
           </center>
         )}
         {selector === "2" && (
@@ -303,19 +306,19 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -332,19 +335,36 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The firm completed 1,247 phone interviews at the designated
+              counties during a specified period of time. The primary purposes
+              of the phone survey were to follow up on a baseline survey and
+              evaluate the effectiveness of three campaigns promoting
+              grasscycling.{" "}
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The results indicated that the outcomes of grasscycling program
+              were mixed. Some indicators increased, some of them did not
+              change, and some of them decreased. For example, the percentage of
+              people who left lawn clippings on lawn increased by 2.7%, 1.3%,
+              and 0.7% in the Bay Area, Inland Empire, and Los Angeles County,
+              respectively. Meanwhile, the percentage of people who brought lawn
+              clippings to a compost facility decreased by 1.2% and 0.6% in the
+              Bay Area and Inland Empire, respectively
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

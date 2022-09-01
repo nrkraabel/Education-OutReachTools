@@ -260,11 +260,14 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>
+              Residential neighborhood near Long Island Sound in the town of
+              Branford, Connecticut.
+            </p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Yard and garden care, and pet waste management</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Pathogens (Fecal Coliforms, Bacteria, E. Coli), Nutrients</p>
           </center>
         )}
         {selector === "2" && (
@@ -273,7 +276,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -300,22 +303,22 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
-                Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
+                Observe Control Group or Counter-Factual <BsCheck2Circle />
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality? <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -329,19 +332,38 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Two adjacent watersheds in Branford, Connecticut, were studied
+              following the design of the paired watershed approach. Water
+              quality testing was performed for two years before the education
+              campaign to calibrate the analysis. A baseline survey was mailed
+              to control and treatment residents during the calibration period.
+              The survey was repeated for residents of the treatment watershed
+              only in 2001. Statistical analyses were performed on water quality
+              data.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The campaign had no statistically-signficant impact on behaviors,
+              though the authors report a significant increase in structural BMP
+              adoption (12 of 34 lots). The campaign caused a 75% reduction in
+              'nitrite + nitrate -N' and a 127% reduction in fecal coliform
+              bacteria concentrations. However, there was no significant
+              reduction in bacteria, total nitrogen, total phosphorus, and
+              ammonia-N concentrations.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

@@ -258,11 +258,13 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners with yards</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Yard care</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>
+              Nutrients, Toxic Chemicals (Pesticide, Household Cleaner, etc.)
+            </p>
           </center>
         )}
         {selector === "2" && (
@@ -298,16 +300,16 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
@@ -327,19 +329,57 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Participants completed surveys at four points during their
+              participation: 1) baseline survey (before receiving education) 2)
+              immediate post-outreach survey (after the spring lawn coach visit
+              and the demonstration workshops but before the fall lawn coach
+              visit) 3) medium-term post-outreach survey (6-12 months after
+              receiving education) 4) long-term post-outreach survey (6 years
+              after receiving education). Respondents self-reported on a list of
+              17 behaviors such as aerating their lawn every 2 years, applying
+              Weed and Feed, etc. Study did not attempt to assess statistical
+              significance.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Nearly all behaviors improved within the first year after the
+              workshop and visits. With respect to Weed-and-Feed, for example,
+              the percent using the product dropped from 65% at baseline to 12%
+              in the "medium" run survey. The only behaviors that did not
+              improve in the medium term was the timing of fertilizer
+              application, which was already "good" (fertilize in spring or fall
+              but not in winter). Most behaviors, however, showed evidence of
+              "back-sliding" in the long-term survey five years later. The
+              percentage using Weed-and-Feed, for example, increased from 12% to
+              38%. Because this was still lower than the baseline (65%), the
+              authors conclude that the program shows long-term effects, though
+              tempered by back-sliding. In fact, many survey respondents in the
+              2020 survey asked for refresher workshops. Backsliding was least
+              pronounced for mulch mowing, and most pronounced for aerating
+              lawns, knowing how much nitrogen to apply and calculating lawn
+              area and application rate, using slow release organic fertilizers,
+              using lime, and not using Weed-and-Feed.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              Free soil test in spring; Spring and Fall lawn coach consultations
+              through home visits covering current lawn and soil conditions
+              based on soil test results and visual inspection; free lawn
+              measurement, free slow-release fertilizer and lime in quantities
+              based on participants' soil test results and lawn size; and $30
+              rebate towards lawn aeration service or free rental of lawn
+              aerator equipment when participants shared the equipment with two
+              other households.
+            </p>
           </center>
         )}
         {selector === "7" && (

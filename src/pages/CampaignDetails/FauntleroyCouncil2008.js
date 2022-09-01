@@ -256,11 +256,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Dog owners or dog walkers</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Pet waste pick-up and proper disposal</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Pathogens (Fecal Coliforms, Bacteria, E. Coli)</p>
           </center>
         )}
         {selector === "2" && (
@@ -269,7 +269,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -296,7 +296,7 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
@@ -305,7 +305,7 @@ function CampgainDetailsTemplate() {
                 Observed Behavior Directly? <BsCheck2Circle />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
@@ -325,19 +325,35 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Kindergarteners, first, and second graders, and parent volunteers
+              would walk a trail that's popular among dog walkers. Teams of 4-5
+              children walked the trail looking for fecal deposits on the trail
+              and on either side of it. They surveyed the trail every four to
+              six weeks, from October through March. A parent volunteer would
+              remove fecal deposits as they were counted to avoid double
+              counting. The student findings showed that dog owners could be
+              more responsible of their pet's waste despite the average
+              instances of fecal deposits found in 2008 was less than in 2004.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              There was a 21% reduction in the average of the number of pet
+              waste found in 2008 compared to 2004, but dog owners could still
+              be more responsible in picking up after their pets.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

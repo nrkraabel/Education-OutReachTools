@@ -261,11 +261,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Residents</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Reducing the use of pesticides</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Toxic Chemicals (Pesticide, Household Cleaner, etc.)</p>
           </center>
         )}
         {selector === "2" && (
@@ -310,7 +310,7 @@ function CampgainDetailsTemplate() {
                 Observed Behavior Directly? <BsCheck2Circle />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
@@ -330,19 +330,47 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              While they were not able to gain access to sales figures for
+              pesticides, they were able to obtain some information on purchases
+              in the three municipalities through two main sources of data: 1)
+              intercept interviews with 40-50 lawn care service providers at the
+              St. Hyacinthe Horticultural Trade show in November 2003 2) Ten
+              independent estimates from local experts (section 10 on page 30 of
+              document) The estimates for the reduction in use are based on two
+              main sources of data: the experts mentioned above and follow-up
+              surveys conducted by Coalition for Alternatives to Pesticides
+              (CAP).
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              In the three communities being studied, lawn care services were
+              almost universally complying with the by-law and were only selling
+              services with banned pesticides if their clients or residents had
+              obtained a permit, but this happened rarely. Overall, the demand
+              for services that did not rely on synthetic pesticides appeared to
+              be growing quickly, around 10%-30% each year. All local stores
+              continued to sell banned pesticides, though there appeared to have
+              been reductions to one third of previous sales levels immediately
+              after the by-laws became effective, then dropped again to about
+              10% of previous sales levels in the following years. Additionally,
+              according to survey results from the Coalition for Alternatives to
+              Pesticides (CAP), the people who reported affirmative on using
+              less pesticide on the exterior or interior of their home decreased
+              by 13% from 2001 to 2002.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

@@ -261,11 +261,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Property owners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Rain garden and native vegetation landscaping</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>LID/Inflitration</p>
           </center>
         )}
         {selector === "2" && (
@@ -274,7 +274,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -307,13 +307,13 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -330,26 +330,55 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Two surveys were developed, one for Soak It Up (SIU) participants
+              and the other for interested participants (had passed an initial
+              site consultation but had not yet moved with the program). The
+              surveys were essentially identical, with slight language and verb
+              tense differences used to best frame questions for those that had
+              completed the program or for those that were considering the
+              program. One question regarding the likelihood of program
+              participation was asked only of interested participants.
+              Participants were contacted either by phone or email, depending on
+              what contact information the City had on file.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The result section contains information on demographics, water
+              quality beliefs, feature interest, and barriers. Focusing on the
+              feature interest, the findings show that among SIU participants,
+              16% installed rain garden, 58% installed native vegetation
+              landscaping, and 26% installed both.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              a rebate program for Shoreline property owners to install either a
+              rain garden or restore hardscape or turf and plant native
+              vegetation landscaping
+            </p>
           </center>
         )}
         {selector === "7" && (
           <center>
             <h2>Socail/Racial Justice Considerations</h2>
             <p>
-              <b>NONE</b>
+              1) Caucasian/White identifying respondents are overrepresented in
+              both participant groups and all other race/ethnic groups are
+              underrepresented compared to the 2019 U.S. Census Bureau Data for
+              the City of Shoreline, 2) program participants are more likely to
+              have a higher household annual pre-tax income (89.4% above $76,000
+              annually). 3) the average number of years living in one's current
+              household for both participants group was 5 years (median), with
+              52% of SIU participants and 52.8% of interested participants
+              occupying their homes for 5 or less years.
             </p>
           </center>
         )}

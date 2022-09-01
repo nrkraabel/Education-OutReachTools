@@ -263,11 +263,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Residents</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Reducing the use of pesticides</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Toxic Chemicals (Pesticide, Household Cleaner, etc.)</p>
           </center>
         )}
         {selector === "2" && (
@@ -276,7 +276,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -303,19 +303,19 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -332,19 +332,47 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              In both telephone surveys by Points of View Research & Consulting
+              Ltd. , baseline (Spring 2003) and Follow-up (Fall 2003), valuable
+              information was collected from 480 interviews distributed equally
+              across the North Shore region. Information included the percentage
+              of residents of single family dwellings with lawns that are
+              currently using pesticides cosmetically, the types of pesticides
+              residents are currently using on their lawns and why, how often
+              pesticides are being applied, the percentage of residents using
+              natural weed and pest control techniques, and several other
+              questions related to pesticide use and the North Shore Pesticide
+              Reduction Education Program. Additionally, four local garden
+              centers representing eight area retailers selling pesticide
+              products were contacted by the C2P2 project review team in
+              November 2003.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Overall, the pesticide use in the past three years was down
+              somewhat, although not statistically significant. The pre- and
+              post-education survey reported 3% reductions in pesticide use. The
+              four local garden centers reported an increase in their sales of
+              organic products from 10 to 50%. Additionally, all four garden
+              centers also confirmed that there had been a decrease in the sales
+              of pesticides; 15% at one store and 60% at another store. Finally,
+              the interview with Environmental Factors Vancouver, a low impact
+              lawn care products and lawn care company franchise, found sales to
+              have grown 10% over 2 years.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

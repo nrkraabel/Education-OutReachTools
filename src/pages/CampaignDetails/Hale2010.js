@@ -260,11 +260,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Rain garden and rain barrel</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>LID/Inflitration</p>
           </center>
         )}
         {selector === "2" && (
@@ -273,7 +273,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -329,19 +329,36 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Upon receiving the bids, the researchers applied the Environmental
+              Benefits Index and ranked the bid amount. Logit regression
+              analysis was used to assess the influence on bid price. Bid price
+              was assessed using either: all bids, zero bids only, positive bids
+              only, and bid price as a binary variable (zero or positive).
+              Parcel-level (independent) data included proximity to stream, soil
+              type, EPI, year house was built, house size in square footage,
+              number of bedrooms and bathrooms in the house, acreage of the lot,
+              and appraised value of the parcel and home.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The auction resulted in installation of 81 rain gardens and 165
+              rain barrels on 107 of the 350 eligible properties. Approximately
+              55% of the bids were $0. The researchers also found that an
+              auction promoted more participation than education alone and it
+              was at a cheaper per-unit control cost than a flat stormwater
+              control payment plan.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>$5 token financial incentive</p>
           </center>
         )}
         {selector === "7" && (

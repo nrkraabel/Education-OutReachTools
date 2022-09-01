@@ -261,11 +261,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners, installers, and county Extension educators</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Rain garden adoption</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>LID/Inflitration</p>
           </center>
         )}
         {selector === "2" && (
@@ -274,7 +274,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -330,19 +330,42 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Field assessments. A post-installation assessment of the condition
+              and functioning of the rain gardens was completed two years after
+              initial installation. To facilitate the analysis, those who had
+              received a rain garden were organized into several rain gardener
+              types based on their gardening knowledge and motivations for
+              installation: (1) avid gardeners (2) environmentalists (3) direct
+              connection to water resource (4) flooding issues (5) required by
+              law and (6) educators/schools.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The rain garden team completed 73 site assessments and installed
+              40 demonstration rain gardens. The two years post-installation
+              evaluation reported that the 'avid gardener' group had a high rate
+              of success. People with a 'direct connection" with the water
+              resource being protected also maintained their gardens relatively
+              well. The 'environmentalist' and 'required by law' groups had
+              functioning rain gardens but suffered maintenance issues and
+              relative lack of plant care, mulching, and general maintenance.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              Cost share was provided by the program in the amount of $50 per
+              garden to cover costs of mulch and plants. Actual construction
+              (digging) of the rain gardens was provided free of cost to the
+              property owner by the rain garden team.
+            </p>
           </center>
         )}
         {selector === "7" && (

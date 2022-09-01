@@ -262,11 +262,16 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>
+              Residents in the Felida neighborhood of southwestern
+              unincorporated Clark County.
+            </p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Reducing the use of fertilizers and pesticides</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>
+              Nutrients, Toxic Chemicals (Pesticide, Household Cleaner, etc.)
+            </p>
           </center>
         )}
         {selector === "2" && (
@@ -275,7 +280,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 75],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -302,7 +307,7 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
@@ -311,13 +316,13 @@ function CampgainDetailsTemplate() {
                 Observed Behavior Directly? <BsCheck2Circle />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality? <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -331,19 +336,42 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The evaluation utilizes water quality, flow, and precipitation
+              monitoring results from a high density residential (HDR) site's
+              240 acre upstream drainage area uses. The site's drainage area
+              land uses consist of approximately 82% single family residential,
+              17% multi-family residential, and 1% parks. The HDR stormwater
+              exits the conveyance system about 1500 feet downstream of the
+              study's monitoring station through a 36 inch pipe at an outfall
+              near Lake River's confluence with Vancouver Lake. The monitoring
+              was conducted from March 2010 to November 2013.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Using rank-sum statistical tests, the results showed that only 2
+              of the 13 monitored parameters, herbicide dichlobenil and nutrient
+              nitrate-nitrite as N, had statistically significant reduction in
+              their median concentrations before and after the education
+              periods. There were statistically significant increases in the
+              medians of ortho-phosphorus as P and total phosphorus
+              concentrations after the education campaign. The education
+              campaign might had helped protecting water quality, but it was not
+              conclusive to infer that the education campaign improved overall
+              water quality.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

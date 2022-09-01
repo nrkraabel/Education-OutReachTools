@@ -262,11 +262,13 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Bellingham and Whatcom County residents</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Lawn Care</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>
+              Nutrients, Toxic Chemicals (Pesticide, Household Cleaner, etc.){" "}
+            </p>
           </center>
         )}
         {selector === "2" && (
@@ -275,7 +277,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 25],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -308,13 +310,13 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -331,19 +333,48 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Follow up surveys were sent 6-9 months after the workshops. The
+              survey consisted of roughly 30 questions, including six open ended
+              items. The majority of the survey focused on recollection of
+              pledges to implement green gardening practices, actual
+              implementation of the pledged practices, modeling of practices to
+              friends and neighbors, and iscussion of what got in the way of
+              implementation. Outreach included an email from the course
+              leaders, followed by individualized invitations to participate
+              sent by Applied Research Northwest. Three reminders were sent as
+              well as a post card from the City. In the end, 108 of the 225
+              workshop participants completed the survey for a response rate of
+              48%
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              On average, survey participants implemented 95% of their pledged
+              categories. Some categories received more pledges and
+              implementation than others. For example, 93% participants pledged
+              to protect healthy soil function, which was the highest percentage
+              of pledges received and 91% participants implemented the practice.
+              The lowest percentage of pledges received was on reducing energy
+              consumption, 72%, and 68% participants implemented the practice.
+              Low impact maintenance and integrated pest management had 83%
+              pledges and 80% implementation. Low impact lawn care received 81%
+              pledges and 73% implementation. Stormwater management category
+              received 78% pledges and 60% implementation, which was the lowest
+              percentage of implementation.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              {" "}
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

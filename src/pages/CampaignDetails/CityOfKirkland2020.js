@@ -267,11 +267,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Dog owners </p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Pet waste pick up</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -307,22 +307,22 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality? <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -336,19 +336,44 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Regarding dog waste, the monitoring period lasted 11 weeks.
+              Frequency monitoring of un-scooped dog waste was conducted at each
+              park location once per week, on the first day of each week.
+              Monitoring began five weeks prior to education and outreach,
+              continued through the campaign period, and concluded three weeks
+              after the campaign. Total duration of frequency monitoring was 11
+              weeks. Regarding water quality, water samples for fecal coliform
+              and E. coli were collected in Hazen Hills Park from three
+              locations, three times per week, for three weeks prior to outreach
+              and three weeks after outreach. Water samples for the EPA canine
+              qPCR genetic marker were collected from the downstream location
+              once per week for three weeks prior to outreach and three weeks
+              following outreach.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The educational outreach campaign led to an 80% reduction in
+              un-scooped dog waste lasting at least two months after outreach
+              efforts had stopped. There was no relationship found between the
+              campaign and fecal indicator bacteria collected from stream
+              samples (fecal coliform and E. coli). However, fecal colirform and
+              E. coli results were strongly associated with measurable
+              precipitation.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              A free on-leash dog bag dispenser and roll of refill bags to
+              people who completed the pledge.{" "}
+            </p>
           </center>
         )}
         {selector === "7" && (

@@ -266,11 +266,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Shoppers</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Purchase environmentally sensitive fertilizer</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -318,7 +318,7 @@ function CampgainDetailsTemplate() {
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -335,26 +335,48 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              Data collection took pace over four weekends in the Fall season to
+              coincide with a recommended time for residents to fertilize their
+              gardens. There were 60 questionnaires completed; everyone who
+              bought fertilizer completed a questionnaire. The belief data were
+              analysed to determine whether the intervention had an impact on
+              the target beliefs related to the difficulty of locating
+              environmentally sensitive fertiliser products and an absence of
+              sufficient information.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Customers who were exposed to the intervention believed that they
+              had greater control over purchasing environmentally sensitive
+              fertilizer compared to customers who were not exposed to the
+              intervention. There was a 37% increase in purchased fertilizer
+              products that respondents believed wre environmentally sensitive.
+              However, the term, environmentally sensitive, can be misleading
+              for the betterment of environmental outcomes. For example, manure
+              and organic fertilizers contribute to the high nutrient loads
+              entering the Swan-Canning river system from domestic gardens.{" "}
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (
           <center>
             <h2>Socail/Racial Justice Considerations</h2>
             <p>
-              <b>NONE</b>
+              The questionnaire asked about respondents' demographic, such as
+              gender, nationality, and place of birth.
             </p>
           </center>
         )}

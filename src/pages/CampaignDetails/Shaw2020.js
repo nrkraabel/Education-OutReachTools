@@ -269,11 +269,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Carpet cleaning contractors</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Proper disposal of waste water from carpet cleaning</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -282,7 +282,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -312,16 +312,16 @@ function CampgainDetailsTemplate() {
                 Collect Baseline? <MdOutlineClear />
               </li>
               <li>
-                Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
+                Observe Control Group or Counter-Factual <BsCheck2Circle />
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -338,19 +338,56 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The evaluation method compared responses from the test population
+              to the control population to determine if there was a significance
+              in waste water disposal practices and spill preparedness between
+              the two groups. Carpet cleaning businesses in test and control
+              jurisdictions were surveyed, as well as mobile contractors. Action
+              Research was hired to conduct the surveys and provide statistical
+              analyses. The company conducted a pilot test in the City of
+              Pullman to validate the survey instrument for mobile contractors
+              and jurisdictions. Following the validation, postcards were sent
+              to carpet cleaning businesses by the City of Wenatchee to assure
+              respondents that they would not be receiving a scam or
+              telemarketing. The company administered the surveys to mobile
+              contractors and carpet cleaning businesses in test and control
+              areas. There were total 83 carpet cleaning businesses in the test
+              and control groups, and only 16 completed the phone surveys.
+              Statistical analyses couldn't be performed due to the limited
+              number of responses. The limited number of responses was due in
+              part to a high volume of wrong, disconnected, and out of business
+              phone numbers. For example, different websites would have
+              different phone numbers for the same business, and carpet cleaning
+              vans would also display different phone numbers from their
+              websites.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Statistical analyses couldn't be performed due to the limited
+              number of responses. Nonetheless, the business survey provided
+              some information about carpet cleaning businesses in the test and
+              control areas and the effectiveness of the Dump Smart program.
+              Most of the businesses, 81% (13 of 16) responded that they had a
+              spill kit in all of their vehicles. With respect to wastewater
+              disposal practices, the data and results were not straightforward.
+              For example, the businesses in both the test and control area were
+              primarily discharging wastewater to drains. It was unclear in at
+              least three of the responses whether the drain was connected to a
+              municipal stormwater system or sewer.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

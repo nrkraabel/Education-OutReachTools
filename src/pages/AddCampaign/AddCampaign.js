@@ -17,9 +17,10 @@ import "../Table.css";
 import "./AddCampaign.css";
 import "./SubmitButton.css";
 import { BsCheck2Circle, BsCircle } from "react-icons/bs";
-import { fireStore } from "../../firebase";
+import { fireStore, storage } from "../../firebase";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import FileUploadIcon from "@mui/icons-material/FileUpload";
 
 function a11yProps(index) {
   return {
@@ -115,7 +116,6 @@ function AddCampaign() {
       Authors: formState.Authors,
       YearStarted: formState.YearStarted,
       YearCompleted: formState.YearCompleted,
-      Report: reportFile.name,
       StudyLocation: formState.StudyLocation,
       Pollutant: formState.Pollutant,
       TargetBehaviourChange: formState.TargetBehaviourChange,
@@ -124,7 +124,6 @@ function AddCampaign() {
       TargetAudienceCategory: formState.TargetAudienceCategory,
       CampaignLocation: formState.CampaignLocation,
       DescriptionofCampaignMaterials: formState.DescriptionofCampaignMaterials,
-      CampaignMaterialExample: campaignMaterialExampleFile.name,
       MaterialsValidated: formState.MaterialsValidated,
       Type: formState.Type,
       Location: formState.Location,
@@ -137,12 +136,24 @@ function AddCampaign() {
       IntendedPurpose: formState.IntendedPurpose,
       InstrumentsValidated: formState.InstrumentsValidated,
       ValidationProcess: formState.ValidationProcess,
-      InstrumentExample: instrumentExampleFile.name,
       DataQualityIndicators: formState.DataQualityIndicators,
       UsabilityValidated: formState.UsabilityValidated,
       DataAnalysisMethod: formState.DataAnalysisMethod,
       HypothesisTesting: formState.HypothesisTesting,
     });
+    if (campaignMaterialExampleFile !== null) {
+      storage
+        .ref(`/UserUploads/${reportFile.name}`)
+        .put(campaignMaterialExampleFile);
+    }
+    if (reportFile !== null) {
+      storage.ref(`/UserUploads/${reportFile.name}`).put(reportFile);
+    }
+    if (instrumentExampleFile !== null) {
+      storage
+        .ref(`/UserUploads/${instrumentExampleFile.name}`)
+        .put(instrumentExampleFile);
+    }
     alert("Data Upload Successful");
   };
 
@@ -876,12 +887,15 @@ function AddCampaign() {
                 </Select>
               </div>
             </Box>
-            <div className="ButtonDiv">
-              <center>
-                <Button variant="contained" onClick={submitData} size="large">
-                  Submit
-                </Button>
-              </center>
+            <div className="ButtonDivSubmit">
+              <Button
+                variant="contained"
+                onClick={submitData}
+                size="large"
+                endIcon={<FileUploadIcon />}
+              >
+                Submit
+              </Button>
             </div>
           </TabPanel>
         </Box>

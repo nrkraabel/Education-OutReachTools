@@ -258,11 +258,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>City of Davis' residents</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Reducing the use of pesticides</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Toxic Chemicals (Pesticide, Household Cleaner, etc.)</p>
           </center>
         )}
         {selector === "2" && (
@@ -271,7 +271,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -304,10 +304,10 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
@@ -327,19 +327,38 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The team administered a random telephone survey of Davis residents
+              to determine gardening practices, awareness of the Healthy Gardens
+              program, and the impact of its message. They also distributed a
+              mailed survey to supplement the data collected through the
+              telephone survey. There was also a kiosk placed in several
+              locations with survey cards and a display of outreach materials.
+              The Public Works website also included the survey and a link to
+              the Healthy Gardens website.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The educational outreach campaign led to an 80% reduction in
+              un-scooped dog waste lasting at least two months after outreach
+              efforts had stopped. There was no relationship found between the
+              campaign and fecal indicator bacteria collected from stream
+              samples (fecal coliform and E. coli). However, fecal colirform and
+              E. coli results were strongly associated with measurable
+              precipitation.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

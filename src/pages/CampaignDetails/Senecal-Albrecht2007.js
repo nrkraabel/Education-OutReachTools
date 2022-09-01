@@ -259,11 +259,14 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>The general public</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              Home projects and erosion control, use of toxic chemicals and
+              fertilizer, car washing, and disposal pet waste
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -299,22 +302,22 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality? <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -328,19 +331,36 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              To gauge the effectiveness of the first 5-year campaign, the team
+              deployed a survey in Fall 2007. The 2007 survey replicated the
+              2003 survey, and results from both surveys were used for a
+              comparison study. The 2003 evaluation results are used the
+              baseline survey. Then, another survey was conducted in July 2008
+              in 9 member communities. This 2008 pre-campaign telephone survey
+              was used as a new baseline of knowledge, attitudes, beliefs and
+              behaviors related to stormwater pollution.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The 2007 results show that there was no significant behavior
+              change with respect to disposal of pet waste from 2003. There was
+              a significant increase in the percentage of people using no
+              chemicals to treat weed problems, and a significant increase in
+              the percentage of people who never washed their cars at home.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

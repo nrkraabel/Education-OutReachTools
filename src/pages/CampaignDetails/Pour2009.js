@@ -264,11 +264,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeownerso</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Installations of self-draining rain barrels</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -304,22 +304,22 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
-                Measure Water quality? <MdOutlineClear />
+                Measure Water quality? <BsCheck2Circle />
               </li>
             </ul>
           </center>
@@ -333,19 +333,49 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              In addition to retrofitting as many residences as possible
+              (withinthe sub-catchments) with the rain barrels, this study also
+              monitored and measured the catchments’ response to rainfall before
+              and after the retrofits. The project scope included installation
+              of flowmonitoring stations at the outfalls of the study area
+              sub-catchments one year prior to the execution of the retrofits
+              and also included continuously collecting data for the duration of
+              the project. Implementing the retrofits required the permission
+              and cooperation of private property owners in the study area. The
+              researcher kept track of residents who signed up to participate.
+              Multiple site visits to each property were made between the first
+              contact with a participant and the final installation. Once a
+              homeowner agreed to participate in the study, a site survey was
+              conducted and a rain barrel delivery was set. Once rain barrel was
+              delivered, downspout was prepared for connection. Rain barrel
+              would then be modified and connected to the downspout and the
+              drain. Rain barrel was tested and monitored to ensure that the
+              barrel's drainage mechanism was working.{" "}
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Overall, the pilot project indicated that it is possible to gain
+              volunteer participation for retrofit projects given the right
+              incentives. 26 of 77 possible residents signed up for the
+              self-draining rain barrel study, suggesting 34% participation
+              rate. The efforts led to installations of 40 rain barrels. Also,
+              it was estimated that the rain barrels captured the runoff from
+              about 3.5% to 7% of the total impervious area in the catchments.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              Free rain barrels and extra chlorine-free water available for
+              gardening during summer.
+            </p>
           </center>
         )}
         {selector === "7" && (

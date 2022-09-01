@@ -269,11 +269,18 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>
+              Property owners in four subwatersheds in the Nippersink Creek
+              Watershed: Silver Creek, Nippersink Headwaters, Lower Nippersink,
+              and Wonder Lake)
+            </p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              Increasing proper maintenance of septic systems and using
+              phosphorus-free fertilizers
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -282,7 +289,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 62.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -309,13 +316,13 @@ function CampgainDetailsTemplate() {
                 Have Target Behavior? <BsCheck2Circle />
               </li>
               <li>
-                Collect Baseline? <MdOutlineClear />
+                Collect Baseline? <BsCheck2Circle />
               </li>
               <li>
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
@@ -338,19 +345,55 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              A randomly sampled survey of property owners in four subwatersheds
+              was conducted in 2013. The four subwatersheds were Silver Creek,
+              Nippersink Headwaters, Lower Nippersink, and Wonder Lake. This
+              phase 2 survey was meant to study if or how residents' and
+              property owners' thoughts and actions had changed over time. The
+              questionnaire survey was self-administered. All samples in each
+              subwatershed were drawn using a scientifically random selection
+              based on residence within the subwatershed. Samples were purchased
+              and drawn from Survey Sampling International (with the exception
+              of Wonder Lake). To develop the sampling frame the research team
+              identified all census block groups within the same four
+              subwatersheds that were studied in 2010 (Silver Creek, Nippersink
+              Headwaters, Lower Nippersink, Wonder Lake). From these block
+              groups, Survey Sampling International collected random sample for
+              each subwatershed. The randomly selected sample included 2,500
+              property owners within the four subwatersheds, but due to bad
+              addresses and unoccupied households, the final sample size was
+              2,471 eligible households.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              With respect to the septic problems, there was no observed septic
+              problems that showed a statistically significant change between
+              2010 and 2013. Nonetheless, there were positive results. The
+              percentage of people who reported having bad smells near the tank
+              or drain field decreased by 1.4% and having sewage on the surface
+              decreased by 0.5%. With respect to the phosphorus-free fertilizer
+              (PFF) campaign, the results indicated that there were
+              statistically significant increases in all seven BMPs. The most
+              significance were the use of phosphorus free fertilizer and proper
+              disposal of pet waste. The percentage of people who reported using
+              PFF increased by 23% and the percentage of people who reported
+              properly disposing of pet waste increased by 20%.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              For "septic social": each event had a full septic cleaning service
+              (donated by Pitel Septic) as a door prize, which was drawn at
+              random from those who attended.
+            </p>
           </center>
         )}
         {selector === "7" && (

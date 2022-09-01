@@ -262,11 +262,18 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Homeowners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>
+              Home care and lawn care best management practices (BMPs). Home
+              care BMPs such as disposal of hazardous materials, recycling,
+              water conservation, and septic tank. Lawn care BMPs include
+              erosion control, stormwater control, stormwater treatment,
+              mulching and composting, fertilizer and pesticide, wildlife
+              enhancement, and pond and lake buffers.{" "}
+            </p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>None</p>
           </center>
         )}
         {selector === "2" && (
@@ -275,7 +282,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -308,13 +315,13 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
                 Address Selection Bias? <BsCheck2Circle />{" "}
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -331,19 +338,37 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The assessment of the educational outreach efforts was
+              administered through a survey that consisted of a questionnaire.
+              The quetions asked about respondents' demographic, past and
+              current behavior, awareness and level of knowledge, attitudes,
+              opinion, and motivation, future intentions and behavior.{" "}
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The educational outreach efforts increased respondents' awareness,
+              which translated into several direct day-to-day best management
+              practices (BMPs). In terms of day-to-day home BMPs, 30% of
+              respondents reported proper disposal of hazardous materials and
+              36% of respondents reported recycling. Additionally, respondents'
+              increased awareness also translated to lawn care BMPs. For
+              example, 21% of respondents practiced erosion control and 12% of
+              respondents reported proper fertilizer and pesticide usage. The
+              gains in lawn care BMPs were not as great as with the home BMPs.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

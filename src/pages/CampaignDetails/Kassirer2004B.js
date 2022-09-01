@@ -265,11 +265,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Property owners</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Reducing the use of pesticides</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Toxic Chemicals (Pesticide, Household Cleaner, etc.)</p>
           </center>
         )}
         {selector === "2" && (
@@ -278,7 +278,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 37.5],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -311,10 +311,10 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
                 Measure Long Term ({">"}1Year)? <BsCheck2Circle />
@@ -334,19 +334,36 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The estimates for reduction in pesticide use were based on two
+              main sources of data: information from experts and polls conducted
+              by Corporate Research Associates Inc. Estimates of sales
+              information from lawn care companies, disontinued sale of banned
+              pesticides at local stores, and sales of low-impact pesticide
+              alternatives were used to assess the impacts of the pesticide ban.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              The immediate impact of the ban suggested that pesticide sales by
+              lawn care companies decreased by 90% in the beginning of 2003.
+              Many local stores discontinued the sale of the banned pesticides.
+              Stores that were still selling the banned pesticides reported
+              average reduction of 50% from the previous year. A national
+              wholesaler of low-impact pesticide alternatives reported 45%
+              increase in sales in Halifax.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

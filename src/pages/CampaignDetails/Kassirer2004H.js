@@ -261,11 +261,11 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>Residents, farmers</p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Reducing the use of pesticide</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>Toxic Chemicals (Pesticide, Household Cleaner, etc.)</p>
           </center>
         )}
         {selector === "2" && (
@@ -274,7 +274,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 25],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -307,13 +307,13 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -330,19 +330,32 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              The campaign team deployed several evaluation methods, including
+              follow-up surveys, telephone interviews, and sales information .
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              Pesticides were no longer sold in the village of Frejlev. Based on
+              follow-up surveys and telephone interviews, Frejlev achieved
+              51%-90% reductions in residential pesticide use. According to
+              sales report from European counties, the greatest reduction in
+              volume of sales between 1991 and 1996 were seen in Finland (-46%),
+              the Netherlands (-43%), Austria (-21%), Denmark (-21%), and Sweden
+              (-21%).
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <p>
+              <b>NONE</b>
+            </p>
           </center>
         )}
         {selector === "7" && (

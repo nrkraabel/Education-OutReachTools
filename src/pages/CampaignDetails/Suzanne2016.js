@@ -259,11 +259,16 @@ function CampgainDetailsTemplate() {
         {selector === "1" && (
           <center>
             <h2>Targeted Audience</h2>
-            <p>Info</p>
+            <p>
+              Conventional lawn care companies who were not offering all organic
+              lawn care, and homeowners
+            </p>
             <h2>Targeted Behavior</h2>
-            <p>Info</p>
+            <p>Reduce fertilizer use, reduce pesticide use.</p>
             <h2>Targeted Pollutant</h2>
-            <p>Info</p>
+            <p>
+              Nutrients, Toxic Chemicals (Pesticide, Household Cleaner, etc.)
+            </p>
           </center>
         )}
         {selector === "2" && (
@@ -272,7 +277,7 @@ function CampgainDetailsTemplate() {
               data={{
                 columns: [
                   // each columns data
-                  ["data", 50],
+                  ["data", 25],
                 ],
                 type: "gauge", // default type of chart
                 gauge: {},
@@ -305,13 +310,13 @@ function CampgainDetailsTemplate() {
                 Observe Control Group or Counter-Factual <MdOutlineClear />{" "}
               </li>
               <li>
-                Observed Behavior Directly? <BsCheck2Circle />
+                Observed Behavior Directly? <MdOutlineClear />
               </li>
               <li>
-                Address Selection Bias? <BsCheck2Circle />{" "}
+                Address Selection Bias? <MdOutlineClear />
               </li>
               <li>
-                Measure Long Term ({">"}1Year)? <BsCheck2Circle />
+                Measure Long Term ({">"}1Year)? <MdOutlineClear />
               </li>
               <li>
                 Measure Water quality? <MdOutlineClear />
@@ -328,26 +333,38 @@ function CampgainDetailsTemplate() {
         {selector === "4" && (
           <center>
             <h2>Evaluation Methods</h2>
-            <p>Text</p>
+            <p>
+              There were early efforts to get professionals to answer their
+              survey, but they were unsuccessful in spite of reaching out to the
+              professionals during a slow period of time (winter). Due to the
+              low response, the program managers conducted interviews rather
+              than relying on survey responses.
+            </p>
           </center>
         )}
         {selector === "5" && (
           <center>
             <h2>Evaluation Results</h2>
-            <p>Text</p>
+            <p>
+              There was a lot of negativity toward environmental efforts.
+              Lawncare professionals felt that their industry was blamed for the
+              problems in the Bay.
+            </p>
           </center>
         )}
         {selector === "6" && (
           <center>
             <h2>Incentive</h2>
-            <p>Text</p>
+            <b>NONE</b>
           </center>
         )}
         {selector === "7" && (
           <center>
             <h2>Socail/Racial Justice Considerations</h2>
             <p>
-              <b>NONE</b>
+              The listed demograhics are Asia/pacificislander, Black or African
+              American, Hispanic or Latino, Other, White. However, it's unclear
+              what the demographics roles are in this project.
             </p>
           </center>
         )}

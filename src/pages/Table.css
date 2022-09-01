@@ -36,23 +36,3 @@ td:nth-child(even) {
   overflow: hidden;
   white-space: nowrap;
 }
-
-.buttonNext {
-  float: right;
-  margin-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 15px;
-}
-.buttonNextDataCollection {
-  float: right;
-  margin-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 15px;
-  margin-top: 63px;
-}
-.buttonPrevious {
-  float: left;
-  margin-left: 25px;
-  padding-top: 10px;
-  padding-bottom: 15px;
-}
