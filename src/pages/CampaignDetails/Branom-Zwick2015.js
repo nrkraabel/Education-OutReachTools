@@ -15,6 +15,7 @@ import FactCheckSharpIcon from "@mui/icons-material/FactCheckSharp";
 import MapElement from "../../components/Map/MapElement";
 import { BsCheck2Circle } from "react-icons/bs";
 import { MdOutlineClear } from "react-icons/md";
+import pdf from "./CampaignPDF/Branom-Zwick2015.pdf";
 
 function CampgainDetailsTemplate() {
   const [selector, setSelector] = useState("0");
@@ -405,11 +406,7 @@ function CampgainDetailsTemplate() {
         {selector === "8" && (
           <center>
             <h2>
-              <a
-                href="https://drive.google.com/file/d/1kY3yFeKVddMmJacvCx1slVySAjj_J6l7/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={pdf} target="_blank" rel="noopener noreferrer">
                 PDF Link
               </a>
             </h2>

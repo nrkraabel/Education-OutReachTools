@@ -18,7 +18,7 @@ const Navbar = () => {
         <img className="logo" src={Logo} alt="Logo" />
         <div className="logoText">
           <h1 className="headerLogoText">
-            Tools & Resources for Behavior Change Campaigns
+            Tools and Resources for Effective Behavior Change Campaigns
           </h1>
           <h2 className="subLogoText">IN STORMWATER & WATER QUALITY</h2>
         </div>
