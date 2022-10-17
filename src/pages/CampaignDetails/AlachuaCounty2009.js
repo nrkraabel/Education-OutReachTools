@@ -384,7 +384,7 @@ function CampgainDetailsTemplate() {
         {selector === "8" && (
           <center>
             <h2>
-              <a href={pdf} target="_blank" rel="noopener noreferrer">
+              <a href={pdf} download target="_blank" rel="noopener noreferrer">
                 PDF Link
               </a>
             </h2>
