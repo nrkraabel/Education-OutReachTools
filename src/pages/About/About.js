@@ -3,6 +3,7 @@ import "../Text.css";
 import WSU from "../Images/WSUExtension.jpg";
 import SAM from "../Images/SAM.jpg";
 import StormWater from "../Images/StormwaterCenter.png";
+import Evergreen from "../Images/EvergreenStormH2OPrimaryLogo.jpg";
 import "./About.css";
 
 function About() {
@@ -21,15 +22,20 @@ function About() {
         Lovelace at the City of Shoreline for sharing her BMP selection tool,
         which was the inspiration for the tool here.
       </p>
-      <div className="LogoImages">
-        <img src={WSU} alt="WSU Extension Logo"></img>
-      </div>
-      <div className="LogoImages">
-        <img src={SAM} alt="SAM Logo"></img>
-      </div>
-      <div className="LogoImages">
-        <img src={StormWater} alt="StormWater Centers Logo"></img>
-      </div>
+      <span className="LogoSpan">
+        <div className="LogoImages">
+          <img src={WSU} alt="WSU Extension Logo"></img>
+        </div>
+        <div className="LogoImages">
+          <img src={SAM} alt="SAM Logo"></img>
+        </div>
+        <div className="LogoImages">
+          <img src={StormWater} alt="StormWater Centers Logo"></img>
+        </div>
+        <center>
+          <img src={Evergreen} alt="Evergreen Storm H20 Logo"></img>
+        </center>
+      </span>
     </div>
   );
 }

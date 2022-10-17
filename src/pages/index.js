@@ -12,23 +12,32 @@ function Home() {
       <div className="page">
         <div className="roundedGreyBox">
           <p>
-            &emsp; Public Behavior Change Campaigns strive to increase awareness
-            of stormwater impacts and encourage changes to actions that
-            contribute to water quality and quantity problems within a
-            watershed. Ecology recognizes the potential benefits of these
-            campaigns on our state’s water bodies and includes behavior change
-            campaigns as a required component of Stormwater Management Campaigns
-            (SWMP). More recent NPDES permits require permittees to develop
-            targeted campaigns using Social Marketing methods, evaluate the
-            effectiveness of these campaigns, and apply results to improve their
-            campaigns.
+            &emsp; Behavior Change Campaigns encourage members of the public to
+            change their actions in ways that contribute to water quality and
+            runoff problems within a watershed. In many places, NPDES permits
+            require permittees to develop targeted campaigns using “social
+            marketing” or “community-based social marketing” methods. Some also
+            require permittees to evaluate the effectiveness of these campaigns
+            and apply results to improve their campaigns.
           </p>
           <p>
-            &emsp;The purpose of this database is to provide jurisdictions with
-            tools to identify and select which stormwater problems and behaviors
-            to focus on, including guidance on how to conduct and report
-            effectiveness evaluations to inform and improve future efforts in a
-            positive feedback loop of doing and learning.
+            &emsp;This site has two main purposes. First, what works? To help
+            jurisdictions assess the effectiveness of existing campaigns around
+            the country, it compiles every known evaluation of a behavior change
+            campaign in stormwater or water quality. We provide details on
+            campaign implementation and evaluation and rate the research quality
+            of the evaluation. (If you know of an evaluation that is not on the
+            site, please help us by submitting it via the “Add Campaign”
+            function above.)
+          </p>
+          <p>
+            &emsp;Second, it provides jurisdictions with guidance on choosing
+            and evaluating their own campaigns. It provides a downloadable
+            decision-aide (in spreadsheet form) that a jurisdiction can use when
+            deciding among several options for new campaigns. It also includes
+            guidance for permittees in Washington State on how to conduct and
+            report effectiveness evaluations to inform and improve future
+            efforts in a positive feedback loop of doing and learning.
           </p>
         </div>
         <center>
