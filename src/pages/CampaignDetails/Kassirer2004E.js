@@ -15,9 +15,19 @@ import FactCheckSharpIcon from "@mui/icons-material/FactCheckSharp";
 import MapElement from "../../components/Map/MapElement";
 import { BsCheck2Circle } from "react-icons/bs";
 import { MdOutlineClear } from "react-icons/md";
-import pdf from "./CampaignPDF/Kassirer2004E.pdf";
+import { storage } from "../../firebase";
 
 function CampgainDetailsTemplate() {
+  const [pdf, setPDF] = useState("");
+
+  // Getting Download Link
+  storage
+    .ref("behaviorChangePdfs")
+    .child("Kassirer2004E.pdf")
+    .getDownloadURL()
+    .then((url) => {
+      setPDF(url);
+    });
   const [selector, setSelector] = useState("0");
   const handleClick = (evt) => {
     if (evt.target.value !== undefined) {
