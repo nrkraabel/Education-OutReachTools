@@ -10,8 +10,6 @@ import { useState } from "react";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
-import LinkIcon from "@mui/icons-material/Link";
-import Link from "@mui/material/Link";
 import "./InputFile.css";
 import "../Table.css";
 import "./AddCampaign.css";
