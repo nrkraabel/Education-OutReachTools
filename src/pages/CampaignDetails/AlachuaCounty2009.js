@@ -15,7 +15,7 @@ import FactCheckSharpIcon from "@mui/icons-material/FactCheckSharp";
 import MapElement from "../../components/Map/MapElement";
 import { BsCheck2Circle } from "react-icons/bs";
 import { MdOutlineClear } from "react-icons/md";
-import { storage } from "C:/Users/Nicholas/StormwaterWebsite/Education-OutReachTools/src/firebase.js";
+import { storage } from "../../firebase";
 
 function CampgainDetailsTemplate() {
   const [pdf, setPDF] = useState("");
