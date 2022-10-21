@@ -1,12 +1,20 @@
-import React from "react";
 import "./Text.css";
 import MapElement from "../components/Map/MapElement.js";
 import C3Chart from "react-c3js";
-import { colors } from "tabler-react";
-import Header from "./Images/WebsiteHeaderImage.png";
-import MapDetails from "./documents/MapDetails.pdf";
+import React, { useState } from "react";
+import { storage } from ".././firebase";
 
 function Home() {
+  const [pdf, setPdf] = useState("");
+
+  // Getting Download Link
+  storage
+    .ref("Documents")
+    .child("MapDetails.pdf")
+    .getDownloadURL()
+    .then((url) => {
+      setPdf(url);
+    });
   return (
     <div>
       <div className="page">
@@ -58,7 +66,7 @@ function Home() {
         <center className="MapDetailsBox">
           <a
             className="MapDetails"
-            href={MapDetails}
+            href={pdf}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Opens a text based pdf of map info."
