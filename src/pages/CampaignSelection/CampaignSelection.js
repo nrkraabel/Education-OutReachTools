@@ -1,13 +1,23 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "../Tab.css";
 import "../Text.css";
 import "../Table.css";
 import "./CampaignSelection.css";
-import spreadSheet from "../documents/BCCampaignSpreadsheetTemplate.xlsx";
+import { storage } from "../../firebase";
 
 //Helper to tab prop
 
 function CampaignSelection() {
+  const [xlsx, setXlsx] = useState("");
+
+  // Getting Download Link
+  storage
+    .ref("Documents")
+    .child("BCCampaignSpreadsheetTemplate.xlsx")
+    .getDownloadURL()
+    .then((url) => {
+      setXlsx(url);
+    });
   return (
     <div className="page">
       <center>
@@ -40,7 +50,7 @@ function CampaignSelection() {
           you an answer by selecting the “best” campaign. Instead, it helps you
           make sure you are asking the right questions.
         </p>
-        <a href={spreadSheet} download>
+        <a href={xlsx} download>
           Click here to download the spreadsheet
         </a>
         <p>
